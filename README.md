@@ -42,13 +42,16 @@ Note that these folders use PascalCase, this styling also applies to subfolders
 
 
 ### Naming Conventions
-Please ensure that members and variables are named accordingly, this should be enforced by `.editorconfig`.
+Please ensure that members and variables are named accordingly, this should be enforced by `.editorconfig` but might not be always enforced.
 
 | Symbol Type             | Scope / Accessibility | Naming Convention | Example                    |
 |-------------------------|-----------------------|-------------------|----------------------------|
+| **Interfaces**          | `any`                 | `IPascalCase`     | `IInteractable`, `IGrabableObject` |
+| **Classes (concrete)**  | `any`                 | `PascalCase`      | `ItemBehaviour`, `PlayerInputManager` |
+| **Classes (abstract)**  | `any`                 | `AbstractPascalCase` | `AbstractEnemy`, `AbstractPlayerState` |
 | **Properties (public)** | `public`              | `PascalCase`      | `Health`, `Speed`          |
 | **Fields (public)**     | `public`              | `PascalCase`      | `MaxHealth`, `IsAlive`     |
 | **Fields (private)**    | `private`             | `_camelCase`      | `_health`, `_speed`        |
 | **Variables**						| `local`								|	`camelCase`				| `normalizedDir`, `i`			 |
 | **Methods (public)**    | `public`              | `PascalCase`      | `TakeDamage()`, `MoveTo()` |
-| **Methods (private)**   | `private`             | `camelCase`      	| `takeDamage()`, `moveTo()` |
+| **Methods (private)**   | `private`             | `_camelCase`      | `_takeDamage()`, `_moveTo()` |
