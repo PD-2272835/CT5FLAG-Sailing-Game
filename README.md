@@ -1,4 +1,4 @@
-#Styleguide for this project
+# Styleguide for this project
 Below is the folder and styleguide for this project, this outlines the naming conventions and folder structure for our game
 
 ## Development Environment Setup
