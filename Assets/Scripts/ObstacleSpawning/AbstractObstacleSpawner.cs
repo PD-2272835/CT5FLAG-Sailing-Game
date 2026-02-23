@@ -9,6 +9,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     //ensure this is a singleton and is not destroyed upon changing scene
     public static ObstacleSpawner Instance;
+    
     private void Awake()
     {
         if (Instance == null)
