@@ -1,16 +1,19 @@
 using UnityEngine;
 
 //Obstacle Settings is used to configure and manage an object in the Object Pooling for obstacles of any type
+[CreateAssetMenu(fileName = "NewItem", menuName = "Obstacle")]
 public class ObstacleSettings : ScriptableObject
 {
     //If an obstacle has custom behaviour (eg. weather, island mechanics)
-    //it should (CURRENTLY) be attached as another component to the desired prefab here:
+    //it should be attached as another component to the desired prefab here:
     //(this will be refactored soon, as this is not intended behaviour)
     [SerializeField] private GameObject prefab;
 
     //allow customization of the max pool size and starting capacity
     public int PoolStartCapacity { get; private set; } = 10;
     public int PoolMaxSize {get; private set;} = 20;
+
+    public Cargo[] DamagesCargo;
 
 
     //executed when the pool needs a completely new object

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FruitCargo : AbstractCargo
+public class FruitCargo : Cargo
 {
     
 }

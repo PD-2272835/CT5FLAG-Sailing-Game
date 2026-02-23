@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public abstract class AbstractCargo : MonoBehaviour
+[CreateAssetMenu( fileName = "NewItem", menuName = "Cargo")]
+public class Cargo : ScriptableObject
 {
     private int cargoCount;
     public int CargoCount

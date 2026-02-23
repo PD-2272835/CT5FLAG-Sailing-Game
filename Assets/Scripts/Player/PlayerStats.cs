@@ -1,11 +1,10 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    private AbstractCargo _heldCargo;
+    private Cargo _heldCargo;
 
-    public void CargoNew(AbstractCargo cargo, int amount)   //Called when recieving cargo from island
+    public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
     {
         if (_heldCargo != null)  //Cargo will be ignored if the player is already carrying cargo
         {
@@ -34,7 +33,7 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void CargoDamage()   //Called by OnTriggerEnter when colliding with valid obstacle
+    public void CargoDamage()   // Called by OnTriggerEnter when colliding with valid obstacle
     {
         _heldCargo.TakeDamage();
 
@@ -48,43 +47,25 @@ public class PlayerStats : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("Obstacle") == true)
         {
-            switch (other.name) ///adjust conditionals to match obstacles when they are implemented
+            //each obstacle can define what cargo it can damage (more extensible)
+            Cargo[] damagableCargos = other.GetComponent<ICargoDamager>().GetDamagableCargo();
+
+            if (damagableCargos.Length > 0)
             {
-                case "Rock":
-                    CargoDamage();
-                    break;
-
-                case "Rain":
-                    if (_heldCargo is FruitCargo || _heldCargo is BookCargo)
+                for (int i = 0; i < damagableCargos.Length; ++i)
+                {
+                    if (_heldCargo.GetType() == damagableCargos[i].GetType())
                     {
                         CargoDamage();
                     }
-                    break;
-
-                case "Wave":
-                    if (_heldCargo is FruitCargo || _heldCargo is AnimalCargo || _heldCargo is GlassCargo)
-                    {
-                        CargoDamage();
-                    }
-                    break;
-
-                case "Cold":
-                    if (_heldCargo is AnimalCargo)
-                    {
-                        CargoDamage();
-                    }
-                    break;
-
-                case "Hot":
-                    if (_heldCargo is GlassCargo)
-                    {
-                        CargoDamage();
-                    }
-                    break;
+                }
             }
         }
+       
+
     }
 
     private void Awake()
