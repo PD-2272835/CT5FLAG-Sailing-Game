@@ -13,8 +13,6 @@ public class GameStateManager : MonoBehaviour
     //state instances go here
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
-    //public PauseState Pause = new PauseState(); //unsure if this is needed? may be too much to have a whole new game state for just pausing - might work if was in a concurrent state machine
-
 
     //Ensure Singleton
     void Awake()
@@ -25,10 +23,11 @@ public class GameStateManager : MonoBehaviour
             else { Destroy(this); }
         }
         DontDestroyOnLoad(Instance);
-        
+
         ChangeState(Menu); //initial state
     }
 
+    //allow the current state access to the update loop
     void Update()
     {
         _currentState?.Update(this);
