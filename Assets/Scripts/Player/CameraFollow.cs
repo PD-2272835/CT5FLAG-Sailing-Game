@@ -3,16 +3,17 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField] private Transform _target;
-    [SerializeField] public float speed = 5f;
-    public Vector3 offset = new Vector3(0f, 0f, -10f);
+    [SerializeField] private float speed = 5f;
+    private Vector3 _offsetPos;
 
-    private void Start()
+    private void Awake()
     {
-        transform.position = _target.position + offset;
+        _offsetPos = transform.position;
     }
+
     void FixedUpdate()
     {
-        Vector3 targetPosition = _target.position + offset;
+        Vector3 targetPosition = _target.position + _offsetPos;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
     }
