@@ -47,37 +47,21 @@ public class PlayerStats : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        //each obstacle can define what cargo it can damage (more extensible)
+        Cargo[] damagableCargos = other.GetComponent<ICargoDamager>()?.GetDamagableCargo();
 
-        if (other.CompareTag("Obstacle") == true)
+        if (damagableCargos?.Length > 0)
         {
-            //each obstacle can define what cargo it can damage (more extensible)
-            Cargo[] damagableCargos = other.GetComponent<ICargoDamager>().GetDamagableCargo();
-
-            if (damagableCargos.Length > 0)
+            for (int i = 0; i < damagableCargos.Length; ++i)
             {
-                for (int i = 0; i < damagableCargos.Length; ++i)
+                if (_heldCargo.GetType() == damagableCargos[i].GetType())
                 {
-                    if (_heldCargo.GetType() == damagableCargos[i].GetType())
-                    {
-                        CargoDamage();
-                    }
+                    CargoDamage();
                 }
             }
         }
        
-
     }
 
-    private void Awake()
-    {
-        
-    }
-    void Start()
-    {
-        
-    }
-    void Update()
-    {
-        
-    }
+
 }

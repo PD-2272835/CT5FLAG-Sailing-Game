@@ -4,11 +4,11 @@ using UnityEngine.Pool;
 
 //Flyweight Factory Singleton that leverages object pooling to reduce Instantiate() and Destroy() overhead
 //the spawn position of a flyweight should be defined by whatever class is creating a flyweight using transform.position
-public class ObstacleSpawner : MonoBehaviour
+public class FlyweightSpawner : MonoBehaviour
 {
 
     //ensure this is a singleton and is not destroyed upon changing scene
-    public static ObstacleSpawner Instance;
+    public static FlyweightSpawner Instance;
     
     public void Awake()
     {
@@ -23,28 +23,28 @@ public class ObstacleSpawner : MonoBehaviour
     }
 
 
-    //wether or not we want to catch doubly releasing a pooled object
+    //whether or not we want to catch doubly releasing a pooled object
     [SerializeField]private bool _collectionCheck = true;
 
     //Collection of object pools for Obstacles
-    readonly Dictionary<ObstacleSettings, IObjectPool<Obstacle>> ObstaclePools = new();
+    readonly Dictionary<FlyweightSettings, IObjectPool<Flyweight>> ObstaclePools = new();
 
 
 
     //Spawn/Release an obstacle from it's respective pool
-    public static Obstacle Spawn(ObstacleSettings settings) => Instance.GetPoolFor(settings)?.Get();
-    public static void ReturnToPool(Obstacle flyweight) => Instance.GetPoolFor(flyweight.settings)?.Release(flyweight);
+    public static Flyweight Spawn(FlyweightSettings settings) => Instance.GetPoolFor(settings)?.Get();
+    public static void ReturnToPool(Flyweight flyweight) => Instance.GetPoolFor(flyweight.Settings)?.Release(flyweight);
 
 
 
     //Get the object pool for a provided obstacle, if no pool exists, create one
-    public IObjectPool<Obstacle> GetPoolFor(ObstacleSettings settings)
+    public IObjectPool<Flyweight> GetPoolFor(FlyweightSettings settings)
     {
-        IObjectPool<Obstacle> pool = null;
+        IObjectPool<Flyweight> pool = null;
 
         if (ObstaclePools.TryGetValue(settings, out pool)) return pool;
 
-        pool = new ObjectPool<Obstacle>(
+        pool = new ObjectPool<Flyweight>(
             settings.CreatePoolObject,
             settings.OnGetPoolObject,
             settings.OnReleasePoolObject,
