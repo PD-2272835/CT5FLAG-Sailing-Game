@@ -1,19 +1,39 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IPausable
 {
     [SerializeField] private float _speedHorizontal = 5f;
-    //[SerializeField] private float _speedForward = 5f;
-    public bool IsFrozen;
-    Rigidbody rb;
+    
+    private bool _isPaused;
+    private Rigidbody _rb;
+    private Vector2 _moveInput;
+
+    void OnEnable()
+    {
+        GameStateManager.OnPauseGame += OnPause;
+    }
+    void OnDisable()
+    {
+        GameStateManager.OnPauseGame -= OnPause;
+    }
+
+    private void OnMove(InputValue input)
+    {
+        _moveInput = input.Get<Vector2>();
+    }
+
+    public void OnPause(bool gamePauseState)
+    {
+        _isPaused = gamePauseState;
+    }
+
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
-        IsFrozen = false;
+        _rb = GetComponent<Rigidbody>();
+        _isPaused = false;
     }
-
     void Start()
     {
         
@@ -23,12 +43,11 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
-
     private void FixedUpdate()
     {
-        if (!IsFrozen)
+        if (!_isPaused)
         {
-            rb.linearVelocity = (new Vector2(Input.GetAxis("Horizontal") * _speedHorizontal, 0f));
+            _rb.linearVelocity = (new Vector2(Input.GetAxis("Horizontal") * _speedHorizontal, 0f));
         }
     }
 }

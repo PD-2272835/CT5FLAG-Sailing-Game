@@ -38,6 +38,15 @@ public class GameStateManager : MonoBehaviour
     public void SetPause(bool setPause)
     {
         OnPauseGame?.Invoke(setPause);
+
+        if (setPause = true)
+        {
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
 
@@ -49,4 +58,9 @@ public class GameStateManager : MonoBehaviour
         _currentState.EnterState(this);
     }
 
+    //Add to score
+    public void AddScore(int score)
+    {
+        Gameplay.CurrentScore += score;
+    }
 }

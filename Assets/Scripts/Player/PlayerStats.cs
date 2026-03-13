@@ -20,9 +20,9 @@ public class PlayerStats : MonoBehaviour
 
     public void CargoDeliver()
     {
-        if (_heldCargo != null)
+        if (_heldCargo != null) //Add x points multiplied by amount of cargo remaining
         {
-            ///add to some kind of score manager depending on amount of cargo delivered??
+            GameStateManager.Instance.AddScore(50 * _heldCargo.CargoCount);
             
             Destroy(_heldCargo);
             _heldCargo = null;

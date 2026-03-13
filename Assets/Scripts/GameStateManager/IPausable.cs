@@ -6,5 +6,5 @@
 
 public interface IPausable
 {
-    void OnPause(bool gamePauseState);
+    public void OnPause(bool gamePauseState);
 }
