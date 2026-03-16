@@ -4,9 +4,9 @@ using UnityEngine.Pool;
 
 //Flyweight Factory Singleton that leverages object pooling to reduce Instantiate() and Destroy() overhead
 //the spawn position of a flyweight should be defined by whatever class is creating a flyweight using transform.position
-public class FlyweightSpawner : MonoBehaviour
+public static class FlyweightFactory // : MonoBehaviour
 {
-
+/*
     //ensure this is a singleton and is not destroyed upon changing scene
     public static FlyweightSpawner Instance;
     
@@ -21,24 +21,24 @@ public class FlyweightSpawner : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+*/
 
     //whether or not we want to catch doubly releasing a pooled object
-    [SerializeField]private bool _collectionCheck = true;
+    private static bool _collectionCheck = true;
 
     //Collection of object pools for Obstacles
-    readonly Dictionary<FlyweightSettings, IObjectPool<Flyweight>> ObstaclePools = new();
+    readonly static Dictionary<FlyweightSettings, IObjectPool<Flyweight>> ObstaclePools = new();
 
 
 
     //Spawn/Release an obstacle from it's respective pool
-    public static Flyweight Spawn(FlyweightSettings settings) => Instance.GetPoolFor(settings)?.Get();
-    public static void ReturnToPool(Flyweight flyweight) => Instance.GetPoolFor(flyweight.Settings)?.Release(flyweight);
+    public static Flyweight Spawn(FlyweightSettings settings) => GetPoolFor(settings)?.Get();
+    public static void ReturnToPool(Flyweight flyweight) => GetPoolFor(flyweight.Settings)?.Release(flyweight);
 
 
 
     //Get the object pool for a provided obstacle, if no pool exists, create one
-    public IObjectPool<Flyweight> GetPoolFor(FlyweightSettings settings)
+    public static IObjectPool<Flyweight> GetPoolFor(FlyweightSettings settings)
     {
         IObjectPool<Flyweight> pool = null;
 

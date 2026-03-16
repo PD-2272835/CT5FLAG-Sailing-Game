@@ -17,7 +17,7 @@ public class Flyweight : MonoBehaviour
 
         if (transform.position.z < Settings.DespawnBoundZ)
         {
-            FlyweightSpawner.ReturnToPool(this);
+            FlyweightFactory.ReturnToPool(this);
         }
     }
 }

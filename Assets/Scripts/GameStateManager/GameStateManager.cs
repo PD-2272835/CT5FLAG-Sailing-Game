@@ -6,13 +6,15 @@ using UnityEngine;
 //This is a singleton state machine that will persist througout play and between scenes, with each state allowing 
 public class GameStateManager : MonoBehaviour
 {
-    public static GameStateManager Instance { get; private set; } //this state manager is a singleton
+    public static GameStateManager Instance { get; private set; } //this state manager is a singleton (that requires access to monobehaviour elements)
     public static event Action<bool> OnPauseGame;
 
     private AbstractGameState _currentState;
     //state instances go here
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
+
+    public float PlayerForwardSpeed;
 
     //Ensure Singleton
     void Awake()
@@ -39,7 +41,7 @@ public class GameStateManager : MonoBehaviour
     {
         OnPauseGame?.Invoke(setPause);
 
-        if (setPause = true)
+        if (setPause)
         {
             Time.timeScale = 0f;
         }
