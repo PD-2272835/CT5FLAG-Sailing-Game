@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Obstacle", menuName = "Flyweights/Obstacle")]
 public class ObstacleSettings : FlyweightSettings
 {
     public Cargo[] DamagesCargo;

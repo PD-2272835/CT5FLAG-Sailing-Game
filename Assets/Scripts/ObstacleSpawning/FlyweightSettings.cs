@@ -11,9 +11,9 @@ public class FlyweightSettings : ScriptableObject
 
     //allow customization of the max pool size and starting capacity
     public int PoolStartCapacity { get; private set; } = 10;
-    public int PoolMaxSize {get; private set;} = 20;
+    public int PoolMaxSize {get; private set; } = 20;
 
-    public float DespawnBoundZ = -10;
+    public float DespawnBoundZ = -10; //this is public as the despawn bound must be accessible
 
 
     //executed when the pool needs a completely new object
