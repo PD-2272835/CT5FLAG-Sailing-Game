@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour, IPausable
 {
     [SerializeField] private float _speedHorizontal = 5f;
-    
+    public InputAction pauseInput;  ///implement input action
+
     private bool _isPaused;
     private Rigidbody _rb;
     private Vector2 _moveInput;
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
 
 
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -36,12 +38,12 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
     void Start()
     {
-        
+
     }
 
     void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
