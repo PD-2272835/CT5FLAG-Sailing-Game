@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour, IPausable
 {
     [SerializeField] private float _speedHorizontal = 5f;
-    public InputAction pauseInput;  ///implement input action
 
     private bool _isPaused;
     private Rigidbody _rb;
@@ -23,6 +22,11 @@ public class PlayerMovement : MonoBehaviour, IPausable
     {
         _moveInput = input.Get<Vector2>();
     }
+    private void OnPauseGame(InputValue input)
+    {
+        GameStateManager.Instance.SetPause(true);   ///rework SetPause method to not take bool
+    }
+
 
     public void OnPause(bool gamePauseState)
     {
@@ -49,7 +53,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     {
         if (!_isPaused)
         {
-            _rb.linearVelocity = (new Vector2(Input.GetAxis("Horizontal") * _speedHorizontal, 0f));
+            _rb.linearVelocity = (new Vector2(_moveInput.x * _speedHorizontal, 0f));    ///needs to be smoothed
         }
     }
 }

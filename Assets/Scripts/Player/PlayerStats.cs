@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
+    [SerializeField] private int _cargoScore = 50;
     private Cargo _heldCargo;
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
@@ -20,9 +21,9 @@ public class PlayerStats : MonoBehaviour
 
     public void CargoDeliver()
     {
-        if (_heldCargo != null) //Add x points multiplied by amount of cargo remaining
+        if (_heldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
         {
-            GameStateManager.Instance.AddScore(50 * _heldCargo.CargoCount);
+            GameStateManager.Instance.AddScore(_cargoScore * _heldCargo.CargoCount);
             
             Destroy(_heldCargo);
             _heldCargo = null;
@@ -42,6 +43,14 @@ public class PlayerStats : MonoBehaviour
             Debug.Log("Cargo has been destroyed");
             Destroy(_heldCargo);
             _heldCargo = null;
+        }
+    }
+
+    public void CargoRestore()  ///implement into OnTriggerEnter to call function when colliding with cargo obstacle
+    {
+        if (_heldCargo != null)
+        {
+            _heldCargo.HealDamage();
         }
     }
 

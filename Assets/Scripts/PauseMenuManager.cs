@@ -19,6 +19,17 @@ public class PauseMenuManager : MonoBehaviour
     {
         CloseMenus();
     }
+    public void OnPause(bool gamePauseState)
+    {
+        if (gamePauseState == true)
+        {
+            PauseMenuActive();
+        }
+        else
+        {
+            CloseMenus();
+        }
+    }
 
     private void CloseMenus()
     {
@@ -38,18 +49,6 @@ public class PauseMenuManager : MonoBehaviour
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(true);
         CreditsMenu.SetActive(false);
-    }
-
-    public void OnPause(bool gamePauseState)
-    {
-        if (gamePauseState == true)
-        {
-            PauseMenuActive();
-        }
-        else
-        {
-            CloseMenus();
-        }
     }
 
     public void ResumeButton()

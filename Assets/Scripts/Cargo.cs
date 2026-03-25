@@ -20,4 +20,8 @@ public class Cargo : ScriptableObject
     {
         CargoCount--;
     }
+    public void HealDamage()
+    {
+        CargoCount++;
+    }
 }
