@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int _cargoScore = 50;
-    private Cargo _heldCargo;
+    public Cargo _heldCargo = null;
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
     {
