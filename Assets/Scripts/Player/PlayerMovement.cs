@@ -22,9 +22,9 @@ public class PlayerMovement : MonoBehaviour, IPausable
     {
         _moveInput = input.Get<Vector2>();
     }
-    private void OnPauseGame(InputValue input)
+    private void OnPauseGame()
     {
-        GameStateManager.Instance.SetPause(true);   ///rework SetPause method to not take bool
+        GameStateManager.Instance.SetPause();
     }
 
 

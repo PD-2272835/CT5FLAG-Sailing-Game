@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;  ///replace if changing restart button
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -53,13 +54,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void ResumeButton()
     {
-        GameStateManager.Instance.SetPause(false);
+        GameStateManager.Instance.SetPause();
     }
 
-    public void RestartButton()
+    public void RestartButton() ///rework to call function in GameStateManager
     {
-        ///call reload gamestate & scene
-        
+        Scene currentScene = SceneManager.GetActiveScene();
+
+        GameStateManager.Instance.SetPause();   //Should resume, as game should already be paused to access this button
+        SceneManager.LoadScene(currentScene.name);
     }
 
     public void SettingsButton()
