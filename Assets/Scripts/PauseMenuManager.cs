@@ -86,16 +86,16 @@ public class PauseMenuManager : MonoBehaviour
 
     public void AudioMuteButton()
     {
-        //if (AudioManager.Instance.Muted == false)
-        //{
-        //    //change audio icon to muted
-        //    AudioManager.Instance.ChangeVolume(0f);
-        //}
-        //else
-        //{
-        //    //change audio icon the unmuted
-        //    AudioManager.Instance.ChangeVolume(1f);
-        //}
+        if (AudioManager.Instance.Muted == false)
+        {
+            //change audio icon to muted
+            AudioManager.Instance.Mute();
+        }
+        else
+        {
+            //change audio icon the unmuted
+            AudioManager.Instance.Unmute();
+        }
     }
 
     void Update()

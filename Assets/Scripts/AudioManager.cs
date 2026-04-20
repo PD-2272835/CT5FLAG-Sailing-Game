@@ -4,10 +4,47 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioListener _listener;
+    public static AudioManager Instance { get; private set; }
+
+    private AudioSource[] _audioSources;
+    public bool Muted;
+
+    private void Awake()
+    {
+        if (Instance != this)
+        {
+            if (Instance == null) { Instance = this; }
+            else { Destroy(this); }
+        }
+        DontDestroyOnLoad(Instance);
+
+        GetSceneAudioSources();
+
+        Muted = false;
+        ChangeVolume(1f);
+    }
+
+    public void GetSceneAudioSources()
+    {
+        ///get all game objects in current scene
+    }
 
     public void ChangeVolume(float value)
     {
-        ///_listener.volume = value;
+        for(int i = 0;  i < _audioSources.Length; i++)
+        {
+            _audioSources[i].volume = value;
+        }
+    }
+
+    public void Mute()
+    {
+        ChangeVolume(0f);
+        Muted = true;
+    }
+    public void Unmute()
+    {
+        ChangeVolume(1f);
+        Muted = false;
     }
 }
