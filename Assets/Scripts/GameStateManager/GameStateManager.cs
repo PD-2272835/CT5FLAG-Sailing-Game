@@ -15,6 +15,7 @@ public class GameStateManager : MonoBehaviour
     public GameplayState Gameplay = new GameplayState();
 
     public float PlayerForwardSpeed;
+    public ObstacleSettings[] allObstacles; //use this to hold all obstacle settings for spawn weighting and pool creation
 
     //Ensure Singleton
     void Awake()

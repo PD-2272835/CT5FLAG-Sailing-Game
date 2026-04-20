@@ -1,9 +1,19 @@
 using UnityEngine;
 
+public enum ObstacleKind //flags to help with obstacle spawn determination
+{
+    Misc = 0, //rocks, other obstacles
+    Island = 1, //islands
+    Weather = 2 //weather
+};
+
 [CreateAssetMenu(fileName = "New Obstacle", menuName = "Flyweights/Obstacle")]
 public class ObstacleSettings : FlyweightSettings
 {
+    
     public Cargo[] DamagesCargo;
+    public float SpawnWeight;
+    public ObstacleKind Kind = 0;
 
     public override Flyweight CreatePoolObject()
     {

@@ -26,7 +26,12 @@ public class GameplayState : AbstractGameState
 
     public override void Update(GameStateManager context)
     {
-
+        //pick an obstacle to spawn
+        //-check elapsed distance between island checkpoints and set flag
+        //-allow picking island only if flag active
+        //-otherwise only use weather/misc obstacles
+        //get pool for that obstacle
+        //spawn it
     }
 
 
