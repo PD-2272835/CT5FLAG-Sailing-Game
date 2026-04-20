@@ -14,8 +14,11 @@ public class GameStateManager : MonoBehaviour
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
 
-    public float PlayerForwardSpeed;
+    public float PlayerForwardSpeed = 0; //this gets overriden, the initial value should be set in gameplaystate
+
     public ObstacleSettings[] allObstacles; //use this to hold all obstacle settings for spawn weighting and pool creation
+    
+    public GameObject player; //terrible coupled way to get a reference to the player
 
     //Ensure Singleton
     void Awake()

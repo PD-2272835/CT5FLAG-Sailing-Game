@@ -4,26 +4,32 @@ public class GameplayState : AbstractGameState
 {
 
     public int CurrentScore = 0;
-    private float ObstacleRandomXOffet => Random.Range(1, 20); //like lanes, will be relative to player
+    private float ObstacleRandomXOffet => Random.Range(-7, 8); //like lanes, will be relative to player
 
-    private float _DistanceCovered = 0f;
-    private float _LastIslandLocation = 0f;
+    private float _LastIslandInterval;
 
+
+    private readonly float _HorizonDistance = 100f; //how far in front of the player should obstacles spawn
+    
     private float _ElapsedTime = 0f;
     private float _TotalObstacleSpawnWeight = 0f;
 
-    private float _InitialSpawnInterval = 100f;
+    private float _InitialSpawnInterval;
     private float _CurrentSpawnInterval; //time between obstacles
-    private float _DifficultyRampDuration = 300f; //seconds to get to max difficulty
-    private float _MinSpawnInterval = 0.5f; //minimum time between obstacles (seconds)
+    private float _IslandSpawnInterval; //interval between island spawns
+    private readonly float _DifficultyRampDuration = 300f; //seconds to get to max difficulty
+    private readonly float _MinSpawnInterval = 0.5f; //minimum time between obstacles (seconds)
 
     //this should reset/initialze the game state
     public override void EnterState(GameStateManager context)
     {
         context.PlayerForwardSpeed = 10f; //reset players speed on gameplay start
-        _CurrentSpawnInterval = 0f;
 
-        foreach(var data in context.allObstacles)
+        _InitialSpawnInterval = 7f;
+
+        _LastIslandInterval = 0f;
+
+        foreach (var data in context.allObstacles)
         {
             _TotalObstacleSpawnWeight += data.SpawnWeight;
         }
@@ -88,8 +94,17 @@ public class GameplayState : AbstractGameState
     private void SpawnObstacle(ObstacleSettings settings)
     {
         Flyweight obstacle = FlyweightFactory.Spawn(settings);
-        obstacle.transform.position = Vector3.zero; //set new obstacle position
-        //TODO: determine position
+        //obstacle.transform.position = Vector3.zero; //set new obstacle position
+
+        if (settings.Kind == ObstacleKind.Island)
+        {
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, 0, _HorizonDistance);
+            _LastIslandInterval = _ElapsedTime;
+        }
+        else
+        {
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, 0, _HorizonDistance);
+        }
     }
 
     private bool CanSpawnIsland()

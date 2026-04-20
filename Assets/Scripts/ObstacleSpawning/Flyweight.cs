@@ -6,7 +6,7 @@ public class Flyweight : MonoBehaviour
 {
     public FlyweightSettings Settings; // intrinsic state of flyweight
 
-    public float Speed = 10.0f; //this should be the players forwards moving speed and should be managed by an external class/game manager
+    public float Speed => GameStateManager.Instance.PlayerForwardSpeed;
 
 
     //if using FixedUpdate in a derived class,

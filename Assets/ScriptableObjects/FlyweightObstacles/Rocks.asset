@@ -15,3 +15,5 @@ MonoBehaviour:
   _Prefab: {fileID: 8756853297827174833, guid: 41bc9b9f2c6f01841a094ac28038a638, type: 3}
   DespawnBoundZ: -10
   DamagesCargo: []
+  SpawnWeight: 0
+  Kind: 0
