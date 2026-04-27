@@ -97,9 +97,4 @@ public class PauseMenuManager : MonoBehaviour
             AudioManager.Instance.Unmute();
         }
     }
-
-    void Update()
-    {
-        
-    }
 }

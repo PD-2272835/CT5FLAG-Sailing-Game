@@ -34,15 +34,17 @@ public class Island : MonoBehaviour
 
         if (playerStats != null)
         {
-            if (islandVisited == false || playerStats._heldCargo == null)
+            if (islandVisited == false && playerStats._heldCargo == null)
             {
                 playerStats.CargoNew(chosenCargo, 5);
                 islandVisited = true;
+                Debug.Log("Island given cargo");
             }
-            else if (islandVisited == false || playerStats._heldCargo != null)
+            else if (islandVisited == false && playerStats._heldCargo != null)
             {
                 playerStats.CargoDeliver();
                 islandVisited = true;
+                Debug.Log("Island taken cargo");
             }
         }
     }

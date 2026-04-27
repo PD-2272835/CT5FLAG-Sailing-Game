@@ -18,15 +18,16 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(Instance);
 
-        GetSceneAudioSources();
+        GetAudioSources();
 
         Muted = false;
         ChangeVolume(1f);
     }
 
-    public void GetSceneAudioSources()
+    public void GetAudioSources()
     {
-        ///get all game objects in current scene
+        _audioSources = null;
+        _audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
     }
 
     public void ChangeVolume(float value)
