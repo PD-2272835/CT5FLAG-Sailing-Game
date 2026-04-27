@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3add51261cf394ba8861c80da2cb0c, type: 3}
   m_Name: RoughSea
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
-  _Prefab: {fileID: 0}
+  _Prefab: {fileID: 919132149155446097, guid: 9c3c60a5889b1444b83b930d0e19354a, type: 3}
   DespawnBoundZ: -10
   DamagesCargo: []
-  SpawnWeight: 0
+  SpawnWeight: 10
   Kind: 2

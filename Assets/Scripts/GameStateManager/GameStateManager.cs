@@ -13,7 +13,8 @@ public class GameStateManager : MonoBehaviour
     //state instances go here
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
-
+        
+    public float InitialPlayerForwardSpeed = 10f;
     public float PlayerForwardSpeed = 0; //this gets overriden, the initial value should be set in gameplaystate
 
     public ObstacleSettings[] allObstacles; //use this to hold all obstacle settings for spawn weighting and pool creation
@@ -30,7 +31,7 @@ public class GameStateManager : MonoBehaviour
         }
         DontDestroyOnLoad(Instance);
 
-        ChangeState(Menu); //initial state
+        ChangeState(Gameplay); //initial state - should be "Menu" for release
     }
 
     //allow the current state access to the update loop

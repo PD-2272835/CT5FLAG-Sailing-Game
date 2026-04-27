@@ -25,7 +25,7 @@ public class GameplayState : AbstractGameState
     {
         context.PlayerForwardSpeed = 10f; //reset players speed on gameplay start
 
-        _InitialSpawnInterval = 7f;
+        _InitialSpawnInterval = 20f;
 
         _LastIslandInterval = 0f;
 
@@ -98,7 +98,7 @@ public class GameplayState : AbstractGameState
 
         if (settings.Kind == ObstacleKind.Island)
         {
-            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, 0, _HorizonDistance);
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, 0, _HorizonDistance); //spawn all islands directly ahead of the player
             _LastIslandInterval = _ElapsedTime;
         }
         else
@@ -110,6 +110,11 @@ public class GameplayState : AbstractGameState
     private bool CanSpawnIsland()
     {
         //TODO: island placement test - based on distance from last island?
+        
+        if (_ElapsedTime - _LastIslandInterval > _IslandSpawnInterval)
+        {
+            return true;
+        }
         return false;
     }
 }
