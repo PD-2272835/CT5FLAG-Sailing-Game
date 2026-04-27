@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rock
+  m_Name: SailsRed
   m_Shader: {fileID: -6465566751694194690, guid: 175a6905c0cde524fbfa13b659438c58, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -58,9 +58,9 @@ Material:
     - _AmbientIntensity: 0.2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RimLightPower: 43
+    - _RimLightPower: 100
     m_Colors:
-    - _RimLightColour: {r: 2, g: 2, b: 2, a: 1}
-    - _Tint: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
+    - _RimLightColour: {r: 0, g: 0, b: 0, a: 1}
+    - _Tint: {r: 0.9716981, g: 0.0779192, b: 0.20088437, a: 0.49803922}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
