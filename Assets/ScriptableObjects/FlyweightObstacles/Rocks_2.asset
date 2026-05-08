@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e3add51261cf394ba8861c80da2cb0c, type: 3}
-  m_Name: Rock_1
+  m_Name: Rocks_2
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
-  _Prefab: {fileID: 8756853297827174833, guid: 41bc9b9f2c6f01841a094ac28038a638, type: 3}
+  _Prefab: {fileID: 0}
   DespawnBoundZ: -10
   DamagesCargo: []
-  SpawnWeight: 10
+  SpawnWeight: 0
   Kind: 0
