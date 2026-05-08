@@ -206,13 +206,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951936546}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08042196, y: -0, z: -0, w: 0.9967609}
-  m_LocalPosition: {x: 0, y: 3.74, z: -7.21}
+  m_LocalRotation: {x: 0.1854543, y: -0, z: -0, w: 0.9826529}
+  m_LocalPosition: {x: 0, y: 11.28, z: -11.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 9.226, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 21.375, y: 0, z: 0}
 --- !u!114 &951936550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,8 +269,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9690a44c4db09d940a4d780dcf49a89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
-  _target: {fileID: 0}
+  _target: {fileID: 979166180}
   speed: 5
+--- !u!4 &979166180 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2022762056334152751, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+  m_PrefabInstance: {fileID: 2106248318}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1013590525
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +526,7 @@ Transform:
   m_GameObject: {fileID: 1639983569}
   serializedVersion: 2
   m_LocalRotation: {x: 0.32257986, y: 0.63437146, z: -0.329951, w: 0.62019956}
-  m_LocalPosition: {x: 0, y: 5.71, z: 0}
+  m_LocalPosition: {x: 0, y: 19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -579,6 +584,26 @@ PrefabInstance:
     - target: {fileID: 2022762056334152751, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899667526344616839, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_Size.x
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899667526344616839, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_Size.y
+      value: 8.240055
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899667526344616839, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_Size.z
+      value: 7.5274987
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899667526344616839, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_Center.y
+      value: 3.620027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2899667526344616839, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_Center.z
+      value: 1.3783915
       objectReference: {fileID: 0}
     - target: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Name
