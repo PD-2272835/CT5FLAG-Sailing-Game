@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3add51261cf394ba8861c80da2cb0c, type: 3}
   m_Name: Island_1
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
-  _Prefab: {fileID: 4007564406956953233, guid: 1527d079a471001418c562faf84da678, type: 3}
+  _Prefab: {fileID: 5087392686933450162, guid: 61f0be4d661cab346ab6952bf30c104f, type: 3}
   DespawnBoundZ: -10
   DamagesCargo:
   - {fileID: 0}

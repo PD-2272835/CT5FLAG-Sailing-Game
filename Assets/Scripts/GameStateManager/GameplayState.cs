@@ -4,34 +4,46 @@ public class GameplayState : AbstractGameState
 {
 
     public int CurrentScore = 0;
-    private float ObstacleRandomXOffet => Random.Range(-7, 8); //like lanes, will be relative to player
+    private float ObstacleRandomXOffet => Random.Range(-(_ObstacleXSpawningRange-1), _ObstacleXSpawningRange); //like lanes, will be relative to player - should be configureable
 
+
+    private float _CurrentObstacleInterval; //time between obstacles
+    private float _CurrentIslandSpawnInterval; //interval between island spawns
     private float _LastIslandInterval;
+    private float _LastObstacleInterval;
+
+    private float _ElapsedTime;
+    private float _TotalObstacleSpawnWeight;
 
 
-    private readonly float _HorizonDistance = 100f; //how far in front of the player should obstacles spawn
+    //Designers can tweak these to mess with how obstacles are spawned! >:3c
+    private readonly float _InitialPlayerSpeed = 10f;           //Starting forward speed of the player
+    private readonly float _MaxSpeed = 30f;                     //Maximum player speed
+    private readonly float _DifficultyRampDuration = 20f;       //seconds to get to max difficulty (speed and obstacle intervals)
+    private readonly float _InitialObstacleInterval = 0.5f;     //starting time between obstacles
+    private readonly float _MaxSpawnInterval = 0.5f;            //maximum time between obstacles (seconds)
+    private readonly float _HorizonDistance = 100f;             //how far in front of the player obstacles should spawn
+    private readonly float _ObstacleXSpawningRange = 25f;       //how far to the left and right of the player an obstacle should be allowed to spawn
+    private readonly float _InitialIslandSpawnInterval = 1f;    //starting minimum interval between islands
+    private readonly float _IslandSpawnIntervalAmplifier = 5f; //How much the island interval should increase by on each successful island spawn
     
-    private float _ElapsedTime = 0f;
-    private float _TotalObstacleSpawnWeight = 0f;
-
-    private float _InitialSpawnInterval;
-    private float _CurrentSpawnInterval; //time between obstacles
-    private float _IslandSpawnInterval; //interval between island spawns
-    private readonly float _DifficultyRampDuration = 300f; //seconds to get to max difficulty
-    private readonly float _MinSpawnInterval = 0.5f; //minimum time between obstacles (seconds)
 
     //this should reset/initialze the game state
     public override void EnterState(GameStateManager context)
     {
-        context.PlayerForwardSpeed = 10f; //reset players speed on gameplay start
+        //intial internal state should be set in here as modifiable values are not guarenteed to be correct
+        _LastIslandInterval = 1f;
+        _LastObstacleInterval = 1f;
+        _CurrentIslandSpawnInterval = _InitialIslandSpawnInterval;
+        _CurrentObstacleInterval = _InitialObstacleInterval;
+        _ElapsedTime = 0f;
+        _TotalObstacleSpawnWeight = 0f;
 
-        _InitialSpawnInterval = 20f;
-
-        _LastIslandInterval = 0f;
-
+        context.PlayerForwardSpeed = _InitialPlayerSpeed; //reset players speed on gameplay start
         foreach (var data in context.allObstacles)
         {
             _TotalObstacleSpawnWeight += data.SpawnWeight;
+            //Debug.Log(_TotalObstacleSpawnWeight);
         }
     }
 
@@ -44,30 +56,32 @@ public class GameplayState : AbstractGameState
     {
         _ElapsedTime += Time.deltaTime;
         float t = Mathf.Clamp01(_ElapsedTime / _DifficultyRampDuration);
-        _CurrentSpawnInterval = Mathf.Lerp(_InitialSpawnInterval, _MinSpawnInterval, t);
-
+        _CurrentObstacleInterval = Mathf.Lerp(_InitialObstacleInterval, _MaxSpawnInterval, t);
+        context.PlayerForwardSpeed = Mathf.Lerp(_InitialPlayerSpeed, _MaxSpeed, t);
 
         //flow for this is as follows
         //pick an obstacle to spawn
-        //-check elapsed distance:speed between island checkpoints and set flag
+        //-check elapsed interval between island checkpoints and determine wether an island can spawn
         //-allow picking island only if flag active
         //-otherwise only use weather/misc obstacles
         //get pool for that obstacle
         //find an appropriate location to spawn the selected obstacle
         //spawn it
-        ObstacleSettings obstacle = PickWeightedObstacle();
-
-        if (obstacle.Kind != ObstacleKind.Island)
+        //Debug.Log(Time.deltaTime + " " + (_ElapsedTime - _LastObstacleInterval) + " " + _CurrentObstacleInterval);
+        if(_ElapsedTime - _LastObstacleInterval > _CurrentObstacleInterval)
         {
-            SpawnObstacle(obstacle);
-        }
-        else
-        {
-            if (CanSpawnIsland())
+            //Debug.Log("tried spawning something");
+            ObstacleSettings obstacle = PickWeightedObstacle();
+            if (obstacle.Kind != ObstacleKind.Island)
+            {
+                SpawnObstacle(obstacle);
+            }
+            else if (CanSpawnIsland())
             {
                 SpawnObstacle(obstacle);
             }
         }
+        
     }
 
 
@@ -104,15 +118,19 @@ public class GameplayState : AbstractGameState
         else
         {
             obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, 0, _HorizonDistance);
+            _LastObstacleInterval = _ElapsedTime;
         }
     }
 
     private bool CanSpawnIsland()
     {
         //TODO: island placement test - based on distance from last island?
-        
-        if (_ElapsedTime - _LastIslandInterval > _IslandSpawnInterval)
+        //float islandSpawnInterval = _CurrentSpawnInterval * 10;
+
+
+        if (_ElapsedTime - _LastIslandInterval > _CurrentIslandSpawnInterval)
         {
+            _CurrentIslandSpawnInterval = _CurrentObstacleInterval * _IslandSpawnIntervalAmplifier; //TODO: maybe move this somewhere else (like only if successful delivery)
             return true;
         }
         return false;

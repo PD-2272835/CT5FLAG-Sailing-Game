@@ -66,6 +66,16 @@ public class GameStateManager : MonoBehaviour
         OnPauseGame?.Invoke(true);
     }
 
+    public void OnApplicationFocus(bool focus)
+    {
+        //maybe some kind of subway surfers-style countdown?
+        //or indeed wait until the pause screen goes away
+        //this will be fine for now though
+        
+        Time.timeScale = 1f;
+        OnPauseGame?.Invoke(false);
+    }
+
 
     //Change State
     public void ChangeState(AbstractGameState newState)
