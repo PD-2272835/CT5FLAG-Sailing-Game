@@ -7,6 +7,8 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject CreditsMenu;
 
+    public GameObject AudioIcon;
+
     private void OnEnable()
     {
         GameStateManager.OnPauseGame += OnPause;
@@ -20,7 +22,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         CloseMenus();
     }
-    public void OnPause(bool gamePauseState)
+
+    private void OnPause(bool gamePauseState)
     {
         if (gamePauseState == true)
         {
@@ -32,20 +35,20 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-    private void CloseMenus()
+    private void CloseMenus()   //Disables all menus
     {
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         CreditsMenu.SetActive(false);
     }
 
-    private void PauseMenuActive()
+    private void PauseMenuActive()  //Enables pause menu
     {
         PauseMenu.SetActive(true);
         SettingsMenu.SetActive(false);
         CreditsMenu.SetActive(false);
     }
-    private void SettingsMenuActive()
+    private void SettingsMenuActive()   //Enables settings menu
     {
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(true);
@@ -61,6 +64,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
+        GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();   //Should resume, as game should already be paused to access this button
         SceneManager.LoadScene(currentScene.name);
     }

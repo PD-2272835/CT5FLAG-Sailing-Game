@@ -6,7 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    private AudioSource[] _audioSources;
     public bool Muted;
 
     private void Awake()
@@ -18,24 +17,13 @@ public class AudioManager : MonoBehaviour
         }
         DontDestroyOnLoad(Instance);
 
-        GetAudioSources();
-
         Muted = false;
         ChangeVolume(1f);
     }
 
-    public void GetAudioSources()
-    {
-        _audioSources = null;
-        _audioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-    }
-
     public void ChangeVolume(float value)
     {
-        for(int i = 0;  i < _audioSources.Length; i++)
-        {
-            _audioSources[i].volume = value;
-        }
+        AudioListener.volume = value;
     }
 
     public void Mute()

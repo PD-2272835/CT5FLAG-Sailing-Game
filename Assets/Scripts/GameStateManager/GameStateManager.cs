@@ -60,6 +60,12 @@ public class GameStateManager : MonoBehaviour
         OnPauseGame?.Invoke(setPause);
     }
 
+    public void OnApplicationPause(bool pause)
+    {
+        Time.timeScale = 0f;
+        OnPauseGame?.Invoke(true);
+    }
+
 
     //Change State
     public void ChangeState(AbstractGameState newState)
@@ -73,5 +79,11 @@ public class GameStateManager : MonoBehaviour
     public void AddScore(int score)
     {
         Gameplay.CurrentScore += score;
+    }
+
+    //ResetScore
+    public void ResetScore()
+    {
+        Gameplay.CurrentScore = 0;
     }
 }
