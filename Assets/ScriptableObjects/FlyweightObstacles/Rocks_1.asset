@@ -15,8 +15,10 @@ MonoBehaviour:
   _Prefab: {fileID: 2318548891235399441, guid: c20eb447de172054eb2ed92c8e57b278, type: 3}
   DespawnBoundZ: -10
   DamagesCargo:
-  - {fileID: 11400000, guid: 77cedce3c2ae7db4cb1d929786699512, type: 2}
-  - {fileID: 11400000, guid: 6d0908c70db74f246a90e58bc2533b9d, type: 2}
+  - {fileID: 11400000, guid: d75a9ee6b7b88e84186d826d145d60eb, type: 2}
+  - {fileID: 11400000, guid: 815acce445c1d0545a5d44566dbbcb86, type: 2}
   - {fileID: 11400000, guid: bc7d565c322bbb64dad702addea9fe0e, type: 2}
+  - {fileID: 11400000, guid: 8d33eed76e31b8748b87b7372ace5209, type: 2}
+  - {fileID: 11400000, guid: 555912fa2165ca241be7de255c9c7629, type: 2}
   SpawnWeight: 10
   Kind: 0
