@@ -1,5 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;  ///replace if changing restart button
+using UnityEngine.SceneManagement;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class PauseMenuManager : MonoBehaviour
 {
@@ -54,13 +56,19 @@ public class PauseMenuManager : MonoBehaviour
         SettingsMenu.SetActive(true);
         CreditsMenu.SetActive(false);
     }
+    private void CreditsMenuActive()    //Enables credits menu
+    {
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+        CreditsMenu.SetActive(true);
+    }
 
     public void ResumeButton()
     {
         GameStateManager.Instance.SetPause();
     }
 
-    public void RestartButton() ///rework to call function in GameStateManager
+    public void RestartButton()
     {
         Scene currentScene = SceneManager.GetActiveScene();
 
@@ -76,16 +84,16 @@ public class PauseMenuManager : MonoBehaviour
 
     public void CreditsButton()
     {
-        ///credits asset
+        CreditsMenuActive();
     }
 
     public void SetEnglishButton()
     {
-        ///call change text to english
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("en");
     }
-    public void SetJapaneseButton()
+    public void SetSpanishButton()
     {
-        ///call change text to japanese
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
     }
 
     public void AudioMuteButton()
