@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     [SerializeField] private int _cargoScore = 50;
+    [SerializeField] private Transform _cargoLocation;
+    private GameObject _cargoInstance = null;
     public Cargo _heldCargo = null;
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
@@ -16,6 +18,8 @@ public class PlayerStats : MonoBehaviour
             _heldCargo = cargo;
             _heldCargo.CargoCount = amount;
             Debug.Log($"Player now has {_heldCargo}, {_heldCargo.CargoCount}");
+
+            _cargoInstance = Instantiate(_heldCargo.Prefab, _cargoLocation);
         }
     }
 
@@ -27,6 +31,9 @@ public class PlayerStats : MonoBehaviour
             
             Destroy(_heldCargo);
             _heldCargo = null;
+
+            Destroy(_cargoInstance.gameObject);
+            _cargoInstance = null;
         }
         else
         {

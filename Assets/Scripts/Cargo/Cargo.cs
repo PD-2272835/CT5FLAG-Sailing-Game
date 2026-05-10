@@ -4,6 +4,7 @@ using UnityEngine;
 public class Cargo : ScriptableObject
 {
     private int cargoCount;
+    public GameObject Prefab;
     public int CargoCount
     {
         get { return cargoCount; }
