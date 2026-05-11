@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65cf3de822bd7e48b0312a54c5d78ef, type: 3}
   m_Name: Books
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
-  Prefab: {fileID: 4058078024559621226, guid: d58c398d34a8f11448a12e60273a00ab, type: 3}
+  Prefab: {fileID: 5850680748479099797, guid: d58c398d34a8f11448a12e60273a00ab, type: 3}
