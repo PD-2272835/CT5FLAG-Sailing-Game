@@ -17,15 +17,15 @@ public class GameplayState : AbstractGameState
 
 
     //Designers can tweak these to mess with how obstacles are spawned! >:3c
-    private readonly float _InitialPlayerSpeed = 10f;           //Starting forward speed of the player
-    private readonly float _MaxSpeed = 30f;                     //Maximum player speed
+    private readonly float _InitialPlayerSpeed = 15f;           //Starting forward speed of the player
+    private readonly float _MaxSpeed = 40f;                     //Maximum player speed
     private readonly float _DifficultyRampDuration = 20f;       //seconds to get to max difficulty (speed and obstacle intervals)
-    private readonly float _InitialObstacleInterval = 0.5f;     //starting time between obstacles
-    private readonly float _MaxSpawnInterval = 0.5f;            //maximum time between obstacles (seconds)
-    private readonly float _HorizonDistance = 100f;             //how far in front of the player obstacles should spawn
+    private readonly float _InitialObstacleInterval = 1.5f;     //starting time between obstacles
+    private readonly float _MaxSpawnInterval = 2f;            //maximum time between obstacles (seconds)
+    private readonly float _HorizonDistance = 130f;             //how far in front of the player obstacles should spawn
     private readonly float _ObstacleXSpawningRange = 25f;       //how far to the left and right of the player an obstacle should be allowed to spawn
     private readonly float _InitialIslandSpawnInterval = 1f;    //starting minimum interval between islands
-    private readonly float _IslandSpawnIntervalAmplifier = 5f; //How much the island interval should increase by on each successful island spawn
+    private readonly float _IslandSpawnIntervalAmplifier = 2f; //How much the island interval should increase by on each successful island spawn
     
 
     //this should reset/initialze the game state
