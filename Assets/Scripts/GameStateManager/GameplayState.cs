@@ -1,10 +1,19 @@
 using UnityEngine;
+using System.Collections.Generic;
+
+struct AvoidPoint
+{
+    public Transform t; //position
+    public float r; //radius
+}
 
 public class GameplayState : AbstractGameState
 {
 
-    public int CurrentScore = 0;
-    private float ObstacleRandomXOffet => Random.Range(-(_ObstacleXSpawningRange-1), _ObstacleXSpawningRange); //like lanes, will be relative to player - should be configureable
+    public int CurrentScore;
+
+    private List<AvoidPoint> _AvoidPoints;
+    private float ObstacleRandomXOffet => GetRandomXPosAvoid(); //like lanes, will be relative to player - should be configureable
 
 
     private float _CurrentObstacleInterval; //time between obstacles
@@ -22,7 +31,7 @@ public class GameplayState : AbstractGameState
     private readonly float _DifficultyRampDuration = 20f;       //seconds to get to max difficulty (speed and obstacle intervals)
     private readonly float _InitialObstacleInterval = 1.5f;     //starting time between obstacles
     private readonly float _MaxSpawnInterval = 2f;            //maximum time between obstacles (seconds)
-    private readonly float _HorizonDistance = 130f;             //how far in front of the player obstacles should spawn
+    private readonly float _HorizonDistance = 160f;             //how far in front of the player obstacles should spawn
     private readonly float _ObstacleXSpawningRange = 25f;       //how far to the left and right of the player an obstacle should be allowed to spawn
     private readonly float _InitialIslandSpawnInterval = 1f;    //starting minimum interval between islands
     private readonly float _IslandSpawnIntervalAmplifier = 2f; //How much the island interval should increase by on each successful island spawn
@@ -32,6 +41,8 @@ public class GameplayState : AbstractGameState
     public override void EnterState(GameStateManager context)
     {
         //intial internal state should be set in here as modifiable values are not guarenteed to be correct
+        CurrentScore = 0;
+        _AvoidPoints = new List<AvoidPoint>();
         _LastIslandInterval = 1f;
         _LastObstacleInterval = 1f;
         _CurrentIslandSpawnInterval = _InitialIslandSpawnInterval;
@@ -122,6 +133,7 @@ public class GameplayState : AbstractGameState
         }
     }
 
+
     private bool CanSpawnIsland()
     {
         //TODO: island placement test - based on distance from last island?
@@ -134,5 +146,25 @@ public class GameplayState : AbstractGameState
             return true;
         }
         return false;
+    }
+
+
+    private float GetRandomXPosAvoid()
+    {
+        float desiredPosition = Random.Range(-(_ObstacleXSpawningRange - 1), _ObstacleXSpawningRange);
+
+        //check every avoid point
+        foreach(AvoidPoint ap in _AvoidPoints)
+        {
+            //check that the desired x offset is not within an avoid point's bounds, if it is, get another xpos
+            if (desiredPosition < ap.t.transform.position.x + ap.r
+                && desiredPosition > ap.t.transform.position.x - ap.r)
+            {
+                desiredPosition = GetRandomXPosAvoid();
+                break;
+            }
+        }
+
+        return desiredPosition;
     }
 }
