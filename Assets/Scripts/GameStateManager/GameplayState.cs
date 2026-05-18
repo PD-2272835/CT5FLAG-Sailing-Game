@@ -120,7 +120,13 @@ public class GameplayState : AbstractGameState
     {
         Flyweight obstacle = FlyweightFactory.Spawn(settings);
         //obstacle.transform.position = Vector3.zero; //set new obstacle position
-        _AvoidPoints = new List<AvoidPoint>(settings.avoidPoints); //add the obstacle's avoid points to the _AvoidPoints array
+        if (settings.avoidPoints != null)
+        {
+            _AvoidPoints = new List<AvoidPoint>(settings.avoidPoints); //add the obstacle's avoid points to the _AvoidPoints array
+        } else
+        {
+            _AvoidPoints.Clear(); //if there are no avoid points to add, clear the _AvoidPoints array
+        }
 
         if (settings.Kind == ObstacleKind.Island)
         {
