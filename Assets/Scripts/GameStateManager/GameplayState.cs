@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-struct AvoidPoint
+public struct AvoidPoint
 {
     public Transform t; //position
     public float r; //radius
@@ -120,6 +120,7 @@ public class GameplayState : AbstractGameState
     {
         Flyweight obstacle = FlyweightFactory.Spawn(settings);
         //obstacle.transform.position = Vector3.zero; //set new obstacle position
+        _AvoidPoints = new List<AvoidPoint>(settings.avoidPoints); //add the obstacle's avoid points to the _AvoidPoints array
 
         if (settings.Kind == ObstacleKind.Island)
         {
@@ -160,6 +161,7 @@ public class GameplayState : AbstractGameState
             if (desiredPosition < ap.t.transform.position.x + ap.r
                 && desiredPosition > ap.t.transform.position.x - ap.r)
             {
+                Debug.Log("chosen xpos was within spawn point");
                 desiredPosition = GetRandomXPosAvoid();
                 break;
             }
