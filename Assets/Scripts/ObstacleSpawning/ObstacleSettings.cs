@@ -14,6 +14,7 @@ public class ObstacleSettings : FlyweightSettings
     public Cargo[] DamagesCargo;
     public float SpawnWeight;
     public ObstacleKind Kind = 0;
+    public AvoidPoint[] avoidPoints;
 
     public override Flyweight CreatePoolObject()
     {
