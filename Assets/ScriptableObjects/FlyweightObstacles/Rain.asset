@@ -17,4 +17,4 @@ MonoBehaviour:
   DamagesCargo:
   - {fileID: 11400000, guid: 51c496ae2fd014a4bb02e41d920c2baa, type: 2}
   SpawnWeight: 0
-  Kind: 0
+  Kind: 2
