@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu( fileName = "NewItem", menuName = "Cargo")]
-public class Cargo : ScriptableObject
+public class Cargo : ScriptableObject, IDamageable
 {
     private int cargoCount;
     public GameObject Prefab;

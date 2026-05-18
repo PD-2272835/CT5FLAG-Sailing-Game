@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   _cargoScore: 50
+  _cargoLocation: {fileID: 0}
   _heldCargo: {fileID: 0}
 --- !u!1001 &1745027003960005149
 PrefabInstance:

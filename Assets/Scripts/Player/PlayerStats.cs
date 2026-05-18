@@ -1,39 +1,47 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _cargoScore = 50;
     [SerializeField] private Transform _cargoLocation;
+
     private GameObject _cargoInstance = null;
-    public Cargo _heldCargo = null;
+
+    public int Health;
+    public Cargo HeldCargo = null;
+
+    public void TakeDamage()
+    {
+
+    }
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
     {
-        if (_heldCargo != null)  //Cargo will be ignored if the player is already carrying cargo
+        if (HeldCargo != null)  //Cargo will be ignored if the player is already carrying cargo
         {
-            Debug.Log($"Cargo declined, player is carrying {_heldCargo}, {_heldCargo.CargoCount}");
+            Debug.Log($"Cargo declined, player is carrying {HeldCargo}, {HeldCargo.CargoCount}");
         }
         else
         {
-            _heldCargo = cargo;
-            _heldCargo.CargoCount = amount;
-            Debug.Log($"Player now has {_heldCargo}, {_heldCargo.CargoCount}");
+            HeldCargo = cargo;
+            HeldCargo.CargoCount = amount;
+            Debug.Log($"Player now has {HeldCargo}, {HeldCargo.CargoCount}");
 
-            _cargoInstance = Instantiate(_heldCargo.Prefab, _cargoLocation);
+            ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
         }
     }
 
     public void CargoDeliver()
     {
-        if (_heldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
+        if (HeldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
         {
-            GameStateManager.Instance.AddScore(_cargoScore * _heldCargo.CargoCount);
+            GameStateManager.Instance.AddScore(_cargoScore * HeldCargo.CargoCount);
             
-            Destroy(_heldCargo);
-            _heldCargo = null;
+            Destroy(HeldCargo);
+            HeldCargo = null;
 
-            Destroy(_cargoInstance.gameObject);
-            _cargoInstance = null;
+            ///Destroy(_cargoInstance.gameObject);
+            ///_cargoInstance = null;
         }
         else
         {
@@ -43,21 +51,21 @@ public class PlayerStats : MonoBehaviour
 
     public void CargoDamage()   // Called by OnTriggerEnter when colliding with valid obstacle
     {
-        _heldCargo.TakeDamage();
+        HeldCargo.TakeDamage();
 
-        if (_heldCargo.CargoCount == 0)
+        if (HeldCargo.CargoCount == 0)
         {
             Debug.Log("Cargo has been destroyed");
-            Destroy(_heldCargo);
-            _heldCargo = null;
+            Destroy(HeldCargo);
+            HeldCargo = null;
         }
     }
 
     public void CargoRestore()  ///implement into OnTriggerEnter to call function when colliding with cargo obstacle
     {
-        if (_heldCargo != null)
+        if (HeldCargo != null)
         {
-            _heldCargo.HealDamage();
+            HeldCargo.HealDamage();
         }
     }
 
@@ -70,7 +78,7 @@ public class PlayerStats : MonoBehaviour
         {
             for (int i = 0; i < damagableCargos.Length; ++i)
             {
-                if (_heldCargo.GetType() == damagableCargos[i].GetType())
+                if (HeldCargo.GetType() == damagableCargos[i].GetType())
                 {
                     CargoDamage();
                 }

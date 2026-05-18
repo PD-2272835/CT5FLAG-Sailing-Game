@@ -4,11 +4,18 @@ using UnityEngine;
 public class Island : MonoBehaviour
 {
     [SerializeField] private Cargo[] availableCargo;
+    [SerializeField] private Transform _cargoLocation;
+
     private bool islandVisited;
     private Cargo chosenCargo;
-    /// serialized int for cargo amount?
+    private GameObject _cargoInstance;
     
     void Awake()
+    {
+        Debug.Log("Island instantiated");
+    }
+
+    private void OnEnable()
     {
         if (availableCargo == null)
         {
@@ -18,14 +25,14 @@ public class Island : MonoBehaviour
         else
         {
             islandVisited = false;
+
+            int random = Random.Range(0, availableCargo.Length);
+
+            chosenCargo = availableCargo[random];
+            Debug.Log($"Island cargo is {chosenCargo.name}");
+
+            ///_cargoInstance = Instantiate(chosenCargo.Prefab, _cargoLocation);
         }
-    }
-
-    private void Start()
-    {
-        int random = Random.Range(0, availableCargo.Length);
-
-        chosenCargo = availableCargo[random];
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,17 +41,21 @@ public class Island : MonoBehaviour
 
         if (playerStats != null)
         {
-            if (islandVisited == false && playerStats._heldCargo == null)
+            if (islandVisited == false && playerStats.HeldCargo == null)
             {
-                playerStats.CargoNew(chosenCargo, 5);
+                playerStats.CargoNew(chosenCargo, 2);
                 islandVisited = true;
-                Debug.Log("Island given cargo");
+
+                ///_cargoInstance = null;
+
+                Debug.Log($"Island has given {chosenCargo.name} cargo");
             }
-            else if (islandVisited == false && playerStats._heldCargo != null)
+            else if (islandVisited == false && playerStats.HeldCargo != null)
             {
                 playerStats.CargoDeliver();
                 islandVisited = true;
-                Debug.Log("Island taken cargo");
+
+                Debug.Log($"Island has taken player cargo");
             }
         }
     }
