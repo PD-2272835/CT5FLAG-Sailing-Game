@@ -43,6 +43,11 @@ public class PauseMenuManager : MenuBase
         SceneManager.LoadScene("TitleScreen");
     }
 
+    public void PauseButton()
+    {
+        GameStateManager.Instance.SetPause();
+    }
+
     public void Resume()
     {
         CloseMenus();

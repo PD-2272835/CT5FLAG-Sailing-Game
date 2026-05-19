@@ -7,12 +7,17 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     ///private GameObject _cargoInstance = null;
 
-    public int Health;
+    public int Health = 3;
     public Cargo HeldCargo = null;
 
     public void TakeDamage()
     {
+        Health--;
 
+        if (Health <= 0)
+        {
+            /// Add game over
+        }
     }
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
