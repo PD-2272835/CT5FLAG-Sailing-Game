@@ -4,8 +4,7 @@
       "version": "1.0.0",
       "depth": 0,
       "source": "builtin",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
+      "dependencies": {}
     },
     "com.unity.addressables": {
       "version": "2.7.4",
