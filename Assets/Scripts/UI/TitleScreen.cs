@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleScreen : MenuBase
 {
@@ -42,6 +43,11 @@ public class TitleScreen : MenuBase
         LanguageMenu.SetActive(false);
         CreditsMenu.SetActive(false);
         ControlsMenu.SetActive(true);
+    }
+
+    public void StartButton()
+    {
+        SceneManager.LoadScene("MainGameScene");
     }
 
     public void GoToCredits()

@@ -5,7 +5,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [SerializeField] private int _cargoScore = 50;
     [SerializeField] private Transform _cargoLocation;
 
-    private GameObject _cargoInstance = null;
+    ///private GameObject _cargoInstance = null;
 
     public int Health;
     public Cargo HeldCargo = null;
