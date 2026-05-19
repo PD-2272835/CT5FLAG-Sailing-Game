@@ -6,6 +6,9 @@ public class TitleScreen : MenuBase
     public GameObject CreditsMenu;
     public GameObject ControlsMenu;
 
+    public GameObject BackgroundMain;
+    public GameObject BackgroundCredCtrls;
+
     private void Awake()
     {
         MainMenuActive();
@@ -16,6 +19,9 @@ public class TitleScreen : MenuBase
         base.MainMenuActive();
         CreditsMenu.SetActive(false);
         ControlsMenu.SetActive(false);
+
+        BackgroundMain.SetActive(true);
+        BackgroundCredCtrls.SetActive(false);
     }
 
     protected override void SettingsMenuActive()
@@ -33,6 +39,9 @@ public class TitleScreen : MenuBase
         LanguageMenu.SetActive(false);
         CreditsMenu.SetActive(true);
         ControlsMenu.SetActive(false);
+
+        BackgroundMain.SetActive(false);
+        BackgroundCredCtrls.SetActive(true);
     }
 
     private void ControlsMenuActive()   //Enables controls menu
@@ -43,6 +52,9 @@ public class TitleScreen : MenuBase
         LanguageMenu.SetActive(false);
         CreditsMenu.SetActive(false);
         ControlsMenu.SetActive(true);
+
+        BackgroundMain.SetActive(false);
+        BackgroundCredCtrls.SetActive(true);
     }
 
     public void StartButton()
