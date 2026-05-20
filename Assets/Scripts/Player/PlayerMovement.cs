@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
     private void OnPauseGame()
     {
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause();   ///needs a bool to stop from pausing on game over
     }
 
 

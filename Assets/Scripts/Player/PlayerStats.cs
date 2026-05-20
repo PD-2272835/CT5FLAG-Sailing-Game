@@ -14,9 +14,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
     {
         Health--;
 
+        GameplayUI.Instance.DamageTaken(Health);
+
         if (Health <= 0)
         {
-            /// Add game over
+            gameObject.transform.Find("new pirate ship 5 fbx").gameObject.SetActive(false);
+            GameplayUI.Instance.GameOver();
         }
     }
 
@@ -32,6 +35,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo.CargoCount = amount;
             Debug.Log($"Player now has {HeldCargo}, {HeldCargo.CargoCount}");
 
+            GameplayUI.Instance.DisplayCargo(HeldCargo);
             ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
         }
     }
@@ -45,6 +49,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
             Destroy(HeldCargo);
             HeldCargo = null;
 
+            GameplayUI.Instance.DisplayCargo(null);
             ///Destroy(_cargoInstance.gameObject);
             ///_cargoInstance = null;
         }
@@ -60,9 +65,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         if (HeldCargo.CargoCount == 0)
         {
-            Debug.Log("Cargo has been destroyed");
             Destroy(HeldCargo);
             HeldCargo = null;
+
+            GameplayUI.Instance.DisplayCargo(null);
+
+            Debug.Log("Cargo has been destroyed");
         }
     }
 
