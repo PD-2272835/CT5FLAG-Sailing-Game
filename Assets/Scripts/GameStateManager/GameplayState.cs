@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public struct AvoidPoint
 {
@@ -31,8 +31,8 @@ public class GameplayState : AbstractGameState
     private readonly float _DifficultyRampDuration = 20f;       //seconds to get to max difficulty (speed and obstacle intervals)
     private readonly float _InitialObstacleInterval = 1.5f;     //starting time between obstacles
     private readonly float _MaxSpawnInterval = 2f;            //maximum time between obstacles (seconds)
-    private readonly float _HorizonDistance = 160f;             //how far in front of the player obstacles should spawn
-    private readonly float _ObstacleXSpawningRange = 25f;       //how far to the left and right of the player an obstacle should be allowed to spawn
+    private readonly float _HorizonDistance = 300f;             //how far in front of the player obstacles should spawn
+    private readonly float _ObstacleXSpawningRange = 50f;       //how far to the left and right of the player an obstacle should be allowed to spawn
     private readonly float _InitialIslandSpawnInterval = 1f;    //starting minimum interval between islands
     private readonly float _IslandSpawnIntervalAmplifier = 2f; //How much the island interval should increase by on each successful island spawn
     
@@ -83,16 +83,21 @@ public class GameplayState : AbstractGameState
         {
             //Debug.Log("tried spawning something");
             ObstacleSettings obstacle = PickWeightedObstacle();
+            GameObject obstacleObj = null;
             if (obstacle.Kind != ObstacleKind.Island)
             {
-                SpawnObstacle(obstacle);
+                obstacleObj = SpawnObstacle(obstacle);
             }
             else if (CanSpawnIsland())
             {
-                SpawnObstacle(obstacle);
+                obstacleObj = SpawnObstacle(obstacle);
+            }
+
+            if (obstacleObj != null)
+            {
+                context.StartObstacleRaise(obstacle, obstacleObj, 2f, obstacleObj.transform.position.y, 1f);
             }
         }
-        
     }
 
 
@@ -116,7 +121,7 @@ public class GameplayState : AbstractGameState
     }
 
 
-    private void SpawnObstacle(ObstacleSettings settings)
+    private GameObject SpawnObstacle(ObstacleSettings settings)
     {
         Flyweight obstacle = FlyweightFactory.Spawn(settings);
         //obstacle.transform.position = Vector3.zero; //set new obstacle position
@@ -130,14 +135,16 @@ public class GameplayState : AbstractGameState
 
         if (settings.Kind == ObstacleKind.Island)
         {
-            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, 0, _HorizonDistance); //spawn all islands directly ahead of the player
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, -7, _HorizonDistance); //spawn all islands directly ahead of the player
             _LastIslandInterval = _ElapsedTime;
         }
         else
         {
-            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, 0, _HorizonDistance);
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, -7, _HorizonDistance);
             _LastObstacleInterval = _ElapsedTime;
         }
+
+        return obstacle.gameObject;
     }
 
 
@@ -161,7 +168,7 @@ public class GameplayState : AbstractGameState
         float desiredPosition = Random.Range(-(_ObstacleXSpawningRange - 1), _ObstacleXSpawningRange);
 
         //check every avoid point
-        foreach(AvoidPoint ap in _AvoidPoints)
+        foreach (AvoidPoint ap in _AvoidPoints)
         {
             //check that the desired x offset is not within an avoid point's bounds, if it is, get another xpos
             if (desiredPosition < ap.t.transform.position.x + ap.r

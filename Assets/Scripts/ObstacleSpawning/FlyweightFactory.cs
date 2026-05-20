@@ -4,24 +4,8 @@ using UnityEngine.Pool;
 
 //Flyweight Factory Singleton that leverages object pooling to reduce Instantiate() and Destroy() overhead
 //the spawn position of a flyweight should be defined by whatever class is creating a flyweight using transform.position
-public static class FlyweightFactory // : MonoBehaviour
+public static class FlyweightFactory
 {
-/*
-    //ensure this is a singleton and is not destroyed upon changing scene
-    public static FlyweightSpawner Instance;
-    
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        } else
-        {
-            Destroy(gameObject);
-        }
-    }
-*/
 
     //whether or not we want to catch doubly releasing a pooled object
     private static bool _collectionCheck = true;

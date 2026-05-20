@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 
@@ -95,5 +96,30 @@ public class GameStateManager : MonoBehaviour
     public void ResetScore()
     {
         Gameplay.CurrentScore = 0;
+    }
+
+    public void StartObstacleRaise(ObstacleSettings settings, GameObject obj, float duration, float startHeight, float endHeight)
+    {
+        StartCoroutine(RaiseToHorizon(obj, duration, startHeight, endHeight));
+    }
+
+    //working out how to work with enumerators for interpolation between values
+    //https://discussions.unity.com/t/ienumerator-with-transform-rotate-is-slighty-off/907397/7
+    public IEnumerator RaiseToHorizon(GameObject obj, float duration, float startHeight, float endHeight)
+    {
+
+        float factor = 1f / duration;
+        for (float time = 0f; time <= duration; time += Time.deltaTime * factor)
+        {
+            //float t = time / duration;
+            float progress = 1 - Mathf.Pow(1 - time, 3); //ease out cubic
+
+
+            obj.transform.position = new Vector3(obj.transform.position.x, Mathf.Lerp(startHeight, endHeight, progress), obj.transform.position.z);
+
+            yield return null;
+        }
+        Debug.Log("stopped raising");
+        obj.transform.position = new Vector3(obj.transform.position.x, endHeight, obj.transform.position.z);
     }
 }
