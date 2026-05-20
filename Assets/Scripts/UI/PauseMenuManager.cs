@@ -19,7 +19,7 @@ public class PauseMenuManager : MenuBase
 
     private void OnPause(bool gamePauseState)
     {
-        if (gamePauseState == true)
+        if (gamePauseState == true) ///needs a bool to stop from pausing on a game over
         {
             MainMenuActive();
         }
