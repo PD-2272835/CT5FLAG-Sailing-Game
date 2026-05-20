@@ -77,3 +77,5 @@ crashlytics-build.properties
 
 /[Aa]ssets/TextMesh*Pro
 /[Aa]ssets/AddressableAssetsData
+Assets/Scenes/temp gameplay ui scene.unity
+Assets/Scenes/temp gameplay ui scene.unity.meta
