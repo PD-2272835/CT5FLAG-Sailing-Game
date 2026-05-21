@@ -16,12 +16,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
         Health--;
 
         //UI should be notified by an event delegate from here that the UI can subscribe to
-        GameplayUI.Instance.DamageTaken(Health);
+        GameplayUI.Instance?.DamageTaken(Health);
 
         if (Health <= 0)
         {
             gameObject.transform.Find("new pirate ship 5 fbx").gameObject.SetActive(false);
-            GameplayUI.Instance.GameOver();
+            GameplayUI.Instance?.GameOver();
         }
     }
 
@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo.CargoCount = amount;
             Debug.Log($"Player now has {HeldCargo}, {HeldCargo.CargoCount}");
 
-            GameplayUI.Instance.DisplayCargo(HeldCargo);
+            GameplayUI.Instance?.DisplayCargo(HeldCargo);
             ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
         }
     }
@@ -47,11 +47,10 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (HeldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
         {
             GameStateManager.Instance.AddScore(_cargoScore * HeldCargo.CargoCount);
-            
-            Destroy(HeldCargo);
+
             HeldCargo = null;
 
-            GameplayUI.Instance.DisplayCargo(null);
+            GameplayUI.Instance?.DisplayCargo(null);
             ///Destroy(_cargoInstance.gameObject);
             ///_cargoInstance = null;
         }
@@ -67,10 +66,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
         if (HeldCargo.CargoCount == 0)
         {
-            Destroy(HeldCargo);
             HeldCargo = null;
 
-            GameplayUI.Instance.DisplayCargo(null);
+            GameplayUI.Instance?.DisplayCargo(null);
 
             Debug.Log("Cargo has been destroyed");
         }
@@ -86,6 +84,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entered collider of " + other.name);
+        
         ICargoDamager obstacle = other.GetComponent<ICargoDamager>();
 
         //each obstacle can define what cargo it can damage (more extensible)
@@ -101,8 +101,12 @@ public class PlayerStats : MonoBehaviour, IDamageable
                     CargoDamage();
                 }
             }
-        } else
+        } 
+
+
+        if (!other.CompareTag("DockCollider") && !other.CompareTag("Weather")) //if it's not a dock collider or weather, we should damage the player
         {
+            Debug.Log(other.name + " was not weather/a dock collider");
             //logic for if player should be damaged - simple take damage for now
             TakeDamage();
         }
