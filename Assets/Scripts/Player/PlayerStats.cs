@@ -5,15 +5,17 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [SerializeField] private int _cargoScore = 50;
     [SerializeField] private Transform _cargoLocation;
 
-    ///private GameObject _cargoInstance = null;
+    //private GameObject _cargoInstance = null;
 
     public int Health = 3;
     public Cargo HeldCargo = null;
 
     public void TakeDamage()
     {
+        Debug.Log("player has been damaged");
         Health--;
 
+        //UI should be notified by an event delegate from here that the UI can subscribe to
         GameplayUI.Instance.DamageTaken(Health);
 
         if (Health <= 0)
@@ -74,7 +76,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
         }
     }
 
-    public void CargoRestore()  ///implement into OnTriggerEnter to call function when colliding with cargo obstacle
+    public void CargoRestore()  //implement into OnTriggerEnter to call function when colliding with cargo obstacle
     {
         if (HeldCargo != null)
         {
@@ -84,21 +86,26 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void OnTriggerEnter(Collider other)
     {
+        ICargoDamager obstacle = other.GetComponent<ICargoDamager>();
+
         //each obstacle can define what cargo it can damage (more extensible)
-        Cargo[] damagableCargos = other.GetComponent<ICargoDamager>()?.GetDamagableCargo();
+        Cargo[] damagableCargos = obstacle?.GetDamagableCargo();
 
         if (damagableCargos?.Length > 0)
         {
             for (int i = 0; i < damagableCargos.Length; ++i)
             {
-                if (HeldCargo.GetType() == damagableCargos[i].GetType())
+                Debug.Log(damagableCargos[i].ToString());
+                if (HeldCargo?.GetType() == damagableCargos[i].GetType())
                 {
                     CargoDamage();
                 }
             }
+        } else
+        {
+            //logic for if player should be damaged - simple take damage for now
+            TakeDamage();
         }
-       
+
     }
-
-
 }
