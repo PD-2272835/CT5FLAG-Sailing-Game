@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
   _Prefab: {fileID: 6117265249301446249, guid: 1720089bc4308704f8b9332acbd59a58, type: 3}
   DespawnBoundZ: -10
-  DamagesCargo:
-  - {fileID: 11400000, guid: bc7d565c322bbb64dad702addea9fe0e, type: 2}
-  - {fileID: 11400000, guid: 8d33eed76e31b8748b87b7372ace5209, type: 2}
-  - {fileID: 11400000, guid: 555912fa2165ca241be7de255c9c7629, type: 2}
+  DamagesCargo: []
   SpawnWeight: 10
   Kind: 1

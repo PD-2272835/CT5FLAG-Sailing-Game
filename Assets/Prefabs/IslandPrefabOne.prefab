@@ -505,6 +505,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4008368107426116549}
   - component: {fileID: -4837476394434527771}
+  - component: {fileID: 4578727787120970653}
+  - component: {fileID: 4123787568491122350}
+  - component: {fileID: 7152378421832669381}
+  - component: {fileID: 8327675828160729025}
   m_Layer: 0
   m_Name: IslandPrefabOne
   m_TagString: Untagged
@@ -625,6 +629,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4578727787120970653
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087392686933450162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 18.6, y: 12.6, z: 18.9}
+  m_Center: {x: 59.3, y: 0, z: 30.7}
+--- !u!65 &4123787568491122350
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087392686933450162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 29.1, y: 20.35, z: 34}
+  m_Center: {x: 38.88, y: 0, z: 38.3}
+--- !u!135 &7152378421832669381
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087392686933450162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 44.5
+  m_Center: {x: -16.7, y: 0, z: 0}
+--- !u!65 &8327675828160729025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5087392686933450162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.34, y: 21.46, z: 24.88}
+  m_Center: {x: -70.9, y: 0, z: -15.57}
 --- !u!1 &6979668346401887580
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,8 +816,8 @@ GameObject:
   - component: {fileID: 5976579432608195759}
   - component: {fileID: 4383945500931581743}
   m_Layer: 0
-  m_Name: DeliverCollision
-  m_TagString: Untagged
+  m_Name: DeliverCollisions
+  m_TagString: DockCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
