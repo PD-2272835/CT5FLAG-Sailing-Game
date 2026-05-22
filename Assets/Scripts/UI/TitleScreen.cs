@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class TitleScreen : MenuBase
@@ -10,7 +11,9 @@ public class TitleScreen : MenuBase
 
     private void Awake()
     {
+        fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
         MainMenuActive();
+        StartCoroutine(Transitions.FadeIn(fog, 1f));
     }
 
     protected override void MainMenuActive()
