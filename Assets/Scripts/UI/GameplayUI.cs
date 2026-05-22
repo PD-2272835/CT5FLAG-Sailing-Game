@@ -49,6 +49,7 @@ public class GameplayUI : MonoBehaviour
 
     public void DamageTaken(int currentHealth)  //Change displayed 
     {
+        Debug.Log($"GameplayUI has recieved player health: {currentHealth}");
         switch (currentHealth)
         {
             case 2:

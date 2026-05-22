@@ -10,10 +10,15 @@ public class PlayerStats : MonoBehaviour, IDamageable
     public int Health = 3;
     public Cargo HeldCargo = null;
 
+    private void Awake()
+    {
+        Debug.Log($"Player has {Health} health on Awake");
+    }
     public void TakeDamage()
     {
         Debug.Log("player has been damaged");
         Health--;
+        Debug.Log($"Player now has {Health} health");
 
         //UI should be notified by an event delegate from here that the UI can subscribe to
         GameplayUI.Instance?.DamageTaken(Health);
