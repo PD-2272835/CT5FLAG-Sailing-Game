@@ -76,6 +76,7 @@ public class PauseMenuManager : MenuBase
     {
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
 
         SceneManager.LoadScene("TitleScreen");
     }
@@ -96,7 +97,8 @@ public class PauseMenuManager : MenuBase
         Scene currentScene = SceneManager.GetActiveScene();
 
         GameStateManager.Instance.ResetScore();
-        GameStateManager.Instance.SetPause();   //Should resume, as game should already be paused to access this button
+        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
 
         SceneManager.LoadScene(currentScene.name);
     }
