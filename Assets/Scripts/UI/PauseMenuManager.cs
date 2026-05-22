@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MenuBase
 {
+    public GameObject ControlsMenu; ///should be removed from here and TitleScreen & added to MenuBase
+
     private void Awake()
     {
         CloseMenus();
@@ -19,13 +21,16 @@ public class PauseMenuManager : MenuBase
 
     private void OnPause(bool gamePauseState)
     {
-        if (gamePauseState == true) ///needs a bool to stop from pausing on a game over
+        if (!GameplayUI.Instance.GameOverBool)  /// temp    /// if (GameStateManager.Instance.CurrentState != EndGame)
         {
-            MainMenuActive();
-        }
-        else
-        {
-            CloseMenus();
+            if (gamePauseState == true)
+            {
+                MainMenuActive();
+            }
+            else
+            {
+                CloseMenus();
+            }
         }
     }
 
@@ -33,6 +38,18 @@ public class PauseMenuManager : MenuBase
     {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
+        AudioMenu.SetActive(false);
+        LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
+    }
+
+    private void ControlsMenuActive()   //Enables controls menu
+    {
+        MainMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+        AudioMenu.SetActive(false);
+        LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(true);
     }
 
     protected override void ExitGame()
@@ -62,5 +79,10 @@ public class PauseMenuManager : MenuBase
         GameStateManager.Instance.SetPause();   //Should resume, as game should already be paused to access this button
 
         SceneManager.LoadScene(currentScene.name);
+    }
+
+    public void GoToControls()
+    {
+        ControlsMenuActive();
     }
 }

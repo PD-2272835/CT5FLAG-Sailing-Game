@@ -25,6 +25,8 @@ public class GameplayUI : MonoBehaviour
     private GameObject _heart2;
     private GameObject _heart3;
 
+    public bool GameOverBool = false;   ///temp
+
     private void Awake()
     {
         if (Instance != this)
@@ -32,13 +34,13 @@ public class GameplayUI : MonoBehaviour
             if (Instance == null) { Instance = this; }
             else { Destroy(this); }
         }
-        DontDestroyOnLoad(Instance);
+        DontDestroyOnLoad(Instance);    /// would this be an issue if the player goes to the main menu and then back into the game?
 
         _gameOverMenu.SetActive(false);
 
-        ///_heart1 = _displayedHealth.transform.Find("first heart").gameObject;
-        ///_heart2 = _displayedHealth.transform.Find("second heart").gameObject;
-        ///_heart3 = _displayedHealth.transform.Find("third heart").gameObject;
+        _heart1 = _displayedHealth.transform.Find("FullHeart1").gameObject;
+        _heart2 = _displayedHealth.transform.Find("FullHeart2").gameObject;
+        _heart3 = _displayedHealth.transform.Find("FullHeart3").gameObject;
         
         _displayedCargo.GetComponent<Image>().sprite = null;
     }
@@ -89,6 +91,8 @@ public class GameplayUI : MonoBehaviour
 
     public void GameOver()
     {
+        GameOverBool = true;
+
         GameStateManager.Instance.SetPause();
         _gameOverMenu.SetActive(true);
     }

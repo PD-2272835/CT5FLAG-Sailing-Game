@@ -17,7 +17,7 @@ public class Cargo : ScriptableObject, IDamageable
             }
         }
     }
-    public void TakeDamage() ///will probably implement interface to handle damage method as player will also need it
+    public void TakeDamage()
     {
         CargoCount--;
     }

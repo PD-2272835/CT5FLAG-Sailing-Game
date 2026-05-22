@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuBase : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class MenuBase : MonoBehaviour
     public GameObject LanguageMenu;
 
     public GameObject AudioIcon;
+    public Sprite AudioMute;
+    public Sprite AudioUnmute;
 
     protected virtual void MainMenuActive()  //Enables main menu for the respective scene
     {
@@ -62,14 +66,18 @@ public class MenuBase : MonoBehaviour
         AudioMenuActive();
     }
 
-    public void AudioMute()
+    public void AudioToggle ()
     {
-        AudioManager.Instance.Mute();
-    }
-
-    public void AudioUnmute()
-    {
-        AudioManager.Instance.Unmute();
+        if (AudioListener.volume > 0)
+        {
+            AudioIcon.GetComponent<Image>().sprite = AudioMute;
+            AudioManager.Instance.Mute();
+        }
+        else
+        {
+            AudioIcon.GetComponent<Image>().sprite = AudioUnmute;
+            AudioManager.Instance.Unmute();
+        }
     }
 
     public void GoToLanguages()
@@ -79,11 +87,11 @@ public class MenuBase : MonoBehaviour
 
     public void SetLanguageEnglish()
     {
-        ///call change text to english
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("en");
     }
     public void SetLanguageSpanish()
     {
-        ///call change text to spanish
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
     }
 
     public void Exit()
