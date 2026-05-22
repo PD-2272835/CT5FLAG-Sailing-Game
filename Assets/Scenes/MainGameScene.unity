@@ -466,10 +466,22 @@ PrefabInstance:
     - target: {fileID: 2223393032712951512, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 212410211}
+      objectReference: {fileID: 212410212}
     - target: {fileID: 2223393032712951512, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223393032712951512, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223393032712951512, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223393032712951512, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2366016227921326191, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -788,6 +800,34 @@ PrefabInstance:
       value: PauseMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4021106550691217059, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 212410212}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4027636674262075600, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1205,6 +1245,9 @@ MonoBehaviour:
   AudioMenu: {fileID: 201324364}
   LanguageMenu: {fileID: 201324363}
   AudioIcon: {fileID: 0}
+  AudioMute: {fileID: -1784285903, guid: fa83e5c498495864fb4e955ab0ca39de, type: 3}
+  AudioUnmute: {fileID: -1785831918, guid: b15125f9e55cba54981783505195319f, type: 3}
+  ControlsMenu: {fileID: 521410572}
 --- !u!4 &212410213
 Transform:
   m_ObjectHideFlags: 0
@@ -1367,6 +1410,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493719854}
   m_CullTransparentMesh: 1
+--- !u!1 &521410572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1842022958500805942, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+  m_PrefabInstance: {fileID: 201324362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &687921535
 GameObject:
   m_ObjectHideFlags: 0
