@@ -6,6 +6,7 @@ public class GameplayUI : MonoBehaviour
     public static GameplayUI Instance { get; private set; }
 
     [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private GameObject _gameOverBackground;
     [SerializeField] private GameObject _displayedHealth;
     [SerializeField] private GameObject _displayedCargo;
 
@@ -37,6 +38,7 @@ public class GameplayUI : MonoBehaviour
         DontDestroyOnLoad(Instance);    /// would this be an issue if the player goes to the main menu and then back into the game?
 
         _gameOverMenu.SetActive(false);
+        _gameOverBackground.SetActive(false);
 
         _heart1 = _displayedHealth.transform.Find("FullHeart1").gameObject;
         _heart2 = _displayedHealth.transform.Find("FullHeart2").gameObject;
@@ -95,5 +97,6 @@ public class GameplayUI : MonoBehaviour
 
         GameStateManager.Instance.SetPause();
         _gameOverMenu.SetActive(true);
+        _gameOverBackground.SetActive(true);
     }
 }

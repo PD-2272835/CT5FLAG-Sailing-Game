@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
     }
     public void Unmute()
     {
-        ChangeVolume(1f);
+        ChangeVolume(0.5f);
         Muted = false;
     }
 }

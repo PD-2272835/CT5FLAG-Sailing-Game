@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class TitleScreen : MenuBase
 {
     public GameObject CreditsMenu;
-    public GameObject ControlsMenu;
 
     public GameObject BackgroundMain;
     public GameObject BackgroundCredCtrls;
@@ -18,7 +17,6 @@ public class TitleScreen : MenuBase
     {
         base.MainMenuActive();
         CreditsMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
 
         BackgroundMain.SetActive(true);
         BackgroundCredCtrls.SetActive(false);
@@ -28,7 +26,18 @@ public class TitleScreen : MenuBase
     {
         base.SettingsMenuActive();
         CreditsMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
+
+        BackgroundMain.SetActive(true);
+        BackgroundCredCtrls.SetActive(false);
+    }
+
+    protected override void ControlsMenuActive()
+    {
+        base.ControlsMenuActive();
+        CreditsMenu.SetActive(false);
+
+        BackgroundMain.SetActive(false);
+        BackgroundCredCtrls.SetActive(true);
     }
 
     private void CreditsMenuActive()  //Enables credits menu
@@ -37,21 +46,8 @@ public class TitleScreen : MenuBase
         SettingsMenu.SetActive(false);
         AudioMenu.SetActive(false);
         LanguageMenu.SetActive(false);
-        CreditsMenu.SetActive(true);
         ControlsMenu.SetActive(false);
-
-        BackgroundMain.SetActive(false);
-        BackgroundCredCtrls.SetActive(true);
-    }
-
-    private void ControlsMenuActive()   //Enables controls menu
-    {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        CreditsMenu.SetActive(false);
-        ControlsMenu.SetActive(true);
+        CreditsMenu.SetActive(true);
 
         BackgroundMain.SetActive(false);
         BackgroundCredCtrls.SetActive(true);
@@ -65,10 +61,5 @@ public class TitleScreen : MenuBase
     public void GoToCredits()
     {
         CreditsMenuActive();
-    }
-
-    public void GoToControls()
-    {
-        ControlsMenuActive();
     }
 }

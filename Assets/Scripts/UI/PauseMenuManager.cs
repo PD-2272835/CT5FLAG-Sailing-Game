@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MenuBase
 {
-    public GameObject ControlsMenu; ///should be removed from here and TitleScreen & added to MenuBase
+    [SerializeField] private GameObject _pauseBackground;
 
     private void Awake()
     {
@@ -21,16 +21,14 @@ public class PauseMenuManager : MenuBase
 
     private void OnPause(bool gamePauseState)
     {
-        if (!GameplayUI.Instance.GameOverBool)  /// temp    /// if (GameStateManager.Instance.CurrentState != EndGame)
+        /// if (GameStateManager.Instance.CurrentState != EndGame)
+        if (gamePauseState == true)
         {
-            if (gamePauseState == true)
-            {
-                MainMenuActive();
-            }
-            else
-            {
-                CloseMenus();
-            }
+            MainMenuActive();
+        }
+        else
+        {
+            CloseMenus();
         }
     }
 
@@ -41,15 +39,37 @@ public class PauseMenuManager : MenuBase
         AudioMenu.SetActive(false);
         LanguageMenu.SetActive(false);
         ControlsMenu.SetActive(false);
+        _pauseBackground.SetActive(false);
     }
 
-    private void ControlsMenuActive()   //Enables controls menu
+    protected override void MainMenuActive()
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(true);
+        base.MainMenuActive();
+        _pauseBackground.SetActive(true);
+    }
+
+    protected override void SettingsMenuActive()
+    {
+        base.SettingsMenuActive();
+        _pauseBackground.SetActive(true);
+    }
+
+    protected override void AudioMenuActive()
+    {
+        base.AudioMenuActive();
+        _pauseBackground.SetActive(true);
+    }
+
+    protected override void LanguageMenuActive()
+    {
+        base.LanguageMenuActive();
+        _pauseBackground.SetActive(true);
+    }
+
+    protected override void ControlsMenuActive()
+    {
+        base.ControlsMenuActive();
+        _pauseBackground.SetActive(true);
     }
 
     protected override void ExitGame()
@@ -79,10 +99,5 @@ public class PauseMenuManager : MenuBase
         GameStateManager.Instance.SetPause();   //Should resume, as game should already be paused to access this button
 
         SceneManager.LoadScene(currentScene.name);
-    }
-
-    public void GoToControls()
-    {
-        ControlsMenuActive();
     }
 }

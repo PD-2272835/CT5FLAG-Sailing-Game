@@ -9,6 +9,7 @@ public class MenuBase : MonoBehaviour
     public GameObject SettingsMenu;
     public GameObject AudioMenu;
     public GameObject LanguageMenu;
+    public GameObject ControlsMenu;
 
     public GameObject AudioIcon;
     public Sprite AudioMute;
@@ -20,6 +21,7 @@ public class MenuBase : MonoBehaviour
         SettingsMenu.SetActive(false);
         AudioMenu.SetActive(false);
         LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
     }
 
     protected virtual void SettingsMenuActive()   //Enables settings menu
@@ -28,22 +30,34 @@ public class MenuBase : MonoBehaviour
         SettingsMenu.SetActive(true);
         AudioMenu.SetActive(false);
         LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void AudioMenuActive()
+    protected virtual void AudioMenuActive()    //Enables audio menu
     {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         AudioMenu.SetActive(true);
         LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void LanguageMenuActive()
+    protected virtual void LanguageMenuActive()     //Enables language menu
     {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         AudioMenu.SetActive(false);
         LanguageMenu.SetActive(true);
+        ControlsMenu.SetActive(false);
+    }
+
+    protected virtual void ControlsMenuActive()   //Enables controls menu
+    {
+        MainMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+        AudioMenu.SetActive(false);
+        LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(true);
     }
 
     protected virtual void ExitGame()
@@ -92,6 +106,11 @@ public class MenuBase : MonoBehaviour
     public void SetLanguageSpanish()
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
+    }
+
+    public void GoToControls()
+    {
+        ControlsMenuActive();
     }
 
     public void Exit()
