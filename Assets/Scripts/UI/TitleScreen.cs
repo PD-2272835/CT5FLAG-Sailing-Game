@@ -55,7 +55,11 @@ public class TitleScreen : MenuBase
 
     public void StartButton()
     {
-        GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        if (GameStateManager.Instance)
+        {
+            Debug.Log("Changed to GameplayState");
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        }
         SceneManager.LoadScene("MainGameScene");
     }
 
