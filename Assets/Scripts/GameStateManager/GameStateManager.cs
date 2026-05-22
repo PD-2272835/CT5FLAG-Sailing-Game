@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 //The Game State Manager should be used to orchestrate events such as pausing, game start, game end and switching between Main Menu and back
@@ -39,6 +41,22 @@ public class GameStateManager : MonoBehaviour
     void Update()
     {
         _currentState?.Update(this);
+    }
+
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += GetPlayer;
+    }
+
+    void GetPlayer(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "MainGameScene") this.player = GameObject.FindAnyObjectByType<PlayerStats>().gameObject;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= GetPlayer;
     }
 
 
@@ -81,6 +99,7 @@ public class GameStateManager : MonoBehaviour
     //Change State
     public void ChangeState(AbstractGameState newState)
     {
+
         _currentState?.ExitState(this);
         _currentState = newState;
         _currentState.EnterState(this);
@@ -111,15 +130,13 @@ public class GameStateManager : MonoBehaviour
         float factor = 1f / duration;
         for (float time = 0f; time <= duration; time += Time.deltaTime * factor)
         {
-            //float t = time / duration;
+            float t = time / duration;
             float progress = 1 - Mathf.Pow(1 - time, 3); //ease out cubic
 
-
-            obj.transform.position = new Vector3(obj.transform.position.x, Mathf.Lerp(startHeight, endHeight, progress), obj.transform.position.z);
+            if (obj != null) obj.transform.position = new Vector3(obj.transform.position.x, Mathf.Lerp(startHeight, endHeight, progress), obj.transform.position.z);
 
             yield return null;
         }
-        Debug.Log("stopped raising");
-        obj.transform.position = new Vector3(obj.transform.position.x, endHeight, obj.transform.position.z);
+        if (obj != null) obj.transform.position = new Vector3(obj.transform.position.x, endHeight, obj.transform.position.z);
     }
 }

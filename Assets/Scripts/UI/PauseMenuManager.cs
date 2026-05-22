@@ -94,12 +94,11 @@ public class PauseMenuManager : MenuBase
 
     public void Restart()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
 
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
 
-        SceneManager.LoadScene(currentScene.name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

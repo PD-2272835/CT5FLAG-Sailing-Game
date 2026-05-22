@@ -35,7 +35,6 @@ public class GameplayUI : MonoBehaviour
             if (Instance == null) { Instance = this; }
             else { Destroy(this); }
         }
-        DontDestroyOnLoad(Instance);    /// would this be an issue if the player goes to the main menu and then back into the game?
 
         _gameOverMenu.SetActive(false);
         _gameOverBackground.SetActive(false);
@@ -66,28 +65,29 @@ public class GameplayUI : MonoBehaviour
 
     public void DisplayCargo(Cargo heldCargo)   //Called from PlayerStats to show current cargo
     {
+        Sprite spriteRef = _displayedCargo.GetComponent<Image>().sprite;
         switch (heldCargo.name)
         {
             case "Books":
-                _displayedCargo.GetComponent<Image>().sprite = _booksSprite;
+                spriteRef = _booksSprite;
                 break;
             case "Bottles":
-                _displayedCargo.GetComponent<Image>().sprite = _bottlesSprite;
+                spriteRef = _bottlesSprite;
                 break;
             case "Fruit":
-                _displayedCargo.GetComponent<Image>().sprite = _fruitSprite;
+                spriteRef = _fruitSprite;
                 break;
             case "Goose":
-                _displayedCargo.GetComponent<Image>().sprite = _gooseSprite;
+                spriteRef = _gooseSprite;
                 break;
             case "Rat":
-                _displayedCargo.GetComponent<Image>().sprite = _ratSprite;
+                spriteRef = _ratSprite;
                 break;
             case "Uranium":
-                _displayedCargo.GetComponent<Image>().sprite = _uraniumSprite;
+                spriteRef = _uraniumSprite;
                 break;
             case null:
-                _displayedCargo.GetComponent<Image>().sprite = null;
+                spriteRef = null;
                 break;
         }
     }
