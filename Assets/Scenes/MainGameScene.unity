@@ -1748,12 +1748,12 @@ MonoBehaviour:
   _displayedCargo: {fileID: 0}
   _heartFull: {fileID: 1709894935, guid: 1532ca892d553484faba941c221f63d0, type: 3}
   _heartEmpty: {fileID: 316785047, guid: eae935ab71fbd79459b1c7dcadf22d49, type: 3}
-  _booksSprite: {fileID: 0}
-  _bottlesSprite: {fileID: 0}
-  _fruitSprite: {fileID: 0}
-  _gooseSprite: {fileID: 0}
-  _ratSprite: {fileID: 0}
-  _uraniumSprite: {fileID: 0}
+  _booksSprite: {fileID: 21300000, guid: 67c2c11ff75ab2848b664d59e1f240b1, type: 3}
+  _bottlesSprite: {fileID: 21300000, guid: 414127c8ed700c34687d9415d299326f, type: 3}
+  _fruitSprite: {fileID: 21300000, guid: f2c9a3e570912b24eb635bac7e35f5e7, type: 3}
+  _gooseSprite: {fileID: 21300000, guid: dc27e1c1a0cdac942b5fd8a1c82cb476, type: 3}
+  _ratSprite: {fileID: 21300000, guid: 5fba4c97732c6b445b6d130eb3a32b82, type: 3}
+  _uraniumSprite: {fileID: 21300000, guid: 53b8508296b77544ca72f327a674b2db, type: 3}
   GameOverBool: 0
 --- !u!4 &1024901636
 Transform:
