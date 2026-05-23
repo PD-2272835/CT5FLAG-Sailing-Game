@@ -27,14 +27,14 @@ MonoBehaviour:
 
       Alexandra Sharpe
 
-      
+
 
       Asset Artist:
 
       Cara
       Kelly
 
-      
+
 
       Environment Artist:
 
@@ -50,7 +50,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4464451574030336
-    m_Localized: EXIT TO DESKTOP
+    m_Localized: TO DESKTOP
     m_Metadata:
       m_Items: []
   - m_Id: 4464461040574464
@@ -87,7 +87,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4474616050343936
-    m_Localized: EXIT TO MENU
+    m_Localized: TO MENU
     m_Metadata:
       m_Items: []
   - m_Id: 4473027256377344
@@ -99,30 +99,28 @@ MonoBehaviour:
 
       Peter Delap
 
-      
 
-      
 
-      Lead UI,
-      UX Engineer:
 
-      Jamie Holgate
 
-      
+      Lead UI, UX Engineer:
+
+      Jamie
+      Holgate
+
+
 
       Designer:
 
-      Daisy
-      Plumb'
+      Daisy Plumb'
     m_Metadata:
       m_Items: []
   - m_Id: 4474612694900736
     m_Localized: 'Developed by ToasterCar
 
-      
 
-      Published by Port In The
-      Storm'
+
+      Published by Port In The Storm'
     m_Metadata:
       m_Items: []
   - m_Id: 4464440865972224
@@ -131,6 +129,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4474614334873600
     m_Localized: GAME OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473255514595328
+    m_Localized: EXIT
     m_Metadata:
       m_Items: []
   references:

@@ -37,7 +37,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4464451574030336
-    m_Localized: SALIR AL ESCRITORIO
+    m_Localized: AL ESCRITORIO
     m_Metadata:
       m_Items: []
   - m_Id: 4464461040574464
@@ -59,14 +59,14 @@ MonoBehaviour:
 
       Alexandra Sharpe
 
-      
+
 
       Artista
       de recursos:
 
       Cara Kelly
 
-      
+
 
       Artista de entornos:
 
@@ -89,10 +89,10 @@ MonoBehaviour:
   - m_Id: 4474612694900736
     m_Localized: 'Desarrollado por ToasterCar
 
-      
 
-      Publicado por Port
-      In The Storm'
+
+      Publicado por Port In The
+      Storm'
     m_Metadata:
       m_Items: []
   - m_Id: 4474614334873600
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4474616050343936
-    m_Localized: "SALIR AL MEN\xDA"
+    m_Localized: "AL MEN\xDA"
     m_Metadata:
       m_Items: []
   - m_Id: 4474617698705408
@@ -117,6 +117,10 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4474622408908800
     m_Localized: IDIOMA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473255514595328
+    m_Localized: SALIR
     m_Metadata:
       m_Items: []
   references:
