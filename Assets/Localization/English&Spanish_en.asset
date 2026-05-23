@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 1893991440384
-    m_Localized: A ToasterCar Production
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 1978477305856
-    m_Localized: Published by Port in the Storm
+    m_Localized: 
     m_Metadata:
       m_Items: []
   - m_Id: 2050422202368

@@ -1218,11 +1218,11 @@ MonoBehaviour:
   SettingsMenu: {fileID: 969927018}
   AudioMenu: {fileID: 1334183112}
   LanguageMenu: {fileID: 799207507}
+  ControlsMenu: {fileID: 171489896}
   AudioIcon: {fileID: 0}
   AudioMute: {fileID: 0}
   AudioUnmute: {fileID: 0}
   CreditsMenu: {fileID: 414219180}
-  ControlsMenu: {fileID: 171489896}
   BackgroundMain: {fileID: 1120747090}
   BackgroundCredCtrls: {fileID: 199810032}
 --- !u!4 &406101141
@@ -5479,7 +5479,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
