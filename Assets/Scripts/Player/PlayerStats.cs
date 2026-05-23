@@ -1,32 +1,63 @@
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _cargoScore = 50;
-    public Cargo _heldCargo = null;
+    [SerializeField] private Transform _cargoLocation;
+
+    //private GameObject _cargoInstance = null;
+
+    public int Health = 3;
+    public Cargo HeldCargo = null;
+
+    private void Awake()
+    {
+        Debug.Log($"Player has {Health} health on Awake");
+    }
+    public void TakeDamage()
+    {
+        Debug.Log("player has been damaged");
+        Health--;
+        Debug.Log($"Player now has {Health} health");
+
+        //UI should be notified by an event delegate from here that the UI can subscribe to
+        GameplayUI.Instance?.DamageTaken(Health);
+
+        if (Health <= 0)
+        {
+            gameObject.transform.Find("new pirate ship 5 fbx").gameObject.SetActive(false);
+            GameplayUI.Instance?.GameOver();
+        }
+    }
 
     public void CargoNew(Cargo cargo, int amount)   //Called when recieving cargo from island
     {
-        if (_heldCargo != null)  //Cargo will be ignored if the player is already carrying cargo
+        if (HeldCargo != null)  //Cargo will be ignored if the player is already carrying cargo
         {
-            Debug.Log($"Cargo declined, player is carrying {_heldCargo}, {_heldCargo.CargoCount}");
+            Debug.Log($"Cargo declined, player is carrying {HeldCargo}, {HeldCargo.CargoCount}");
         }
         else
         {
-            _heldCargo = cargo;
-            _heldCargo.CargoCount = amount;
-            Debug.Log($"Player now has {_heldCargo}, {_heldCargo.CargoCount}");
+            HeldCargo = cargo;
+            HeldCargo.CargoCount = amount;
+            Debug.Log($"Player now has {HeldCargo}, {HeldCargo.CargoCount}");
+
+            GameplayUI.Instance?.DisplayCargo(HeldCargo);
+            ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
         }
     }
 
     public void CargoDeliver()
     {
-        if (_heldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
+        if (HeldCargo != null) //Add _cargoScore multiplied by amount of cargo remaining to the current score
         {
-            GameStateManager.Instance.AddScore(_cargoScore * _heldCargo.CargoCount);
-            
-            Destroy(_heldCargo);
-            _heldCargo = null;
+            GameStateManager.Instance.AddScore(_cargoScore * HeldCargo.CargoCount);
+
+            HeldCargo = null;
+
+            GameplayUI.Instance?.DisplayCargo(null);
+            ///Destroy(_cargoInstance.gameObject);
+            ///_cargoInstance = null;
         }
         else
         {
@@ -36,41 +67,54 @@ public class PlayerStats : MonoBehaviour
 
     public void CargoDamage()   // Called by OnTriggerEnter when colliding with valid obstacle
     {
-        _heldCargo.TakeDamage();
+        HeldCargo.TakeDamage();
 
-        if (_heldCargo.CargoCount == 0)
+        if (HeldCargo.CargoCount == 0)
         {
+            HeldCargo = null;
+
+            GameplayUI.Instance?.DisplayCargo(null);
+
             Debug.Log("Cargo has been destroyed");
-            Destroy(_heldCargo);
-            _heldCargo = null;
         }
     }
 
-    public void CargoRestore()  ///implement into OnTriggerEnter to call function when colliding with cargo obstacle
+    public void CargoRestore()  //implement into OnTriggerEnter to call function when colliding with cargo obstacle
     {
-        if (_heldCargo != null)
+        if (HeldCargo != null)
         {
-            _heldCargo.HealDamage();
+            HeldCargo.HealDamage();
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        Debug.Log("entered collider of " + other.name);
+        
+        ICargoDamager obstacle = other.GetComponent<ICargoDamager>();
+
         //each obstacle can define what cargo it can damage (more extensible)
-        Cargo[] damagableCargos = other.GetComponent<ICargoDamager>()?.GetDamagableCargo();
+        Cargo[] damagableCargos = obstacle?.GetDamagableCargo();
 
         if (damagableCargos?.Length > 0)
         {
             for (int i = 0; i < damagableCargos.Length; ++i)
             {
-                if (_heldCargo.GetType() == damagableCargos[i].GetType())
+                Debug.Log(damagableCargos[i].ToString());
+                if (HeldCargo?.GetType() == damagableCargos[i].GetType())
                 {
                     CargoDamage();
                 }
             }
+        } 
+
+
+        if (!other.CompareTag("DockCollider") && !other.CompareTag("Weather")) //if it's not a dock collider or weather, we should damage the player
+        {
+            Debug.Log(other.name + " was not weather/a dock collider");
+            //logic for if player should be damaged - simple take damage for now
+            TakeDamage();
         }
-       
+
     }
-
-
 }

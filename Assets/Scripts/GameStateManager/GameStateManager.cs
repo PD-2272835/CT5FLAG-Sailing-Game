@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 //The Game State Manager should be used to orchestrate events such as pausing, game start, game end and switching between Main Menu and back
@@ -38,6 +40,22 @@ public class GameStateManager : MonoBehaviour
     void Update()
     {
         _currentState?.Update(this);
+    }
+
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += GetPlayer;
+    }
+
+    void GetPlayer(Scene scene, LoadSceneMode mode)
+    {
+        if(scene.name == "MainGameScene") this.player = GameObject.FindAnyObjectByType<PlayerStats>().gameObject;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= GetPlayer;
     }
 
 
@@ -80,6 +98,7 @@ public class GameStateManager : MonoBehaviour
     //Change State
     public void ChangeState(AbstractGameState newState)
     {
+
         _currentState?.ExitState(this);
         _currentState = newState;
         _currentState.EnterState(this);
@@ -95,5 +114,28 @@ public class GameStateManager : MonoBehaviour
     public void ResetScore()
     {
         Gameplay.CurrentScore = 0;
+    }
+
+    public void StartObstacleRaise(ObstacleSettings settings, GameObject obj, float duration, float startHeight, float endHeight)
+    {
+        StartCoroutine(RaiseToHorizon(obj, duration, startHeight, endHeight));
+    }
+
+    //working out how to work with enumerators for interpolation between values
+    //https://discussions.unity.com/t/ienumerator-with-transform-rotate-is-slighty-off/907397/7
+    public IEnumerator RaiseToHorizon(GameObject obj, float duration, float startHeight, float endHeight)
+    {
+
+        float factor = 1f / duration;
+        for (float time = 0f; time <= duration; time += Time.deltaTime * factor)
+        {
+            float t = time / duration;
+            float progress = 1 - Mathf.Pow(1 - time, 3); //ease out cubic
+
+            if (obj != null) obj.transform.position = new Vector3(obj.transform.position.x, Mathf.Lerp(startHeight, endHeight, progress), obj.transform.position.z);
+
+            yield return null;
+        }
+        if (obj != null) obj.transform.position = new Vector3(obj.transform.position.x, endHeight, obj.transform.position.z);
     }
 }

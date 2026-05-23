@@ -11,9 +11,10 @@ public enum ObstacleKind //flags to help with obstacle spawn determination
 public class ObstacleSettings : FlyweightSettings
 {
     
-    public Cargo[] DamagesCargo;
+    public Cargo[] DamagesCargo; //cargo which this obstacle should damage. If Length 0, this obstacle will damage the player
     public float SpawnWeight;
     public ObstacleKind Kind = 0;
+    public AvoidPoint[] avoidPoints;
 
     public override Flyweight CreatePoolObject()
     {

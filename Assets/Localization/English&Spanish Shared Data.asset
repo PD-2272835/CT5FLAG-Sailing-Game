@@ -1,0 +1,172 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: English&Spanish Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: UI Text
+  m_TableCollectionNameGuidString: 4dd58905c70e62f4b88580d882a7d433
+  m_Entries:
+  - m_Id: 4464440865972224
+    m_Key: CONTROLS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464448629628928
+    m_Key: CREDITS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464451574030336
+    m_Key: TO DESKTOP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464461040574464
+    m_Key: "Just two controls:\r\n\r\nPress \u2018A\u2019 to move the ship left,\r\nPress
+      \u2018D\u2019 to move the ship right.\r\n\r\nAll menu buttons are accessible
+      by mouse click."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473027256377344
+    m_Key: ENGLISH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473043366699008
+    m_Key: "ESPA\xD1OL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474607493963776
+    m_Key: 'UI Artist:
+
+      Alexandra Sharpe
+
+
+
+      Asset Artist:
+
+      Cara
+      Kelly
+
+
+
+      Environment Artist:
+
+      Finley Child'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474609280737280
+    m_Key: 'Tech Lead:
+
+      Peter Delap
+
+
+
+
+
+      Lead UI, UX Engineer:
+
+      Jamie
+      Holgate
+
+
+
+      Designer:
+
+      Daisy Plumb'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474610903932928
+    m_Key: "Music:\r\nMenu music - \u2018Arriving At Shore\u2019 (Loop Version) by
+      flowerheadmusic.itch.io\r\n\r\nGameplay music - \u2018Cursed Sea\u2019 by alkakrab.itch.io\r\n\r\nSFX:\r\nFilmCow
+      Royalty Free Sound Effects Library by filmcow.itch.io"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474612694900736
+    m_Key: 'Developed by ToasterCar
+
+
+
+      Published by Port In The Storm'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474614334873600
+    m_Key: GAME OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474616050343936
+    m_Key: TO MENU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474617698705408
+    m_Key: PAUSED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474619355455488
+    m_Key: RESUME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474620953485312
+    m_Key: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474622408908800
+    m_Key: LANGUAGE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473255514595328
+    m_Key: EXIT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473267258646528
+    m_Key: New Entry 3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473271251623936
+    m_Key: New Entry 4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474597175975936
+    m_Key: New Entry 5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474600040685568
+    m_Key: New Entry 6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474602259472384
+    m_Key: New Entry 7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474604260155392
+    m_Key: New Entry 8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474605963042816
+    m_Key: New Entry 9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464445630701568
+    m_Key: SETTINGS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464429511991296
+    m_Key: START
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4766371054714880000
+  references:
+    version: 2
+    RefIds:
+    - rid: 4766371054714880000
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1778433919859

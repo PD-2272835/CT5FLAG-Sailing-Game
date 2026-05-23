@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeVolume(float value)
     {
-        AudioListener.volume = value;
+        AudioListener.volume = value;   ///will this persist between scenes?
     }
 
     public void Mute()
@@ -33,7 +33,7 @@ public class AudioManager : MonoBehaviour
     }
     public void Unmute()
     {
-        ChangeVolume(1f);
+        ChangeVolume(0.5f);
         Muted = false;
     }
 }

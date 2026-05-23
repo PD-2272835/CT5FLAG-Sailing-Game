@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
     private void OnPauseGame()
     {
+        /// if (GameStateManager.Instance.CurrentState != EndGame)
         GameStateManager.Instance.SetPause();
     }
 

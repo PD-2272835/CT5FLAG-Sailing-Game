@@ -49,4 +49,10 @@ MonoBehaviour:
   allObstacles:
   - {fileID: 11400000, guid: 37603852cd878884d81de7496954d31b, type: 2}
   - {fileID: 11400000, guid: 4fcd1598bcef64747afdb402ba63afbd, type: 2}
+  - {fileID: 11400000, guid: 9ca95cb928ab0ad468839cdce1667e2f, type: 2}
+  - {fileID: 11400000, guid: 4d545db925d2b254ea2a32b6e5249080, type: 2}
+  - {fileID: 11400000, guid: 5056adb0704fe3f4e8f4d07857684dd2, type: 2}
+  - {fileID: 11400000, guid: 07e6ad0e6a5f0cc40a91b9edf1ce07e5, type: 2}
+  - {fileID: 11400000, guid: 7d50ee2e0a529884caa7e4f336315cd1, type: 2}
+  - {fileID: 11400000, guid: 219666821dd907a4696eab33715b1402, type: 2}
   player: {fileID: 0}

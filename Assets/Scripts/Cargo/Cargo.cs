@@ -1,9 +1,10 @@
 using UnityEngine;
 
 [CreateAssetMenu( fileName = "NewItem", menuName = "Cargo")]
-public class Cargo : ScriptableObject
+public class Cargo : ScriptableObject, IDamageable
 {
     private int cargoCount;
+    public GameObject Prefab;
     public int CargoCount
     {
         get { return cargoCount; }
@@ -16,7 +17,7 @@ public class Cargo : ScriptableObject
             }
         }
     }
-    public void TakeDamage() ///will probably implement interface to handle damage method as player will also need it
+    public void TakeDamage()
     {
         CargoCount--;
     }

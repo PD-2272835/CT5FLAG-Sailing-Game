@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65cf3de822bd7e48b0312a54c5d78ef, type: 3}
+  m_Name: Rat
+  m_EditorClassIdentifier: Assembly-CSharp::Cargo
+  Prefab: {fileID: 7096797433051396215, guid: d4fd781fb97bb1c49a41a8ac9294baf9, type: 3}
