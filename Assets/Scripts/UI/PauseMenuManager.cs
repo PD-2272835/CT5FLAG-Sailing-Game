@@ -21,14 +21,16 @@ public class PauseMenuManager : MenuBase
 
     private void OnPause(bool gamePauseState)
     {
-        /// if (GameStateManager.Instance.CurrentState != EndGame)
-        if (gamePauseState == true)
+        if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
         {
-            MainMenuActive();
-        }
-        else
-        {
-            CloseMenus();
+            if (gamePauseState == true)
+            {
+                MainMenuActive();
+            }
+            else
+            {
+                CloseMenus();
+            }
         }
     }
 

@@ -26,8 +26,6 @@ public class GameplayUI : MonoBehaviour
     private GameObject _heart2;
     private GameObject _heart3;
 
-    public bool GameOverBool = false;   ///temp
-
     private void Awake()
     {
         if (Instance != this)
@@ -94,9 +92,9 @@ public class GameplayUI : MonoBehaviour
 
     public void GameOver()
     {
-        GameOverBool = true;
-
+        GameStateManager.Instance.ChangeState(GameStateManager.Instance.GameOver);
         GameStateManager.Instance.SetPause();
+
         _gameOverMenu.SetActive(true);
         _gameOverBackground.SetActive(true);
     }

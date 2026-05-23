@@ -15,6 +15,7 @@ public class GameStateManager : MonoBehaviour
     //state instances go here
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
+    public GameOverState GameOver = new GameOverState();
         
     public float InitialPlayerForwardSpeed = 10f;
     public float PlayerForwardSpeed = 0; //this gets overriden, the initial value should be set in gameplaystate
@@ -102,6 +103,12 @@ public class GameStateManager : MonoBehaviour
         _currentState?.ExitState(this);
         _currentState = newState;
         _currentState.EnterState(this);
+    }
+
+    //Return _currentState
+    public AbstractGameState GetState()
+    {
+        return _currentState;
     }
 
     //Add to score
