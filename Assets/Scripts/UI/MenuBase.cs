@@ -64,7 +64,12 @@ public class MenuBase : MonoBehaviour
 
     protected virtual void ExitGame()
     {
+        Debug.Log("ExitGame");
         Application.Quit();
+
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 
     public void GoToMainMenu()
