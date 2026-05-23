@@ -15,6 +15,8 @@ public class MenuBase : MonoBehaviour
     public Sprite AudioMute;
     public Sprite AudioUnmute;
 
+    protected Image fog;
+
     protected virtual void MainMenuActive()  //Enables main menu for the respective scene
     {
         MainMenu.SetActive(true);
