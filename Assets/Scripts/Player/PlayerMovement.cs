@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     {
         _moveInput = input.Get<Vector2>();
     }
-    private void OnPauseGame()
+    public void OnPauseGame()
     {
         /// if (GameStateManager.Instance.CurrentState != EndGame)
         GameStateManager.Instance.SetPause();
