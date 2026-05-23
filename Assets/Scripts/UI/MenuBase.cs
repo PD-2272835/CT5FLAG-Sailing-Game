@@ -103,10 +103,12 @@ public class MenuBase : MonoBehaviour
 
     public void SetLanguageEnglish()
     {
+        Debug.Log("Changed locale to English");
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("en");
     }
     public void SetLanguageSpanish()
     {
+        Debug.Log("Changed locale to Spanish");
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
     }
 
