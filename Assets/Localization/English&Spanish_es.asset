@@ -96,7 +96,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4474614334873600
-    m_Localized: FIN DEL JUEGO
+    m_Localized: JUEGO TERMINADO
     m_Metadata:
       m_Items: []
   - m_Id: 4474616050343936
@@ -104,7 +104,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4474617698705408
-    m_Localized: EN PAUSA
+    m_Localized: PAUSA
     m_Metadata:
       m_Items: []
   - m_Id: 4474619355455488

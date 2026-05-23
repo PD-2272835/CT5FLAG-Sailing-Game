@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class TitleScreen : MenuBase
 {
@@ -12,48 +13,51 @@ public class TitleScreen : MenuBase
     private void Awake()
     {
         fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
-        MainMenuActive();
+        Debug.Log(fog);
+        transitionDuration = 0.5f;
+        MainMenu.SetActive(true);
         StartCoroutine(Transitions.FadeIn(fog, 1f));
     }
 
-    protected override void MainMenuActive()
+    public override IEnumerator DisableAllMenus()
     {
-        base.MainMenuActive();
+        yield return StartCoroutine (base.DisableAllMenus());
         CreditsMenu.SetActive(false);
-
-        BackgroundMain.SetActive(true);
-        BackgroundCredCtrls.SetActive(false);
-    }
-
-    protected override void SettingsMenuActive()
-    {
-        base.SettingsMenuActive();
-        CreditsMenu.SetActive(false);
-
-        BackgroundMain.SetActive(true);
-        BackgroundCredCtrls.SetActive(false);
-    }
-
-    protected override void ControlsMenuActive()
-    {
-        base.ControlsMenuActive();
-        CreditsMenu.SetActive(false);
-
         BackgroundMain.SetActive(false);
-        BackgroundCredCtrls.SetActive(true);
+        BackgroundCredCtrls.SetActive(false);
+        yield return null;
     }
 
-    private void CreditsMenuActive()  //Enables credits menu
+    protected override IEnumerator MainMenuActive()
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
+        yield return StartCoroutine(DisableAllMenus());
+        BackgroundMain.SetActive(true);
+        yield return StartCoroutine(base.MainMenuActive());
+        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+    }
+
+    protected override IEnumerator SettingsMenuActive()
+    {
+        yield return StartCoroutine(DisableAllMenus());
+        BackgroundMain.SetActive(true);
+        yield return StartCoroutine(base.SettingsMenuActive());
+        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+    }
+
+    protected override IEnumerator ControlsMenuActive()
+    {
+        yield return StartCoroutine(DisableAllMenus());
+        BackgroundCredCtrls.SetActive(true);
+        yield return StartCoroutine(base.ControlsMenuActive());
+        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+    }
+
+    private IEnumerator CreditsMenuActive()  //Enables credits menu
+    {
+        yield return StartCoroutine(DisableAllMenus());
         CreditsMenu.SetActive(true);
-
-        BackgroundMain.SetActive(false);
         BackgroundCredCtrls.SetActive(true);
+        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
     }
 
     public void StartButton()
@@ -63,11 +67,13 @@ public class TitleScreen : MenuBase
             Debug.Log("Changed to GameplayState");
             GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
         }
+        StartCoroutine(Transitions.FadeOut(fog, 1f));
         SceneManager.LoadScene("MainGameScene");
     }
 
     public void GoToCredits()
     {
-        CreditsMenuActive();
+        StartCoroutine(CreditsMenuActive());
     }
+
 }

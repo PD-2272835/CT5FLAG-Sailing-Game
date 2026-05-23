@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
@@ -15,54 +17,56 @@ public class MenuBase : MonoBehaviour
     public Sprite AudioMute;
     public Sprite AudioUnmute;
 
-    protected Image fog;
+    protected float transitionDuration = 1f; // how much time a menu transition should take (this should be set by each menu manager)
+    [SerializeField] protected Image fog; //fading
 
-    protected virtual void MainMenuActive()  //Enables main menu for the respective scene
+    public void DisableAllMenusFunc()
     {
+        MainMenu.SetActive(false);
+        SettingsMenu.SetActive(false);
+        AudioMenu.SetActive(false);
+        LanguageMenu.SetActive(false);
+        ControlsMenu.SetActive(false);
+    }
+
+    public virtual IEnumerator DisableAllMenus()
+    {
+        if (fog != null) yield return StartCoroutine(Transitions.FadeOut(fog, transitionDuration));
+        DisableAllMenusFunc();
+        yield return null;
+    }
+
+    protected virtual IEnumerator MainMenuActive()  //Enables main menu for the respective scene
+    {
+        yield return StartCoroutine(DisableAllMenus());
         MainMenu.SetActive(true);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void SettingsMenuActive()   //Enables settings menu
+    protected virtual IEnumerator SettingsMenuActive()   //Enables settings menu
     {
-        MainMenu.SetActive(false);
+        yield return StartCoroutine(DisableAllMenus());
         SettingsMenu.SetActive(true);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void AudioMenuActive()    //Enables audio menu
+    protected virtual IEnumerator AudioMenuActive()    //Enables audio menu
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
+        yield return StartCoroutine(DisableAllMenus());
         AudioMenu.SetActive(true);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void LanguageMenuActive()     //Enables language menu
+    protected virtual IEnumerator LanguageMenuActive()     //Enables language menu
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
+        yield return StartCoroutine(DisableAllMenus());
         LanguageMenu.SetActive(true);
-        ControlsMenu.SetActive(false);
     }
 
-    protected virtual void ControlsMenuActive()   //Enables controls menu
+    protected virtual IEnumerator ControlsMenuActive()   //Enables controls menu
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
+        yield return StartCoroutine(DisableAllMenus());
         ControlsMenu.SetActive(true);
     }
 
-    protected virtual void ExitGame()
+    protected virtual IEnumerator ExitGame()
     {
         Debug.Log("ExitGame");
         Application.Quit();
@@ -70,24 +74,25 @@ public class MenuBase : MonoBehaviour
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #endif
+        yield return null;
     }
 
     public void GoToMainMenu()
     {
-        MainMenuActive();
+        StartCoroutine(MainMenuActive());
     }
 
     public void GoToSettings()
     {
-        SettingsMenuActive();
+        StartCoroutine(SettingsMenuActive());
     }
 
     public void GoToAudioMenu()
     {
-        AudioMenuActive();
+        StartCoroutine(AudioMenuActive());
     }
 
-    public void AudioToggle ()
+    public void AudioToggle()
     {
         if (AudioListener.volume > 0)
         {
@@ -103,7 +108,7 @@ public class MenuBase : MonoBehaviour
 
     public void GoToLanguages()
     {
-        LanguageMenuActive();
+        StartCoroutine(LanguageMenuActive());
     }
 
     public void SetLanguageEnglish()
@@ -119,11 +124,25 @@ public class MenuBase : MonoBehaviour
 
     public void GoToControls()
     {
-        ControlsMenuActive();
+        StartCoroutine(ControlsMenuActive());
     }
 
     public void Exit()
     {
-        ExitGame();
+        StartCoroutine(ExitGame());
+    }
+
+
+        
+    //start a menu transition
+    protected IEnumerator MenuTransition(float duration, Action func)
+    {
+        if (fog != null)
+        {
+            float halfDuration = duration / 2;
+            yield return StartCoroutine(Transitions.FadeOut(fog, halfDuration));
+            func();
+            yield return StartCoroutine(Transitions.FadeIn(fog, halfDuration));
+        }
     }
 }

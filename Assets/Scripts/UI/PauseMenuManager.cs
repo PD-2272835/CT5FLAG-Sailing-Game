@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -42,43 +44,49 @@ public class PauseMenuManager : MenuBase
         _pauseBackground.SetActive(false);
     }
 
-    protected override void MainMenuActive()
+    protected override IEnumerator MainMenuActive()
     {
         base.MainMenuActive();
         _pauseBackground.SetActive(true);
+        yield return null;
     }
 
-    protected override void SettingsMenuActive()
+    protected override IEnumerator SettingsMenuActive()
     {
         base.SettingsMenuActive();
         _pauseBackground.SetActive(true);
+        yield return null;
     }
 
-    protected override void AudioMenuActive()
+    protected override IEnumerator AudioMenuActive()
     {
         base.AudioMenuActive();
         _pauseBackground.SetActive(true);
+        yield return null;
     }
 
-    protected override void LanguageMenuActive()
+    protected override IEnumerator LanguageMenuActive()
     {
         base.LanguageMenuActive();
         _pauseBackground.SetActive(true);
+        yield return null;
     }
 
-    protected override void ControlsMenuActive()
+    protected override IEnumerator ControlsMenuActive()
     {
         base.ControlsMenuActive();
         _pauseBackground.SetActive(true);
+        yield return null;
     }
 
-    protected override void ExitGame()
+    protected override IEnumerator ExitGame()
     {
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
 
         SceneManager.LoadScene("TitleScreen");
+        yield return null;
     }
 
     public void PauseButton()

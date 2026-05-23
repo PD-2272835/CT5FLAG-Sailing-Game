@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public static class Transitions
 {
 
-    static float EaseInOutSine(float x) 
+    public static float EaseInOutSine(float x) 
     {
         return -(Mathf.Cos(Mathf.PI * x) - 1) / 2;
     }
@@ -16,8 +16,8 @@ public static class Transitions
     {
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
-            float progress = EaseInOutSine(time);
-            float t = Mathf.Lerp(0, 1, time);
+            float progress = EaseInOutSine(time/duration);
+            float t = Mathf.Lerp(0, 1, progress);
             obj.color = new Color(obj.color.r, obj.color.g, obj.color.b, t);
             yield return null;
         }
@@ -28,12 +28,13 @@ public static class Transitions
     {
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
-            float progress = EaseInOutSine(time);
-            float t = Mathf.Lerp(0, 1, time);
+            float progress = EaseInOutSine(time/duration);
+            float t = Mathf.Lerp(0, 1, progress);
             obj.color = new Color(obj.color.r, obj.color.g, obj.color.b, 1-t);
 
             yield return null;
         }
         obj.color = new Color(obj.color.r, obj.color.g, obj.color.b, 0f);
     }
+
 }
