@@ -18,8 +18,105 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 3312903512064
-    m_Localized: 
+  - m_Id: 4464429511991296
+    m_Localized: 'INICIO
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464440865972224
+    m_Localized: CONTROLES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464445630701568
+    m_Localized: AJUSTES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464448629628928
+    m_Localized: "CR\xC9DITOS"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464451574030336
+    m_Localized: SALIR AL ESCRITORIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4464461040574464
+    m_Localized: "Solo hay dos controles:\r\n\r\nPulsa \xABA\xBB para mover la nave
+      hacia la izquierda,\r\nPulsa \xABD\xBB para mover la nave hacia la derecha.\r\n\r\nSe
+      puede acceder a todos los botones del men\xFA haciendo clic con el rat\xF3n."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473027256377344
+    m_Localized: ENGLISH
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4473043366699008
+    m_Localized: "ESPA\xD1OL"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474607493963776
+    m_Localized: 'Artista de interfaz de usuario:
+
+      Alexandra Sharpe
+
+      
+
+      Artista
+      de recursos:
+
+      Cara Kelly
+
+      
+
+      Artista de entornos:
+
+      Finley
+      Child'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474609280737280
+    m_Localized: "Jefe t\xE9cnico:\r\nPeter Delap\r\n\r\n\r\nIngeniero jefe de UI
+      y UX:\r\nJamie Holgate\r\n\r\nDise\xF1adora:\r\nDaisy Plumb"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474610903932928
+    m_Localized: "M\xFAsica:\r\nM\xFAsica del men\xFA: \xABArriving At Shore\xBB
+      (versi\xF3n en bucle) de flowerheadmusic.itch.io\r\n\r\nM\xFAsica del juego:
+      \xABCursed Sea\xBB de alkakrab.itch.io\r\n\r\nEfectos de sonido:\r\nFilmCow
+      Royalty Free Sound Effects Library de filmcow.itch.io"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474612694900736
+    m_Localized: 'Desarrollado por ToasterCar
+
+      
+
+      Publicado por Port
+      In The Storm'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474614334873600
+    m_Localized: FIN DEL JUEGO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474616050343936
+    m_Localized: "SALIR AL MEN\xDA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474617698705408
+    m_Localized: EN PAUSA
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474619355455488
+    m_Localized: REANUDAR
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474620953485312
+    m_Localized: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474622408908800
+    m_Localized: IDIOMA
     m_Metadata:
       m_Items: []
   references:
