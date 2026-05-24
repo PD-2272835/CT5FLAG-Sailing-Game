@@ -1502,7 +1502,7 @@ GameObject:
   - component: {fileID: 212410214}
   m_Layer: 0
   m_Name: PauseMenuManagerGO
-  m_TagString: Untagged
+  m_TagString: MenuManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1524,10 +1524,10 @@ MonoBehaviour:
   AudioMenu: {fileID: 201324364}
   LanguageMenu: {fileID: 201324363}
   ControlsMenu: {fileID: 521410572}
-  AudioIcon: {fileID: 1334652982}
-  AudioMute: {fileID: -1784285903, guid: fa83e5c498495864fb4e955ab0ca39de, type: 3}
-  AudioUnmute: {fileID: -1785831918, guid: b15125f9e55cba54981783505195319f, type: 3}
-  VolumeSlider: {fileID: 774492799}
+  AudioIcon: {fileID: 1334652983}
+  AudioMute: {fileID: -1785831918, guid: b15125f9e55cba54981783505195319f, type: 3}
+  AudioUnmute: {fileID: -1784285903, guid: fa83e5c498495864fb4e955ab0ca39de, type: 3}
+  VolumeSlider: {fileID: 774492800}
   fog: {fileID: 0}
   _pauseBackground: {fileID: 1622799803}
 --- !u!4 &212410213
@@ -2111,11 +2111,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
---- !u!1 &774492799 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5867007146576837831, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+--- !u!114 &774492800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3764921827544528880, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
   m_PrefabInstance: {fileID: 201324362}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &830851436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2185,6 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f7f917640db294a81bf7ab0181413d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  _volumeSlider: {fileID: 0}
   _startingVolume: 2.5
 --- !u!4 &884193266
 Transform:
@@ -3024,11 +3031,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 102507008987402054, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
   m_PrefabInstance: {fileID: 201324362}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1334652982 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 913798551952349774, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+--- !u!114 &1334652983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6708260264856917542, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
   m_PrefabInstance: {fileID: 201324362}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!114 &1453314840
 MonoBehaviour:
   m_ObjectHideFlags: 0

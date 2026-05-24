@@ -7,6 +7,7 @@ TagManager:
   - DockCollider
   - Weather
   - TransitionFog
+  - MenuManager
   layers:
   - Default
   - TransparentFX

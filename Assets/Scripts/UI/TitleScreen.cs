@@ -19,6 +19,11 @@ public class TitleScreen : MenuBase
         StartCoroutine(Transitions.FadeIn(fog, 1f));
     }
 
+    public override void DisableAllMenusFunc()
+    {
+        base.DisableAllMenusFunc();
+    }
+
     public override IEnumerator DisableAllMenus()
     {
         yield return StartCoroutine (base.DisableAllMenus());
@@ -78,7 +83,7 @@ public class TitleScreen : MenuBase
             Debug.Log("Changed to GameplayState");
             GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
         }
-        AudioManager.Instance.GetPreviousVolume(AudioListener.volume);
+        //AudioManager.Instance.GetPreviousVolume(AudioListener.volume);
 
         StartCoroutine(LoadGame());
     }

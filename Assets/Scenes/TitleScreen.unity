@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 406101142}
   m_Layer: 0
   m_Name: TitleScreen script GO
-  m_TagString: Untagged
+  m_TagString: MenuManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1099,10 +1099,10 @@ MonoBehaviour:
   AudioMenu: {fileID: 1334183112}
   LanguageMenu: {fileID: 799207507}
   ControlsMenu: {fileID: 171489896}
-  AudioIcon: {fileID: 1741909991}
+  AudioIcon: {fileID: 1741909994}
   AudioMute: {fileID: -1785831918, guid: b15125f9e55cba54981783505195319f, type: 3}
   AudioUnmute: {fileID: -1784285903, guid: fa83e5c498495864fb4e955ab0ca39de, type: 3}
-  VolumeSlider: {fileID: 971261421}
+  VolumeSlider: {fileID: 971261423}
   fog: {fileID: 0}
   CreditsMenu: {fileID: 414219180}
   BackgroundMain: {fileID: 1120747090}
@@ -3632,6 +3632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f7f917640db294a81bf7ab0181413d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  _volumeSlider: {fileID: 0}
   _startingVolume: 2.5
 --- !u!4 &1329378929
 Transform:

@@ -14,15 +14,16 @@ public class MenuBase : MonoBehaviour
     public GameObject LanguageMenu;
     public GameObject ControlsMenu;
 
-    public GameObject AudioIcon;
+    public Image AudioIcon;
     public Sprite AudioMute;
     public Sprite AudioUnmute;
-    public GameObject VolumeSlider;
+    public Slider VolumeSlider;
 
     protected float transitionDuration = 1f; // how much time a menu transition should take (this should be set by each menu manager)
     [SerializeField] protected Image fog; //fading
 
-    public void DisableAllMenusFunc()
+
+    public virtual void DisableAllMenusFunc()
     {
         MainMenu.SetActive(false);
         SettingsMenu.SetActive(false);
@@ -137,14 +138,12 @@ public class MenuBase : MonoBehaviour
 
         if (AudioListener.volume > 0)
         {
-            AudioIcon.GetComponent<Image>().sprite = AudioMute;
-            VolumeSlider.GetComponent<Slider>().value = 0f;
+            AudioIcon.sprite = AudioMute;
             AudioManager.Instance.Mute();
         }
         else
         {
-            AudioIcon.GetComponent<Image>().sprite = AudioUnmute;
-            VolumeSlider.GetComponent<Slider>().value = 2.5f;
+            AudioIcon.sprite = AudioUnmute;
             AudioManager.Instance.Unmute();
         }
     }
