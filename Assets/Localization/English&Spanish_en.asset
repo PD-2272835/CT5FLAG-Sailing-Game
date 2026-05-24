@@ -135,6 +135,10 @@ MonoBehaviour:
     m_Localized: EXIT
     m_Metadata:
       m_Items: []
+  - m_Id: 4473267258646528
+    m_Localized: 'Score:'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
