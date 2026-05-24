@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Uranium
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 3447734614804973378, guid: c5ec9f54812ef0a45bcb0007236b9606, type: 3}
+  PickupSound: {fileID: 0}
+  DamageSound: {fileID: 0}

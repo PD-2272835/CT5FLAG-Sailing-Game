@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Fruit
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 363563937167324388, guid: 6b290a77eb97d414e84c0e1e7701a8e2, type: 3}
+  PickupSound: {fileID: 0}
+  DamageSound: {fileID: 0}

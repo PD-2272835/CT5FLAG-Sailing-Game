@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Books
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 5850680748479099797, guid: d58c398d34a8f11448a12e60273a00ab, type: 3}
+  PickupSound: {fileID: 0}
+  DamageSound: {fileID: 0}

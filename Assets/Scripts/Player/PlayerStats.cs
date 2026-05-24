@@ -4,14 +4,17 @@ public class PlayerStats : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _cargoScore = 50;
     [SerializeField] private Transform _cargoLocation;
+    [SerializeField] private AudioClip _playerDamageSound;
 
     //private GameObject _cargoInstance = null;
+    private AudioSource _playerAudio;
 
     public int Health = 3;
     public Cargo HeldCargo = null;
 
     private void Awake()
     {
+        _playerAudio = GetComponent<AudioSource>();
         Debug.Log($"Player has {Health} health on Awake");
     }
     public void TakeDamage()
@@ -20,8 +23,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
         Health--;
         Debug.Log($"Player now has {Health} health");
 
-        //UI should be notified by an event delegate from here that the UI can subscribe to
+        ///UI should be notified by an event delegate from here that the UI can subscribe to
         GameplayUI.Instance?.DamageTaken(Health);
+        _playerAudio.PlayOneShot(_playerDamageSound);
 
         if (Health <= 0)
         {
@@ -42,6 +46,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo.CargoCount = amount;
             Debug.Log($"Player now has {HeldCargo}, {HeldCargo.CargoCount}");
 
+            _playerAudio.PlayOneShot(HeldCargo.PickupSound);
             GameplayUI.Instance?.DisplayCargo(HeldCargo);
             ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
         }
@@ -68,6 +73,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
     public void CargoDamage()   // Called by OnTriggerEnter when colliding with valid obstacle
     {
         HeldCargo.TakeDamage();
+        
+        _playerAudio.PlayOneShot(HeldCargo.DamageSound);
 
         if (HeldCargo.CargoCount == 0)
         {

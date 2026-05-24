@@ -5,6 +5,9 @@ public class Cargo : ScriptableObject, IDamageable
 {
     private int cargoCount;
     public GameObject Prefab;
+    public AudioClip PickupSound;
+    public AudioClip DamageSound;
+
     public int CargoCount
     {
         get { return cargoCount; }

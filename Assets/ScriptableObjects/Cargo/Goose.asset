@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Goose
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 8157063450583098532, guid: ed7ef22d3ac3d2d418164de10360e06e, type: 3}
+  PickupSound: {fileID: 0}
+  DamageSound: {fileID: 0}

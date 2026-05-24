@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: Rat
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 7096797433051396215, guid: d4fd781fb97bb1c49a41a8ac9294baf9, type: 3}
+  PickupSound: {fileID: 0}
+  DamageSound: {fileID: 0}
