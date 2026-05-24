@@ -126,13 +126,13 @@ TextureImporter:
       name: Volume_Slider_Straight_0
       rect:
         serializedVersion: 2
-        x: 73
+        x: 78
         y: 85
-        width: 1567
+        width: 1562
         height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 29, y: 30, z: 37, w: 26}
       customData: 
       outline: []
       physicsShape: []
