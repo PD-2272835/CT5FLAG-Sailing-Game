@@ -292,7 +292,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -332,7 +332,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -349,6 +349,10 @@ PrefabInstance:
       value: GameplayUI 1
       objectReference: {fileID: 0}
     - target: {fileID: 538567140170162629, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 888620993879273414, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -568,6 +572,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2310004527442546011, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 475.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 2310004527442546011, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2366016227921326191, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -767,6 +779,18 @@ PrefabInstance:
     - target: {fileID: 3549024135689531725, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650321407992207816, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -112.0301
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650321407992207816, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650321407992207816, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3746045639033148114, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1020,6 +1044,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5813779481236394853, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5813779481236394853, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861898953081577104, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 443.9214
+      objectReference: {fileID: 0}
+    - target: {fileID: 5861898953081577104, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25.9215
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008109732767497229, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000019073
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008109732767497229, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -444
+      objectReference: {fileID: 0}
     - target: {fileID: 6031018620235769960, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1035,6 +1083,22 @@ PrefabInstance:
     - target: {fileID: 6498783759362937634, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561925189892902915, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 939.1687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561925189892902915, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 414.3046
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561925189892902915, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561925189892902915, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51
       objectReference: {fileID: 0}
     - target: {fileID: 6590684790850744492, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
@@ -1252,6 +1316,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 9046175180603375327, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046175180603375327, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8937000508133844877, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
@@ -1395,7 +1467,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1494,7 +1566,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1538,7 +1610,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 78.099976, y: -58.705994}
+  m_AnchoredPosition: {x: 78.099976, y: -57.371}
   m_SizeDelta: {x: -240.6973, y: -217.8223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &493719856
@@ -1677,7 +1749,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1722,7 +1794,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1762,7 +1834,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1886,7 +1958,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -1926,7 +1998,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2011,7 +2083,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2469,7 +2541,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2509,7 +2581,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2549,7 +2621,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2644,7 +2716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 78.099976, y: -58.705994}
+  m_AnchoredPosition: {x: 77.4, y: -57.371}
   m_SizeDelta: {x: -240.6973, y: -217.8223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1030253245
@@ -2783,7 +2855,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2838,7 +2910,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -2877,7 +2949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 78.099976, y: -58.705994}
+  m_AnchoredPosition: {x: 76.7, y: -56.262}
   m_SizeDelta: {x: -240.6973, y: -217.8223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1555483562
@@ -3016,7 +3088,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3193,7 +3265,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3233,7 +3305,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3347,7 +3419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 64.6, y: -51.1}
+  m_AnchoredPosition: {x: 62.3, y: -48.8}
   m_SizeDelta: {x: -191.58939, y: -139.6508}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1799105835
@@ -3486,7 +3558,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3530,7 +3602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 76.4, y: -58.706}
+  m_AnchoredPosition: {x: 77.3, y: -57.371}
   m_SizeDelta: {x: -217.5471, y: -217.8223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1930061303
@@ -3580,8 +3652,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3669,7 +3741,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3730,7 +3802,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3775,7 +3847,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
@@ -3894,7 +3966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 78.1, y: -58.706}
+  m_AnchoredPosition: {x: 78.1, y: -56.262}
   m_SizeDelta: {x: -240.6973, y: -217.8223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2138873930
@@ -4011,9 +4083,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Components.LocalizeStringEvent
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:4dd58905c70e62f4b88580d882a7d433
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 4474616050343936
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -4033,7 +4105,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
   references:
     version: 2
     RefIds: []
