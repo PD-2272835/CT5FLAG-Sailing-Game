@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class GameplayUI : MonoBehaviour
     [SerializeField] private GameObject _gameOverBackground;
     [SerializeField] private GameObject _displayedHealth;
     [SerializeField] private GameObject _displayedCargo;
+    [SerializeField] private GameObject _displayedScore;
 
     [Header("Health Sprites")]
     [SerializeField] private Sprite _heartFull;
@@ -98,6 +100,11 @@ public class GameplayUI : MonoBehaviour
         }
 
         _displayedCargo.GetComponent<Image>().sprite = spriteRef;
+    }
+
+    public void DisplayScore(int score)
+    {
+        _displayedScore.GetComponent<TextMeshProUGUI>().text = score.ToString();
     }
 
     public void GameOver()

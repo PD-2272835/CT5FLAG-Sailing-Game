@@ -61,6 +61,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo = null;
 
             GameplayUI.Instance?.DisplayCargo(null);
+            GameplayUI.Instance?.DisplayScore(GameStateManager.Instance.GetScore());
+
             ///Destroy(_cargoInstance.gameObject);
             ///_cargoInstance = null;
         }

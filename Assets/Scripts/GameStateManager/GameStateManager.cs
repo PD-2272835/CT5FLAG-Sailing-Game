@@ -117,6 +117,12 @@ public class GameStateManager : MonoBehaviour
         Gameplay.CurrentScore += score;
     }
 
+    //Get score
+    public int GetScore()
+    {
+        return Gameplay.CurrentScore;
+    }
+
     //ResetScore
     public void ResetScore()
     {
