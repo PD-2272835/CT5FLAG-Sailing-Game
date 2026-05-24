@@ -405,7 +405,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -516,6 +516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   _cargoScore: 50
   _cargoLocation: {fileID: 0}
+  _playerDamageSound: {fileID: 8300000, guid: d8151cf284a04a64ab614292e05b6a33, type: 3}
   Health: 3
   HeldCargo: {fileID: 0}
 --- !u!1001 &1745027003960005149
