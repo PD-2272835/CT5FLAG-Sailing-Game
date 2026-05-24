@@ -39,7 +39,7 @@ public class SplashSequence : MonoBehaviour
         {
 
             //https://easings.net/
-            float progress = 1 - Mathf.Pow(1 - time, 5); //easeOutQuint
+            float progress = 1 - Mathf.Pow(1 - time/duration, 5); //easeOutQuint
             //float progress = Mathf.Sqrt(1 - Mathf.Pow(t - 1, 2)); //easeOutCirc
             //float progress = 1 - Mathf.Pow(1 - time, 3); //ease out cubic
 

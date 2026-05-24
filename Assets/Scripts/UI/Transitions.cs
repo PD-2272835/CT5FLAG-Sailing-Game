@@ -14,6 +14,7 @@ public static class Transitions
 
     public static IEnumerator FadeOut(Image obj, float duration)
     {
+        obj.raycastTarget = true;
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
             float progress = EaseInOutSine(time/duration);
@@ -26,6 +27,7 @@ public static class Transitions
 
     static public IEnumerator FadeIn(Image obj, float duration)
     {
+        obj.raycastTarget = false;
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
             float progress = EaseInOutSine(time/duration);
