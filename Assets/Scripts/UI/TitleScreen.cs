@@ -67,7 +67,12 @@ public class TitleScreen : MenuBase
             Debug.Log("Changed to GameplayState");
             GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
         }
-        StartCoroutine(Transitions.FadeOut(fog, 1f));
+        StartCoroutine(LoadGame());
+    }
+
+    private IEnumerator LoadGame()
+    {
+        yield return StartCoroutine(Transitions.FadeOut(fog, 2.3f));
         SceneManager.LoadScene("MainGameScene");
     }
 
