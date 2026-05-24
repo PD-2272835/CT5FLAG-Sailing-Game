@@ -1556,9 +1556,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: d451d5dd8923bae409532836b39e2d81, type: 3}
+  m_Resource: {fileID: 8300000, guid: 02d9a948f830f1845a5229b6220c3ec3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2812,6 +2812,7 @@ MonoBehaviour:
   _gameOverBackground: {fileID: 18691210}
   _displayedHealth: {fileID: 1983286813}
   _displayedCargo: {fileID: 1699226753}
+  _displayedScore: {fileID: 0}
   _heartFull: {fileID: 1709894935, guid: 1532ca892d553484faba941c221f63d0, type: 3}
   _heartEmpty: {fileID: 316785047, guid: eae935ab71fbd79459b1c7dcadf22d49, type: 3}
   _booksSprite: {fileID: 21300000, guid: 67c2c11ff75ab2848b664d59e1f240b1, type: 3}
