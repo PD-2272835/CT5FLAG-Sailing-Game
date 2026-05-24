@@ -63,31 +63,41 @@ public class GameplayUI : MonoBehaviour
 
     public void DisplayCargo(Cargo heldCargo)   //Called from PlayerStats to show current cargo
     {
-        Sprite spriteRef = _displayedCargo.GetComponent<Image>().sprite;
-        switch (heldCargo.name)
+        Sprite spriteRef;
+
+        if (heldCargo == null)
         {
-            case "Books":
-                spriteRef = _booksSprite;
-                break;
-            case "Bottles":
-                spriteRef = _bottlesSprite;
-                break;
-            case "Fruit":
-                spriteRef = _fruitSprite;
-                break;
-            case "Goose":
-                spriteRef = _gooseSprite;
-                break;
-            case "Rat":
-                spriteRef = _ratSprite;
-                break;
-            case "Uranium":
-                spriteRef = _uraniumSprite;
-                break;
-            case null:
-                spriteRef = null;
-                break;
+            spriteRef = null;
         }
+        else
+        {
+            switch (heldCargo.name)
+            {
+                case "Books":
+                    spriteRef = _booksSprite;
+                    break;
+                case "Bottles":
+                    spriteRef = _bottlesSprite;
+                    break;
+                case "Fruit":
+                    spriteRef = _fruitSprite;
+                    break;
+                case "Goose":
+                    spriteRef = _gooseSprite;
+                    break;
+                case "Rat":
+                    spriteRef = _ratSprite;
+                    break;
+                case "Uranium":
+                    spriteRef = _uraniumSprite;
+                    break;
+                default:    ///Prevents error for unassigned local variable
+                    spriteRef = null;
+                    break;
+            }
+        }
+
+        _displayedCargo.GetComponent<Image>().sprite = spriteRef;
     }
 
     public void GameOver()
