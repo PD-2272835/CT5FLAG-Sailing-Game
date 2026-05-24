@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bottles
   m_EditorClassIdentifier: Assembly-CSharp::Cargo
   Prefab: {fileID: 8182699332815525612, guid: cfbcd57468be96b40964eadbd0f83b41, type: 3}
-  PickupSound: {fileID: 0}
-  DamageSound: {fileID: 0}
+  PickupSound: {fileID: 8300000, guid: fc144741c3a15334f91c1cf82aaf80fe, type: 3}
+  DamageSound: {fileID: 8300000, guid: e09c5dd777de1fd47af3706635b8576f, type: 3}
