@@ -27,7 +27,7 @@ public class PauseMenuManager : MenuBase
         {
             if (gamePauseState == true)
             {
-                MainMenuActive();
+                StartCoroutine(MainMenuActive());
             }
             else
             {
@@ -38,45 +38,41 @@ public class PauseMenuManager : MenuBase
 
     private void CloseMenus()
     {
-        MainMenu.SetActive(false);
-        SettingsMenu.SetActive(false);
-        AudioMenu.SetActive(false);
-        LanguageMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
+        base.DisableAllMenusFunc();
         _pauseBackground.SetActive(false);
     }
 
     protected override IEnumerator MainMenuActive()
     {
-        base.MainMenuActive();
+        yield return StartCoroutine(base.MainMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
     }
 
     protected override IEnumerator SettingsMenuActive()
     {
-        base.SettingsMenuActive();
+        StartCoroutine(base.SettingsMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
     }
 
     protected override IEnumerator AudioMenuActive()
     {
-        base.AudioMenuActive();
+        StartCoroutine(base.AudioMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
     }
 
     protected override IEnumerator LanguageMenuActive()
     {
-        base.LanguageMenuActive();
+        StartCoroutine(base.LanguageMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
     }
 
     protected override IEnumerator ControlsMenuActive()
     {
-        base.ControlsMenuActive();
+        StartCoroutine(base.ControlsMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
     }

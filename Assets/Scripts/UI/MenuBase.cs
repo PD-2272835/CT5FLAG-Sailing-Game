@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.SceneManagement;
@@ -38,32 +39,32 @@ public class MenuBase : MonoBehaviour
 
     protected virtual IEnumerator MainMenuActive()  //Enables main menu for the respective scene
     {
-        yield return StartCoroutine(DisableAllMenus());
         MainMenu.SetActive(true);
+        yield return null;
     }
 
     protected virtual IEnumerator SettingsMenuActive()   //Enables settings menu
     {
-        yield return StartCoroutine(DisableAllMenus());
         SettingsMenu.SetActive(true);
+        yield return null;
     }
 
     protected virtual IEnumerator AudioMenuActive()    //Enables audio menu
     {
-        yield return StartCoroutine(DisableAllMenus());
         AudioMenu.SetActive(true);
+        yield return null;
     }
 
     protected virtual IEnumerator LanguageMenuActive()     //Enables language menu
     {
-        yield return StartCoroutine(DisableAllMenus());
         LanguageMenu.SetActive(true);
+        yield return null;
     }
 
     protected virtual IEnumerator ControlsMenuActive()   //Enables controls menu
     {
-        yield return StartCoroutine(DisableAllMenus());
         ControlsMenu.SetActive(true);
+        yield return null;
     }
 
     protected virtual IEnumerator ExitGame()
@@ -89,6 +90,7 @@ public class MenuBase : MonoBehaviour
 
     public void GoToAudioMenu()
     {
+        DisableAllMenusFunc();
         StartCoroutine(AudioMenuActive());
     }
 
@@ -108,6 +110,7 @@ public class MenuBase : MonoBehaviour
 
     public void GoToLanguages()
     {
+        DisableAllMenusFunc();
         StartCoroutine(LanguageMenuActive());
     }
 

@@ -31,8 +31,8 @@ public class TitleScreen : MenuBase
     protected override IEnumerator MainMenuActive()
     {
         yield return StartCoroutine(DisableAllMenus());
-        BackgroundMain.SetActive(true);
         yield return StartCoroutine(base.MainMenuActive());
+        BackgroundMain.SetActive(true);
         yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
     }
 
