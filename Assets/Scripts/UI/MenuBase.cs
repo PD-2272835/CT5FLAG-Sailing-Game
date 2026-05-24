@@ -80,21 +80,39 @@ public class MenuBase : MonoBehaviour
         yield return null;
     }
 
-    public void GoToMainMenu()
+    public virtual void GoToMainMenu()
     {
         StartCoroutine(MainMenuActive());
     }
 
-    public void GoToSettings()
+    public virtual void GoToSettings()
     {
         StartCoroutine(SettingsMenuActive());
     }
 
-    public void GoToAudioMenu()
+    public virtual void GoToAudioMenu()
     {
         DisableAllMenusFunc();
         StartCoroutine(AudioMenuActive());
     }
+
+    public virtual void GoToLanguages()
+    {
+        DisableAllMenusFunc();
+        StartCoroutine(LanguageMenuActive());
+    }
+
+    public virtual void GoToControls()
+    {
+        StartCoroutine(ControlsMenuActive());
+    }
+
+    public virtual void Exit()
+    {
+        StartCoroutine(ExitGame());
+    }
+
+
 
     public void AudioToggle()
     {
@@ -112,12 +130,6 @@ public class MenuBase : MonoBehaviour
         }
     }
 
-    public void GoToLanguages()
-    {
-        DisableAllMenusFunc();
-        StartCoroutine(LanguageMenuActive());
-    }
-
     public void SetLanguageEnglish()
     {
         Debug.Log("Changed locale to English");
@@ -129,27 +141,4 @@ public class MenuBase : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
     }
 
-    public void GoToControls()
-    {
-        StartCoroutine(ControlsMenuActive());
-    }
-
-    public void Exit()
-    {
-        StartCoroutine(ExitGame());
-    }
-
-
-        
-    //start a menu transition
-    protected IEnumerator MenuTransition(float duration, Action func)
-    {
-        if (fog != null)
-        {
-            float halfDuration = duration / 2;
-            yield return StartCoroutine(Transitions.FadeOut(fog, halfDuration));
-            func();
-            yield return StartCoroutine(Transitions.FadeIn(fog, halfDuration));
-        }
-    }
 }

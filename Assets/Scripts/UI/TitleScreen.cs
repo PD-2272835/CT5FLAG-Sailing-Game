@@ -60,6 +60,13 @@ public class TitleScreen : MenuBase
         yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
     }
 
+    public void GoToSettingsNoTransition()
+    {
+        base.DisableAllMenusFunc();
+        StartCoroutine(base.SettingsMenuActive());
+    }
+
+
     public void StartButton()
     {
         if (GameStateManager.Instance)
