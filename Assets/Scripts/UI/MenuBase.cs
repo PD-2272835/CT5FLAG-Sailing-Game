@@ -69,6 +69,7 @@ public class MenuBase : MonoBehaviour
 
     protected virtual IEnumerator ExitGame()
     {
+        StartCoroutine(Transitions.FadeOut(fog, 2f));
         Debug.Log("ExitGame");
         Application.Quit();
 

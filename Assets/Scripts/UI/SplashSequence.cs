@@ -62,7 +62,6 @@ public class SplashSequence : MonoBehaviour
         }
         else
         {
-            yield return StartCoroutine(Transitions.FadeOut(fog, 1f));
             Debug.Log(SceneManager.GetSceneByName("TitleScreen"));
             SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
         }
