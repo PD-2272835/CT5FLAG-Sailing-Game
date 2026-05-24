@@ -740,6 +740,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030830294595486815, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.6471863
+      objectReference: {fileID: 0}
     - target: {fileID: 3143070906608773721, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -819,6 +823,14 @@ PrefabInstance:
     - target: {fileID: 3746045639033148114, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764921827544528880, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_Value
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3764921827544528880, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+      propertyPath: m_MaxValue
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3764921827544528880, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -1508,6 +1520,7 @@ MonoBehaviour:
   AudioIcon: {fileID: 1334652982}
   AudioMute: {fileID: -1784285903, guid: fa83e5c498495864fb4e955ab0ca39de, type: 3}
   AudioUnmute: {fileID: -1785831918, guid: b15125f9e55cba54981783505195319f, type: 3}
+  VolumeSlider: {fileID: 774492799}
   fog: {fileID: 0}
   _pauseBackground: {fileID: 1622799803}
 --- !u!4 &212410213
@@ -1962,6 +1975,11 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1 &774492799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5867007146576837831, guid: d7f0490e19ec2804a958e5b71969688b, type: 3}
+  m_PrefabInstance: {fileID: 201324362}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &830851436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2031,7 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f7f917640db294a81bf7ab0181413d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  Muted: 0
+  _startingVolume: 2.5
 --- !u!4 &884193266
 Transform:
   m_ObjectHideFlags: 0

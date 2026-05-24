@@ -17,6 +17,7 @@ public class MenuBase : MonoBehaviour
     public GameObject AudioIcon;
     public Sprite AudioMute;
     public Sprite AudioUnmute;
+    public GameObject VolumeSlider;
 
     protected float transitionDuration = 1f; // how much time a menu transition should take (this should be set by each menu manager)
     [SerializeField] protected Image fog; //fading
@@ -100,11 +101,13 @@ public class MenuBase : MonoBehaviour
         if (AudioListener.volume > 0)
         {
             AudioIcon.GetComponent<Image>().sprite = AudioMute;
+            VolumeSlider.GetComponent<Slider>().value = 0f;
             AudioManager.Instance.Mute();
         }
         else
         {
             AudioIcon.GetComponent<Image>().sprite = AudioUnmute;
+            VolumeSlider.GetComponent<Slider>().value = 2.5f;
             AudioManager.Instance.Unmute();
         }
     }

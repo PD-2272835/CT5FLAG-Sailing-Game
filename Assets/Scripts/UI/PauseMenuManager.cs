@@ -44,6 +44,7 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator MainMenuActive()
     {
+        base.DisableAllMenusFunc(); ///Does pause menu also need the menu transitions?
         yield return StartCoroutine(base.MainMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
@@ -51,6 +52,7 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator SettingsMenuActive()
     {
+        base.DisableAllMenusFunc();
         StartCoroutine(base.SettingsMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
@@ -58,6 +60,7 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator AudioMenuActive()
     {
+        base.DisableAllMenusFunc();
         StartCoroutine(base.AudioMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
@@ -65,6 +68,7 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator LanguageMenuActive()
     {
+        base.DisableAllMenusFunc();
         StartCoroutine(base.LanguageMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
@@ -72,6 +76,7 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator ControlsMenuActive()
     {
+        base.DisableAllMenusFunc();
         StartCoroutine(base.ControlsMenuActive());
         _pauseBackground.SetActive(true);
         yield return null;
@@ -82,6 +87,7 @@ public class PauseMenuManager : MenuBase
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
+        AudioManager.Instance.GetPreviousVolume(AudioListener.volume);
 
         SceneManager.LoadScene("TitleScreen");
         yield return null;
