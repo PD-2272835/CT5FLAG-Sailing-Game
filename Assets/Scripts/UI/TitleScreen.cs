@@ -62,6 +62,8 @@ public class TitleScreen : MenuBase
 
     public void GoToSettingsNoTransition()
     {
+        PlayUISound();
+
         base.DisableAllMenusFunc();
         StartCoroutine(base.SettingsMenuActive());
     }
@@ -69,6 +71,8 @@ public class TitleScreen : MenuBase
 
     public void StartButton()
     {
+        PlayUISound();
+
         if (GameStateManager.Instance)
         {
             Debug.Log("Changed to GameplayState");
@@ -87,6 +91,8 @@ public class TitleScreen : MenuBase
 
     public void GoToCredits()
     {
+        PlayUISound();
+
         StartCoroutine(CreditsMenuActive());
     }
 

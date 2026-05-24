@@ -84,6 +84,8 @@ public class PauseMenuManager : MenuBase
 
     protected override IEnumerator ExitGame()
     {
+        PlayUISound();
+
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
@@ -95,17 +97,22 @@ public class PauseMenuManager : MenuBase
 
     public void PauseButton()
     {
+        PlayUISound();
+
         GameStateManager.Instance.SetPause();
     }
 
     public void Resume()
     {
+        PlayUISound();
+
         CloseMenus();
         GameStateManager.Instance.SetPause();
     }
 
     public void Restart()
     {
+        PlayUISound();
 
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();

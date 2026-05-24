@@ -31,6 +31,11 @@ public class MenuBase : MonoBehaviour
         ControlsMenu.SetActive(false);
     }
 
+    public void PlayUISound()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
     public virtual IEnumerator DisableAllMenus()
     {
         if (fog != null) yield return StartCoroutine(Transitions.FadeOut(fog, transitionDuration));
@@ -82,33 +87,45 @@ public class MenuBase : MonoBehaviour
 
     public virtual void GoToMainMenu()
     {
+        PlayUISound();
+
         StartCoroutine(MainMenuActive());
     }
 
     public virtual void GoToSettings()
     {
+        PlayUISound();
+
         StartCoroutine(SettingsMenuActive());
     }
 
     public virtual void GoToAudioMenu()
     {
+        PlayUISound();
+
         DisableAllMenusFunc();
         StartCoroutine(AudioMenuActive());
     }
 
     public virtual void GoToLanguages()
     {
+        PlayUISound();
+
         DisableAllMenusFunc();
         StartCoroutine(LanguageMenuActive());
     }
 
     public virtual void GoToControls()
     {
+        PlayUISound();
+
         StartCoroutine(ControlsMenuActive());
     }
 
     public virtual void Exit()
     {
+        PlayUISound();
+
         StartCoroutine(ExitGame());
     }
 
@@ -116,6 +133,8 @@ public class MenuBase : MonoBehaviour
 
     public void AudioToggle()
     {
+        PlayUISound();
+
         if (AudioListener.volume > 0)
         {
             AudioIcon.GetComponent<Image>().sprite = AudioMute;
@@ -132,13 +151,17 @@ public class MenuBase : MonoBehaviour
 
     public void SetLanguageEnglish()
     {
-        Debug.Log("Changed locale to English");
+        PlayUISound();
+
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("en");
+        Debug.Log("Changed locale to English");
     }
     public void SetLanguageSpanish()
     {
-        Debug.Log("Changed locale to Spanish");
+        PlayUISound();
+
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale("es");
+        Debug.Log("Changed locale to Spanish");
     }
 
 }
