@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &706955985231452725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329113194802588522}
+  - component: {fileID: 1064339231834187323}
+  m_Layer: 0
+  m_Name: GameplayUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329113194802588522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706955985231452725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 377.18747, y: 64.0554, z: -352.8519}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064339231834187323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706955985231452725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16379acc721837c4ba795440350a6a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameplayUI
+  _gameOverMenu: {fileID: 0}
+  _gameOverBackground: {fileID: 0}
+  _displayedHealth: {fileID: 0}
+  _displayedCargo: {fileID: 0}
+  _displayedScore: {fileID: 0}
+  _heartFull: {fileID: 1709894935, guid: 1532ca892d553484faba941c221f63d0, type: 3}
+  _heartEmpty: {fileID: 316785047, guid: eae935ab71fbd79459b1c7dcadf22d49, type: 3}
+  _booksSprite: {fileID: 21300000, guid: 67c2c11ff75ab2848b664d59e1f240b1, type: 3}
+  _bottlesSprite: {fileID: 21300000, guid: 414127c8ed700c34687d9415d299326f, type: 3}
+  _fruitSprite: {fileID: 21300000, guid: f2c9a3e570912b24eb635bac7e35f5e7, type: 3}
+  _gooseSprite: {fileID: 21300000, guid: dc27e1c1a0cdac942b5fd8a1c82cb476, type: 3}
+  _ratSprite: {fileID: 21300000, guid: 5fba4c97732c6b445b6d130eb3a32b82, type: 3}
+  _uraniumSprite: {fileID: 21300000, guid: 53b8508296b77544ca72f327a674b2db, type: 3}
