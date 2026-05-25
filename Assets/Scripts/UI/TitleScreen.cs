@@ -83,7 +83,6 @@ public class TitleScreen : MenuBase
             Debug.Log("Changed to GameplayState");
             GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
         }
-        //AudioManager.Instance.GetPreviousVolume(AudioListener.volume);
 
         StartCoroutine(LoadGame());
     }

@@ -22,6 +22,30 @@ public class MenuBase : MonoBehaviour
     protected float transitionDuration = 1f; // how much time a menu transition should take (this should be set by each menu manager)
     [SerializeField] protected Image fog; //fading
 
+    private void OnEnable()
+    {
+        AudioManager.OnMute += OnMute;
+    }
+    private void OnDisable()
+    {
+        AudioManager.OnMute -= OnMute;
+    }
+
+
+    protected void OnMute(bool mute)
+    {
+        if (mute)
+        {
+            AudioIcon.sprite = AudioMute;
+        }
+        else
+        {
+            AudioIcon.sprite = AudioUnmute;
+        }
+        
+    }
+
+
 
     public virtual void DisableAllMenusFunc()
     {
@@ -138,12 +162,10 @@ public class MenuBase : MonoBehaviour
 
         if (AudioListener.volume > 0)
         {
-            AudioIcon.sprite = AudioMute;
             AudioManager.Instance.Mute();
         }
         else
         {
-            AudioIcon.sprite = AudioUnmute;
             AudioManager.Instance.Unmute();
         }
     }

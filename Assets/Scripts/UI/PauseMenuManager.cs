@@ -14,10 +14,12 @@ public class PauseMenuManager : MenuBase
 
     private void OnEnable()
     {
+        AudioManager.OnMute += OnMute;
         GameStateManager.OnPauseGame += OnPause;
     }
     private void OnDisable()
     {
+        AudioManager.OnMute -= OnMute;
         GameStateManager.OnPauseGame -= OnPause;
     }
 

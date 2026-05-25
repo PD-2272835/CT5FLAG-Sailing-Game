@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
-using TMPro;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
@@ -10,9 +9,11 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager Instance { get; private set; }
 
+    public static event Action<bool> OnMute;
+
     [SerializeField] private float _startingVolume = 2.5f;
     private static float _trackedVolume;
-    private static bool _isMuted;
+    private static bool _isMuted = false;
 
     private void Start()
     {
@@ -49,12 +50,32 @@ public class AudioManager : MonoBehaviour
     {
         _volumeSlider = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuBase>().VolumeSlider;
         _volumeSlider.onValueChanged.AddListener(ChangeVolume);
-        _volumeSlider.value = _trackedVolume;
+
+        if (_isMuted)
+        {
+            Mute();
+        }
+        else
+        {
+            Unmute();
+        }
     }
 
     public void ChangeVolume(float value)
     {
-        if (value > 0) _trackedVolume = value;
+        if (value > 0)
+        {
+            _trackedVolume = value;
+            if (_isMuted)
+            {
+                Unmute();
+                
+            }
+        } else if(!_isMuted)
+        {
+            Mute();
+        }
+
         AudioListener.volume = value;
     }
 
@@ -63,10 +84,12 @@ public class AudioManager : MonoBehaviour
     {
         _isMuted = true;
         _volumeSlider.value = 0f; //set volume slider value to trigger change volume
+        OnMute.Invoke(true);
     }
     public void Unmute()
     {
         _isMuted = false;
         _volumeSlider.value = _trackedVolume; //set volume slider value to trigger change volume
+        OnMute.Invoke(false);
     }
 }
