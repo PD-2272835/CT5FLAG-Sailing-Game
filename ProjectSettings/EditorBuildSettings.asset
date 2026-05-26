@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SplashScreenScene.unity
     guid: 0ec82d4dc067d704db1a12dc903acfa4
   - enabled: 1
+    path: Assets/Scenes/TutorialScene.unity
+    guid: c7c6c164a0cc51642b1442bce5718428
+  - enabled: 1
     path: Assets/Scenes/TitleScreen.unity
     guid: 11511fe0af7018d449b9f15b0260a9d1
   - enabled: 1
