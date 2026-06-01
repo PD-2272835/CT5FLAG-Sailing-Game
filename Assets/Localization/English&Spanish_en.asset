@@ -139,6 +139,10 @@ MonoBehaviour:
     m_Localized: 'Score:'
     m_Metadata:
       m_Items: []
+  - m_Id: 4473271251623936
+    m_Localized: TUTORIAL
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
