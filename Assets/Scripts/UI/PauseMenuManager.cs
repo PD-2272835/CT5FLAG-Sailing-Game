@@ -10,8 +10,8 @@ public class PauseMenuManager : MenuBase
 
     private void Awake()
     {
-        fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
-        StartCoroutine(Transitions.FadeIn(fog, 1f));
+        Fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
+        StartCoroutine(Transitions.FadeIn(Fog, 1f));
         CloseMenus();
     }
 
@@ -94,7 +94,7 @@ public class PauseMenuManager : MenuBase
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
-        yield return StartCoroutine(Transitions.FadeOut(fog, 2f));
+        yield return StartCoroutine(Transitions.FadeOut(Fog, 2f));
         SceneManager.LoadScene("TitleScreen");
         yield return null;
     }
@@ -128,7 +128,7 @@ public class PauseMenuManager : MenuBase
         GameStateManager.Instance.SetPause();
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
 
-        yield return StartCoroutine(Transitions.FadeOut(fog, 1f));
+        yield return StartCoroutine(Transitions.FadeOut(Fog, 1f));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         yield return null;
     }

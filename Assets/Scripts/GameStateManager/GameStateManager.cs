@@ -16,6 +16,7 @@ public class GameStateManager : MonoBehaviour
     public MenuState Menu = new MenuState();
     public GameplayState Gameplay = new GameplayState();
     public GameOverState GameOver = new GameOverState();
+    public TutorialState Tutorial = new TutorialState();
         
     public float InitialPlayerForwardSpeed = 10f;
     public float PlayerForwardSpeed = 0; //this gets overriden, the initial value should be set in gameplaystate

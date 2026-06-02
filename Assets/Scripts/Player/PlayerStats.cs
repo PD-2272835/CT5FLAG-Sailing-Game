@@ -30,7 +30,14 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (Health <= 0)
         {
             gameObject.transform.Find("new pirate ship 5 fbx").gameObject.SetActive(false);
-            GameplayUI.Instance?.GameOver();
+            if (GameplayUITutorial.Instance)    //Only call GameOver if the player does not die in the tutorials
+            {
+                GameplayUITutorial.Instance.TutorialEnd();
+            }
+            else
+            {
+                GameplayUI.Instance?.GameOver();
+            }
         }
     }
 

@@ -20,7 +20,7 @@ public class MenuBase : MonoBehaviour
     public Slider VolumeSlider;
 
     protected float transitionDuration = 1f; // how much time a menu transition should take (this should be set by each menu manager)
-    [SerializeField] protected Image fog; //fading
+    public Image Fog; //fading
 
     private void OnEnable()
     {
@@ -63,7 +63,7 @@ public class MenuBase : MonoBehaviour
 
     public virtual IEnumerator DisableAllMenus()
     {
-        if (fog != null) yield return StartCoroutine(Transitions.FadeOut(fog, transitionDuration));
+        if (Fog != null) yield return StartCoroutine(Transitions.FadeOut(Fog, transitionDuration));
         DisableAllMenusFunc();
         yield return null;
     }
@@ -100,7 +100,7 @@ public class MenuBase : MonoBehaviour
 
     protected virtual IEnumerator ExitGame()
     {
-        yield return StartCoroutine(Transitions.FadeOut(fog, 2f));
+        yield return StartCoroutine(Transitions.FadeOut(Fog, 2f));
         Debug.Log("ExitGame");
         Application.Quit();
 

@@ -6,8 +6,8 @@ public class GameplayUI : MonoBehaviour
 {
     public static GameplayUI Instance { get; private set; }
 
-    [SerializeField] private GameObject _gameOverMenu;
-    [SerializeField] private GameObject _gameOverBackground;
+    [SerializeField] public GameObject _gameOverMenu;
+    [SerializeField] public GameObject _gameOverBackground;
     [SerializeField] private GameObject _displayedHealth;
     [SerializeField] private GameObject _displayedCargo;
     [SerializeField] private GameObject _displayedScore;

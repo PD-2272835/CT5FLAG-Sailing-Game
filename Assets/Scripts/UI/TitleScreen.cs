@@ -12,11 +12,11 @@ public class TitleScreen : MenuBase
 
     private void Awake()
     {
-        fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
-        Debug.Log(fog);
+        Fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
+        Debug.Log(Fog);
         transitionDuration = 0.5f;
         MainMenu.SetActive(true);
-        StartCoroutine(Transitions.FadeIn(fog, 1f));
+        StartCoroutine(Transitions.FadeIn(Fog, 1f));
     }
 
     public override void DisableAllMenusFunc()
@@ -38,7 +38,7 @@ public class TitleScreen : MenuBase
         yield return StartCoroutine(DisableAllMenus());
         yield return StartCoroutine(base.MainMenuActive());
         BackgroundMain.SetActive(true);
-        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+        yield return StartCoroutine(Transitions.FadeIn(Fog, transitionDuration));
     }
 
     protected override IEnumerator SettingsMenuActive()
@@ -46,7 +46,7 @@ public class TitleScreen : MenuBase
         yield return StartCoroutine(DisableAllMenus());
         BackgroundMain.SetActive(true);
         yield return StartCoroutine(base.SettingsMenuActive());
-        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+        yield return StartCoroutine(Transitions.FadeIn(Fog, transitionDuration));
     }
 
     protected override IEnumerator ControlsMenuActive()
@@ -54,7 +54,7 @@ public class TitleScreen : MenuBase
         yield return StartCoroutine(DisableAllMenus());
         BackgroundCredCtrls.SetActive(true);
         yield return StartCoroutine(base.ControlsMenuActive());
-        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+        yield return StartCoroutine(Transitions.FadeIn(Fog, transitionDuration));
     }
 
     private IEnumerator CreditsMenuActive()  //Enables credits menu
@@ -62,7 +62,7 @@ public class TitleScreen : MenuBase
         yield return StartCoroutine(DisableAllMenus());
         CreditsMenu.SetActive(true);
         BackgroundCredCtrls.SetActive(true);
-        yield return StartCoroutine(Transitions.FadeIn(fog, transitionDuration));
+        yield return StartCoroutine(Transitions.FadeIn(Fog, transitionDuration));
     }
 
     public void GoToSettingsNoTransition()
@@ -93,8 +93,8 @@ public class TitleScreen : MenuBase
 
         if (GameStateManager.Instance)
         {
-            Debug.Log("Changed to GameplayState");   ///state for tutorial?
-            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+            Debug.Log("Changed to TutorialState");
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Tutorial);
         }
 
         StartCoroutine(LoadGame("TutorialScene"));
@@ -102,7 +102,7 @@ public class TitleScreen : MenuBase
 
     private IEnumerator LoadGame(string sceneName)
     {
-        yield return StartCoroutine(Transitions.FadeOut(fog, 2.3f));
+        yield return StartCoroutine(Transitions.FadeOut(Fog, 2.3f));
         SceneManager.LoadScene(sceneName);
     }
 
