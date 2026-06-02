@@ -160,6 +160,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
   m_PrefabInstance: {fileID: 2106248318}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &515174896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1075627065119195804, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
+  m_PrefabInstance: {fileID: 8032356994034615172}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &521410572 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8858089285482943798, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
@@ -771,6 +776,10 @@ PrefabInstance:
       propertyPath: _displayedCargo
       value: 
       objectReference: {fileID: 1699226753}
+    - target: {fileID: 1064339231834187323, guid: db5f1513172f9764289cf6941140bc43, type: 3}
+      propertyPath: _displayedScore
+      value: 
+      objectReference: {fileID: 515174896}
     - target: {fileID: 1064339231834187323, guid: db5f1513172f9764289cf6941140bc43, type: 3}
       propertyPath: _displayedHealth
       value: 
