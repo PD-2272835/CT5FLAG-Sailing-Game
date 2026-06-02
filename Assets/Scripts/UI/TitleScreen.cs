@@ -84,13 +84,26 @@ public class TitleScreen : MenuBase
             GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
         }
 
-        StartCoroutine(LoadGame());
+        StartCoroutine(LoadGame("MainGameScene"));
     }
 
-    private IEnumerator LoadGame()
+    public void TutorialButton()
+    {
+        PlayUISound();
+
+        if (GameStateManager.Instance)
+        {
+            Debug.Log("Changed to GameplayState");   ///state for tutorial?
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        }
+
+        StartCoroutine(LoadGame("TutorialScene"));
+    }
+
+    private IEnumerator LoadGame(string sceneName)
     {
         yield return StartCoroutine(Transitions.FadeOut(fog, 2.3f));
-        SceneManager.LoadScene("MainGameScene");
+        SceneManager.LoadScene(sceneName);
     }
 
     public void GoToCredits()
