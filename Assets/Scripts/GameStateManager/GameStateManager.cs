@@ -35,7 +35,7 @@ public class GameStateManager : MonoBehaviour
         }
         DontDestroyOnLoad(Instance);
 
-        ChangeState(Gameplay); //initial state - should be "Menu" for release
+        ChangeState(Menu); //initial state
     }
 
     //allow the current state access to the update loop
@@ -52,7 +52,7 @@ public class GameStateManager : MonoBehaviour
 
     void GetPlayer(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "MainGameScene") this.player = GameObject.FindAnyObjectByType<PlayerStats>().gameObject;
+        if(scene.name == "MainGameScene" || scene.name == "TutorialScene") this.player = GameObject.FindAnyObjectByType<PlayerStats>().gameObject;
     }
 
     private void OnDisable()
