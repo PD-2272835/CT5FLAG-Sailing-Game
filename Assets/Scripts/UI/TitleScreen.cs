@@ -93,8 +93,8 @@ public class TitleScreen : MenuBase
 
         if (GameStateManager.Instance)
         {
-            Debug.Log("Changed to GameplayState");   ///state for tutorial?
-            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+            Debug.Log("Changed to TutorialState");
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Tutorial);
         }
 
         StartCoroutine(LoadGame("TutorialScene"));

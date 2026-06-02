@@ -6,27 +6,27 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MenuBase
 {
-    [SerializeField] private GameObject _pauseBackground;
+    [SerializeField] protected GameObject _pauseBackground;
 
-    private void Awake()
+    protected void Awake()
     {
         fog = GameObject.FindGameObjectWithTag("TransitionFog").GetComponent<Image>();
         StartCoroutine(Transitions.FadeIn(fog, 1f));
         CloseMenus();
     }
 
-    private void OnEnable()
+    protected void OnEnable()
     {
         AudioManager.OnMute += OnMute;
         GameStateManager.OnPauseGame += OnPause;
     }
-    private void OnDisable()
+    protected void OnDisable()
     {
         AudioManager.OnMute -= OnMute;
         GameStateManager.OnPauseGame -= OnPause;
     }
 
-    private void OnPause(bool gamePauseState)
+    protected void OnPause(bool gamePauseState)
     {
         if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
         {
@@ -41,7 +41,7 @@ public class PauseMenuManager : MenuBase
         }
     }
 
-    private void CloseMenus()
+    protected void CloseMenus()
     {
         base.DisableAllMenusFunc();
         _pauseBackground.SetActive(false);
