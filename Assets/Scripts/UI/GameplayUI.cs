@@ -6,29 +6,29 @@ public class GameplayUI : MonoBehaviour
 {
     public static GameplayUI Instance { get; private set; }
 
-    [SerializeField] protected GameObject _gameOverMenu;
-    [SerializeField] protected GameObject _gameOverBackground;
-    [SerializeField] protected GameObject _displayedHealth;
-    [SerializeField] protected GameObject _displayedCargo;
-    [SerializeField] protected GameObject _displayedScore;
+    [SerializeField] private GameObject _gameOverMenu;
+    [SerializeField] private GameObject _gameOverBackground;
+    [SerializeField] private GameObject _displayedHealth;
+    [SerializeField] private GameObject _displayedCargo;
+    [SerializeField] private GameObject _displayedScore;
 
     [Header("Health Sprites")]
-    [SerializeField] protected Sprite _heartFull;
-    [SerializeField] protected Sprite _heartEmpty;
+    [SerializeField] private Sprite _heartFull;
+    [SerializeField] private Sprite _heartEmpty;
 
     [Header("Cargo Sprites")]
-    [SerializeField] protected Sprite _booksSprite;
-    [SerializeField] protected Sprite _bottlesSprite;
-    [SerializeField] protected Sprite _fruitSprite;
-    [SerializeField] protected Sprite _gooseSprite;
-    [SerializeField] protected Sprite _ratSprite;
-    [SerializeField] protected Sprite _uraniumSprite;
+    [SerializeField] private Sprite _booksSprite;
+    [SerializeField] private Sprite _bottlesSprite;
+    [SerializeField] private Sprite _fruitSprite;
+    [SerializeField] private Sprite _gooseSprite;
+    [SerializeField] private Sprite _ratSprite;
+    [SerializeField] private Sprite _uraniumSprite;
 
-    protected GameObject _heart1;
-    protected GameObject _heart2;
-    protected GameObject _heart3;
+    private GameObject _heart1;
+    private GameObject _heart2;
+    private GameObject _heart3;
 
-    protected void Awake()
+    private void Awake()
     {
         if (Instance != this)
         {
