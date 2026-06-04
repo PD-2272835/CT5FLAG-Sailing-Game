@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour, IPausable
     private Rigidbody _rb;
     private Vector2 _moveInput;
 
+    public bool DisableMovement = false;
+
     void OnEnable()
     {
         GameStateManager.OnPauseGame += OnPause;
@@ -54,7 +56,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
     private void FixedUpdate()
     {
-        if (!_isPaused)
+        if (!_isPaused && !DisableMovement)
         {
             _rb.linearVelocity = (new Vector2(_moveInput.x * _speedHorizontal, 0f));    ///needs to be smoothed
         }
