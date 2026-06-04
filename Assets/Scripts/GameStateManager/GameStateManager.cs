@@ -4,10 +4,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+public enum InitialState    //For setting initial state of GameStateManager
+{
+    Menu,
+    Gameplay,
+    GameOver,
+    Tutorial
+}
+
 //The Game State Manager should be used to orchestrate events such as pausing, game start, game end and switching between Main Menu and back
 //This is a singleton state machine that will persist througout play and between scenes, with each state allowing 
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] private InitialState _setInitialState; //Menu by default
+
     public static GameStateManager Instance { get; private set; } //this state manager is a singleton (that requires access to monobehaviour elements)
     public static event Action<bool> OnPauseGame;
 
@@ -35,7 +45,21 @@ public class GameStateManager : MonoBehaviour
         }
         DontDestroyOnLoad(Instance);
 
-        ChangeState(Menu); //initial state
+        switch (_setInitialState)   
+        {
+            case InitialState.Menu:
+                ChangeState(Menu);
+                break;
+            case InitialState.Gameplay:
+                ChangeState(Gameplay);
+                break;
+            case InitialState.GameOver:
+                ChangeState(GameOver);
+                break;
+            case InitialState.Tutorial:
+                ChangeState(Tutorial);
+                break;
+        }
     }
 
     //allow the current state access to the update loop

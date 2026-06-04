@@ -22,7 +22,7 @@ public class GameplayUITutorial : MonoBehaviour
 
     public void TutorialEnd()
     {
-        GameStateManager.Instance.SetPause();
+        Time.timeScale = 0.0f;
 
         _gameplayUI._gameOverMenu.SetActive(true);
         _gameplayUI._gameOverBackground.SetActive(true);
