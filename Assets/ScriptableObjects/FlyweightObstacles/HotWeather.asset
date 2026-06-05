@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e3add51261cf394ba8861c80da2cb0c, type: 3}
   m_Name: HotWeather
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
-  _Prefab: {fileID: 5439269460199667350, guid: 3b4a047d1cbb01548857484ffe115011, type: 3}
+  _Prefab: {fileID: 5841034571772146307, guid: 4131a0bb96598db418a93fb2c87ffd8b, type: 3}
   DespawnBoundZ: -10
   DamagesCargo:
   - {fileID: 11400000, guid: bc7d565c322bbb64dad702addea9fe0e, type: 2}
