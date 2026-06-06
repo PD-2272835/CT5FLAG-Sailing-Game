@@ -6,7 +6,7 @@ public class PlayerStats : MonoBehaviour, IDamageable
     [SerializeField] private Transform _cargoLocation;
     [SerializeField] private AudioClip _playerDamageSound;
 
-    //private GameObject _cargoInstance = null;
+    private GameObject _cargoInstance = null;
     private AudioSource _playerAudio;
 
     public int Health = 3;
@@ -55,7 +55,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
             _playerAudio.PlayOneShot(HeldCargo.PickupSound);
             GameplayUI.Instance?.DisplayCargo(HeldCargo);
-            ///_cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation);
+
+            _cargoInstance = Instantiate(HeldCargo.Prefab, _cargoLocation.position, _cargoLocation.rotation, _cargoLocation);
         }
     }
 
@@ -70,8 +71,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
             GameplayUI.Instance?.DisplayCargo(null);
             GameplayUI.Instance?.DisplayScore(GameStateManager.Instance.GetScore());
 
-            ///Destroy(_cargoInstance.gameObject);
-            ///_cargoInstance = null;
+            Destroy(_cargoInstance.gameObject);
+            _cargoInstance = null;
         }
         else
         {
