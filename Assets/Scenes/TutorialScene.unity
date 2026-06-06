@@ -336,6 +336,10 @@ MonoBehaviour:
   - {fileID: 2133098074}
   - {fileID: 2044745379}
   - {fileID: 425979794}
+  _Tooltips:
+  - {fileID: 1917665848}
+  - {fileID: 1304596581}
+  - {fileID: 1783129509}
   _MovementSpeed: 150
   _RotationSpeed: 150
   _atTargetTransform: 0
@@ -367,7 +371,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: ee23c4cc-940e-4e1d-8004-0c6e7267c95f
+  m_DefaultActionMap: TutorialPlayer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1001 &370447971
@@ -1296,6 +1300,11 @@ PrefabInstance:
 --- !u!224 &1304596580 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7571995867994111673, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1304596579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1304596581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1304596579}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1328500713
@@ -2497,6 +2506,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7571995867994111673, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1783129507}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1783129509 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1783129507}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874058571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2562,6 +2576,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1328500714}
     m_Modifications:
+    - target: {fileID: 6070816929681181743, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Name
       value: TextCanvas1
@@ -2654,6 +2672,11 @@ PrefabInstance:
 --- !u!224 &1917665847 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7571995867994111673, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1917665846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1917665848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1917665846}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2006476039
@@ -2835,13 +2858,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2133098073}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3653929, y: 0.45122892, z: 0.20956808, w: 0.78674126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.22, y: 32.47, z: 0.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 22.694, y: -3170.677, z: 405.631}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
