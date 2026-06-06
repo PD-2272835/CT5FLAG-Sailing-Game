@@ -43,7 +43,7 @@ public class Island : MonoBehaviour
         {
             if (islandVisited == false && playerStats.HeldCargo == null)
             {
-                playerStats.CargoNew(chosenCargo, 2);
+                playerStats.CargoNew(chosenCargo, 1);
                 islandVisited = true;
 
                 ///_cargoInstance = null;
