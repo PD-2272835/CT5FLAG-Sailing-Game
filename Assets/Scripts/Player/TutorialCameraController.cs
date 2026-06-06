@@ -31,6 +31,7 @@ public class TutorialCameraController : MonoBehaviour
         if (_targetIndex > _Positions.Count - 1)
         {
             GameplayUITutorial.Instance.TutorialEnd();
+            _targetIndex--;
             return;
         }
         _atTargetTransform = false;

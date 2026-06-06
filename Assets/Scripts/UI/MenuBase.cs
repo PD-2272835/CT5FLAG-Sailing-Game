@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
-using UnityEditor.Localization.Plugins.XLIFF.V20;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuBase : MonoBehaviour
