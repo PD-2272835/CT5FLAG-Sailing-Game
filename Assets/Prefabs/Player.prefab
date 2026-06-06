@@ -368,7 +368,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: df70fa95-8a34-4494-b137-73ab6b9c7d37
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!65 &2899667526344616839
@@ -516,7 +516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   _cargoScore: 50
-  _cargoLocation: {fileID: 0}
+  _cargoLocation: {fileID: 3876193294599101787}
   _playerDamageSound: {fileID: 8300000, guid: d8151cf284a04a64ab614292e05b6a33, type: 3}
   Health: 3
   HeldCargo: {fileID: 0}
