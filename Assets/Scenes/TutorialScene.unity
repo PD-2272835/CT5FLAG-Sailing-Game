@@ -354,7 +354,7 @@ MonoBehaviour:
   _RotationSpeed: 150
   _atTargetTransform: 0
   _targetIndex: 0
-  _movementIndex: 1
+  _movementIndex: 0
 --- !u!114 &192709388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -932,6 +932,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Good luck!
       objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 4474605963042816
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:4dd58905c70e62f4b88580d882a7d433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 697049817}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Name
       value: TextCanvas4
@@ -1016,6 +1044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014837234718863666, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_Name
+      value: TutorialText4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1031,6 +1063,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 697049814}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &697049817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 697049814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &867222792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1552,8 +1595,36 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_text
-      value: Crashing into rocks and islands will break your cargo and you'll lose
+      value: Crashing into rocks and islands will break your cargo, and you'll lose
         a heart!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 4474602259472384
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:4dd58905c70e62f4b88580d882a7d433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1304596582}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Name
@@ -1639,6 +1710,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014837234718863666, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_Name
+      value: TutorialText2
+      objectReference: {fileID: 0}
     - target: {fileID: 9139725763452193597, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1658,6 +1733,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1304596579}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1304596582 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1304596579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1328500713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,7 +1869,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_text
-      value: Use the A and D keys or arrow keys to move the ship left and right
+      value: Use the A and D keys to move the ship left and right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 4474597175975936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:4dd58905c70e62f4b88580d882a7d433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1507504253}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Name
@@ -1869,6 +1983,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014837234718863666, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_Name
+      value: TutorialText0
+      objectReference: {fileID: 0}
     - target: {fileID: 9139725763452193597, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -1888,6 +2006,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1507504250}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507504253 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1507504250}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1515248064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2935,6 +3064,34 @@ PrefabInstance:
       propertyPath: m_text
       value: Rain soaks books, snow harms animals, and sunbeams rot bananas.
       objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 4474604260155392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:4dd58905c70e62f4b88580d882a7d433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1783129510}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Name
       value: TextCanvas3
@@ -3019,6 +3176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9014837234718863666, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_Name
+      value: TutorialText3
+      objectReference: {fileID: 0}
     - target: {fileID: 9139725763452193597, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
@@ -3038,6 +3199,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1783129507}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1783129510 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1783129507}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1874058571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3105,8 +3277,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_text
-      value: Sail past a dock to automatically collect and deliver a piece of cargo
-        - worth 50 points each.
+      value: Sail past a dock to automatically collect and deliver cargo for points.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 4474600040685568
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_StringReference.m_TableReference.m_TableCollectionName
+      value: GUID:4dd58905c70e62f4b88580d882a7d433
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1917665849}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_text
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_UpdateString.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6070816929681181743, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_Enabled
@@ -3215,6 +3414,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6153667320330690418, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
   m_PrefabInstance: {fileID: 1917665846}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1917665849 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+  m_PrefabInstance: {fileID: 1917665846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &2006476039
 PrefabInstance:
   m_ObjectHideFlags: 0

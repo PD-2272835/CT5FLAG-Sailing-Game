@@ -132,23 +132,24 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4474597175975936
-    m_Key: New Entry 5
+    m_Key: Use the A and D keys to move the ship left and right.
     m_Metadata:
       m_Items: []
   - m_Id: 4474600040685568
-    m_Key: New Entry 6
+    m_Key: Sail past a dock to automatically collect and deliver cargo for points.
     m_Metadata:
       m_Items: []
   - m_Id: 4474602259472384
-    m_Key: New Entry 7
+    m_Key: Crashing into rocks and islands will break your cargo, and you'll lose
+      a heart!
     m_Metadata:
       m_Items: []
   - m_Id: 4474604260155392
-    m_Key: New Entry 8
+    m_Key: Rain soaks books, snow harms animals, and sunbeams rot bananas.
     m_Metadata:
       m_Items: []
   - m_Id: 4474605963042816
-    m_Key: New Entry 9
+    m_Key: Good luck!
     m_Metadata:
       m_Items: []
   - m_Id: 4464445630701568

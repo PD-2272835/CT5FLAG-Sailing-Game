@@ -130,6 +130,30 @@ MonoBehaviour:
     m_Localized: TUTORIAL
     m_Metadata:
       m_Items: []
+  - m_Id: 4474597175975936
+    m_Localized: Usa las teclas A y D para mover la nave hacia la izquierda y hacia
+      la derecha.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474600040685568
+    m_Localized: "Navega junto a un muelle para recoger y entregar carga autom\xE1ticamente
+      y ganar puntos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474602259472384
+    m_Localized: "\xA1Si chocas contra las rocas y las islas, se te romper\xE1 la
+      carga y perder\xE1s un coraz\xF3n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474604260155392
+    m_Localized: "La lluvia empapa los libros, la nieve da\xF1a a los animales y
+      los rayos de sol hacen que se pudren los pl\xE1tanos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4474605963042816
+    m_Localized: "\xA1Mucha suerte!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
