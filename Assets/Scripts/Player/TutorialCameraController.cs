@@ -20,11 +20,11 @@ public class TutorialCameraController : MonoBehaviour
 
     [SerializeField] private int _movementIndex; //Index of the tutorial stage that should allow movement
 
-    private PlayerMovement _player;
+    private TutorialMovement _playerMove;
 
     private void Awake()
     {
-        _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        _playerMove = GetComponent<TutorialMovement>();
 
         GetComponent<PlayerInput>().actions.FindActionMap("Player").Disable();
 
@@ -87,7 +87,7 @@ public class TutorialCameraController : MonoBehaviour
     private void SetPlayer(bool active) //Enable or disable PlayerMovement component in Player for segment of tutorial that requires input
     {
         Debug.Log($"Called SetPlayer with {active}");
-        _player.enabled = active;
+        _playerMove.SetActive(active);
     }
 
     private void FixedUpdate()
