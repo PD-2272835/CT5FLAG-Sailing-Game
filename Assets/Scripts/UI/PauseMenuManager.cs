@@ -91,7 +91,7 @@ public class PauseMenuManager : MenuBase
         PlayUISound();
 
         GameStateManager.Instance.ResetScore();
-        GameStateManager.Instance.SetPause(true);
+        GameStateManager.Instance.SetPause(false);
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
         yield return StartCoroutine(Transitions.FadeOut(Fog, 2f));
         SceneManager.LoadScene("TitleScreen");
