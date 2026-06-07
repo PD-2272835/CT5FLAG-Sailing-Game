@@ -4982,7 +4982,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 15
+  m_Radius: 20
   m_Height: 110
   m_Direction: 1
   m_Center: {x: 0, y: -60, z: 0}
