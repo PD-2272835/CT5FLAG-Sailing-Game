@@ -28,14 +28,17 @@ public class PlayerMovement : MonoBehaviour, IPausable
     {
         PlayerInput playerInputs = GetComponent<PlayerInput>();
         InputActionMap playerMap = playerInputs.actions.FindActionMap("Player");
+        InputActionMap tutorialMap = playerInputs.actions.FindActionMap("TutorialPlayer");
 
         if (enabled)
         {
             playerMap.Enable();
+            tutorialMap.Disable();
         }
         else
         {
             playerMap.Disable();
+            tutorialMap.Enable();
         }
         foreach (var map in GetComponent<PlayerInput>().actions.actionMaps)
         {
@@ -55,13 +58,14 @@ public class PlayerMovement : MonoBehaviour, IPausable
             Debug.Log("Called OnPauseGame in PlayerMovement");
             if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
             {
-                GameStateManager.Instance.SetPause();
+                GameStateManager.Instance.SetPause(!_isPaused);
             }
         }
     }
 
     public void OnPause(bool gamePauseState)
     {
+        Debug.Log($"Called OnPause in PlayerMovement with {gamePauseState}");
         _isPaused = gamePauseState;
     }
 

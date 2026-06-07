@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32013323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+  m_PrefabInstance: {fileID: 370447971}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &156094807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,6 +200,7 @@ GameObject:
   - component: {fileID: 192709386}
   - component: {fileID: 192709388}
   - component: {fileID: 192709387}
+  - component: {fileID: 192709389}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -375,6 +381,19 @@ MonoBehaviour:
   m_DefaultActionMap: TutorialPlayer
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &192709389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192709382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5442473ef40c7499b189b7326d9c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialMovement
+  _player: {fileID: 32013323}
 --- !u!1001 &370447971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -445,7 +464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5116243721643137739, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_DefaultActionMap
-      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5306967306751243160, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Enabled
@@ -463,7 +482,9 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3275556740818020844, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+    - {fileID: 5116243721643137739, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

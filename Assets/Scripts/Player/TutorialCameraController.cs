@@ -18,13 +18,13 @@ public class TutorialCameraController : MonoBehaviour
     [SerializeField] private bool _atTargetTransform = false;
     [SerializeField] private int _targetIndex;
 
-    [SerializeField] private int _movementIndex;
+    [SerializeField] private int _movementIndex; //Index of the tutorial stage that should allow movement
 
-    private PlayerMovement _player;
+    private TutorialMovement _playerMove;
 
     private void Awake()
     {
-        _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        _playerMove = GetComponent<TutorialMovement>();
 
         GetComponent<PlayerInput>().actions.FindActionMap("Player").Disable();
 
@@ -37,7 +37,6 @@ public class TutorialCameraController : MonoBehaviour
     private void OnPrevious(InputValue input)
     {
         Debug.Log("Called OnPrevious");
-
         if (_targetIndex == 0) return;
         _targetIndex--;
         _atTargetTransform = false;
@@ -69,7 +68,7 @@ public class TutorialCameraController : MonoBehaviour
     {
         Debug.Log("Called OnPauseGame in TutorialCameraController");
 
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause((Time.timeScale > 0));
     }
 
     private void CheckMovement()
@@ -88,7 +87,7 @@ public class TutorialCameraController : MonoBehaviour
     private void SetPlayer(bool active) //Enable or disable PlayerMovement component in Player for segment of tutorial that requires input
     {
         Debug.Log($"Called SetPlayer with {active}");
-        _player.enabled = active;
+        _playerMove.SetActive(active);
     }
 
     private void FixedUpdate()
@@ -110,6 +109,7 @@ public class TutorialCameraController : MonoBehaviour
         }
     }
 
+    //better to do this if using a coroutine
     public void SetCameraIndexPos(int index)
     {
         if(_targetIndex == index) return;

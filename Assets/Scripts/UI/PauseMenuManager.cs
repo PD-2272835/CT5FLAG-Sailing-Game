@@ -91,7 +91,7 @@ public class PauseMenuManager : MenuBase
         PlayUISound();
 
         GameStateManager.Instance.ResetScore();
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause(false);
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Menu);
         yield return StartCoroutine(Transitions.FadeOut(Fog, 2f));
         SceneManager.LoadScene("TitleScreen");
@@ -103,7 +103,7 @@ public class PauseMenuManager : MenuBase
         Debug.Log("Called PauseButton");
         PlayUISound();
 
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause((Time.timeScale > 0));
     }
 
     public void Resume()
@@ -112,7 +112,7 @@ public class PauseMenuManager : MenuBase
         PlayUISound();
 
         CloseMenus();
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause(false);
     }
 
 
@@ -126,8 +126,16 @@ public class PauseMenuManager : MenuBase
         PlayUISound();
 
         GameStateManager.Instance.ResetScore();
-        GameStateManager.Instance.SetPause();
-        GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        GameStateManager.Instance.SetPause(false);
+
+        if (SceneManager.GetActiveScene().name == "TutorialScene")
+        {
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Tutorial);
+        }
+        else
+        {
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        }
 
         yield return StartCoroutine(Transitions.FadeOut(Fog, 1f));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
