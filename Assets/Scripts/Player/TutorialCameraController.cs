@@ -68,7 +68,10 @@ public class TutorialCameraController : MonoBehaviour
     {
         Debug.Log("Called OnPauseGame in TutorialCameraController");
 
-        GameStateManager.Instance.SetPause((Time.timeScale > 0));
+        if (!Transitions.Transitioning)
+        {
+            GameStateManager.Instance.SetPause((Time.timeScale > 0));
+        }
     }
 
     private void CheckMovement()

@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour, IPausable
         if (CanPause)
         {
             Debug.Log("Called OnPauseGame in PlayerMovement");
-            if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
+            if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver && !Transitions.Transitioning)
             {
                 GameStateManager.Instance.SetPause(!_isPaused);
             }
