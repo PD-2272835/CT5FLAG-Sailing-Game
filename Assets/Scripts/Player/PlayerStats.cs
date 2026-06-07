@@ -91,6 +91,10 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo = null;
 
             GameplayUI.Instance?.DisplayCargo(null);
+            foreach(Transform child in _cargoLocation)
+            {
+                Destroy(child.gameObject);
+            }
 
             Debug.Log("Cargo has been destroyed");
         }
