@@ -106,20 +106,24 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered collider of " + other.name);
         
         ICargoDamager obstacle = other.GetComponent<ICargoDamager>();
 
+        Debug.Log(obstacle?.ToString());
+
         //each obstacle can define what cargo it can damage (more extensible)
         Cargo[] damagableCargos = obstacle?.GetDamagableCargo();
+
+        Debug.Log($"entered collider of {other.name} where cargos are {damagableCargos?.Length}");
 
         if (damagableCargos?.Length > 0)
         {
             for (int i = 0; i < damagableCargos.Length; ++i)
             {
                 Debug.Log(damagableCargos[i].ToString());
-                if (HeldCargo?.GetType() == damagableCargos[i].GetType())
+                if (HeldCargo?.name == damagableCargos[i].name)
                 {
+                    Debug.Log($"Damaged Cargo {HeldCargo}, when against {damagableCargos[i]}");
                     CargoDamage();
                 }
             }

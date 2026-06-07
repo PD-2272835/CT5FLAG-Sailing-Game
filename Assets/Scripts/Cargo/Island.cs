@@ -53,6 +53,7 @@ public class Island : MonoBehaviour
             else if (islandVisited == false && playerStats.HeldCargo != null)
             {
                 playerStats.CargoDeliver();
+                playerStats.CargoNew(chosenCargo, 1);
                 islandVisited = true;
 
                 Debug.Log($"Island has taken player cargo");

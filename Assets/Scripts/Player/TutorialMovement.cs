@@ -12,7 +12,7 @@ public class TutorialMovement : MonoBehaviour
     private void Awake()
     {
         _rb = _player.GetComponent<Rigidbody>();
-        _startingPos = _player.transform;
+        
     }
     private void OnMove(InputValue input)
     {
@@ -24,6 +24,7 @@ public class TutorialMovement : MonoBehaviour
         _active = b;
 
         _rb.linearVelocity = new Vector2(0, 0);
+        if (b == false) _startingPos = _player.transform;
     }
 
     private void FixedUpdate()

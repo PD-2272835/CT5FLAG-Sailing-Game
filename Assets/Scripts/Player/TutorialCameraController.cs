@@ -87,7 +87,7 @@ public class TutorialCameraController : MonoBehaviour
     private void SetPlayer(bool active) //Enable or disable PlayerMovement component in Player for segment of tutorial that requires input
     {
         Debug.Log($"Called SetPlayer with {active}");
-        _playerMove.SetActive(active);
+        _playerMove.SetActive(active); //THIS ISN'T A GAME OBJECT WE'RE JUST AWESOME ASF
     }
 
     private void FixedUpdate()

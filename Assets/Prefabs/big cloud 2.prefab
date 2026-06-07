@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253728607805141192}
-  - component: {fileID: 3185168636454146479}
   m_Layer: 0
   m_Name: TRSNode
   m_TagString: Weather
@@ -37,29 +36,6 @@ Transform:
   - {fileID: 6716401835953782347}
   m_Father: {fileID: 3822323852876275134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3185168636454146479
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3756008041189612044}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Height: 110
-  m_Direction: 1
-  m_Center: {x: 0, y: -50, z: 0}
 --- !u!1 &4392978143263210003
 GameObject:
   m_ObjectHideFlags: 0
@@ -69,9 +45,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3822323852876275134}
+  - component: {fileID: 8056734725534548556}
   m_Layer: 0
   m_Name: big cloud 2
-  m_TagString: Untagged
+  m_TagString: Weather
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,6 +69,29 @@ Transform:
   - {fileID: 253728607805141192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8056734725534548556
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4392978143263210003}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 20
+  m_Height: 110
+  m_Direction: 1
+  m_Center: {x: 0, y: -30, z: 0}
 --- !u!1 &5172277778558406178
 GameObject:
   m_ObjectHideFlags: 0
