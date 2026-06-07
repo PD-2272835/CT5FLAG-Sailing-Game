@@ -4973,7 +4973,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4985,7 +4985,7 @@ CapsuleCollider:
   m_Radius: 15
   m_Height: 110
   m_Direction: 1
-  m_Center: {x: 0, y: -60, z: 0}
+  m_Center: {x: 0, y: -50, z: 0}
 --- !u!1 &3446364983469270694
 GameObject:
   m_ObjectHideFlags: 0
