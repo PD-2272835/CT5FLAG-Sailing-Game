@@ -110,7 +110,7 @@ public class GameplayUI : MonoBehaviour
     public void GameOver()
     {
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.GameOver);
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause(true);
 
         _gameOverMenu.SetActive(true);
         _gameOverBackground.SetActive(true);

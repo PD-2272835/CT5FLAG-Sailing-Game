@@ -19,7 +19,7 @@ public class PauseMenuManagerTutorial : MonoBehaviour
         _pauseMenuManager.PlayUISound();
 
         GameStateManager.Instance.ResetScore();
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause(false);
         GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
 
         yield return StartCoroutine(Transitions.FadeOut(_pauseMenuManager.Fog, 2f));

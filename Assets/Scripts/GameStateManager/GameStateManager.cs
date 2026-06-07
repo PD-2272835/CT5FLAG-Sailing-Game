@@ -86,22 +86,18 @@ public class GameStateManager : MonoBehaviour
 
 
     //Coordinate game pausing
-    public void SetPause()
+    public void SetPause(bool shouldPause)
     {
-        bool setPause;
-
-        if (Time.timeScale == 1f)
+    
+        if (shouldPause)
         {
             Time.timeScale = 0f;
-            setPause = true;
-        }
-        else
+        } else
         {
             Time.timeScale = 1f;
-            setPause = false;
         }
 
-        OnPauseGame?.Invoke(setPause);
+        OnPauseGame?.Invoke(shouldPause);
     }
 
     public void OnApplicationPause(bool pause)

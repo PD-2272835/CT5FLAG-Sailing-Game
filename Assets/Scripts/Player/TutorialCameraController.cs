@@ -18,7 +18,7 @@ public class TutorialCameraController : MonoBehaviour
     [SerializeField] private bool _atTargetTransform = false;
     [SerializeField] private int _targetIndex;
 
-    [SerializeField] private int _movementIndex;
+    [SerializeField] private int _movementIndex; //Index of the tutorial stage that should allow movement
 
     private PlayerMovement _player;
 
@@ -37,7 +37,6 @@ public class TutorialCameraController : MonoBehaviour
     private void OnPrevious(InputValue input)
     {
         Debug.Log("Called OnPrevious");
-
         if (_targetIndex == 0) return;
         _targetIndex--;
         _atTargetTransform = false;
@@ -69,7 +68,7 @@ public class TutorialCameraController : MonoBehaviour
     {
         Debug.Log("Called OnPauseGame in TutorialCameraController");
 
-        GameStateManager.Instance.SetPause();
+        GameStateManager.Instance.SetPause((Time.timeScale > 0));
     }
 
     private void CheckMovement()
@@ -110,6 +109,7 @@ public class TutorialCameraController : MonoBehaviour
         }
     }
 
+    //better to do this if using a coroutine
     public void SetCameraIndexPos(int index)
     {
         if(_targetIndex == index) return;
