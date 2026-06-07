@@ -127,7 +127,15 @@ public class PauseMenuManager : MenuBase
 
         GameStateManager.Instance.ResetScore();
         GameStateManager.Instance.SetPause(false);
-        GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+
+        if (SceneManager.GetActiveScene().name == "TutorialScene")
+        {
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Tutorial);
+        }
+        else
+        {
+            GameStateManager.Instance.ChangeState(GameStateManager.Instance.Gameplay);
+        }
 
         yield return StartCoroutine(Transitions.FadeOut(Fog, 1f));
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
