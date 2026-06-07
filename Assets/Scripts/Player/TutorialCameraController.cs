@@ -32,6 +32,8 @@ public class TutorialCameraController : MonoBehaviour
         {
             Debug.Log($"{map.name}, {map.enabled}");
         }
+
+        CheckMovement();
     }
 
     public void OnPrevious()
