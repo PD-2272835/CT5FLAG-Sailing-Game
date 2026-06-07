@@ -34,7 +34,7 @@ public class TutorialCameraController : MonoBehaviour
         }
     }
 
-    public void OnPrevious(InputValue input)
+    public void OnPrevious()
     {
         Debug.Log("Called OnPrevious");
         if (_targetIndex == 0) return;
@@ -45,7 +45,7 @@ public class TutorialCameraController : MonoBehaviour
         CheckMovement();
     }
 
-    public void OnNext(InputValue input)
+    public void OnNext()
     {
         Debug.Log("Called OnNext");
 
@@ -63,6 +63,8 @@ public class TutorialCameraController : MonoBehaviour
         }
         _atTargetTransform = false;
     }
+
+
 
     private void OnPauseGame()
     {
