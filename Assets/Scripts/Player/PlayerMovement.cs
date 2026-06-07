@@ -10,40 +10,38 @@ public class PlayerMovement : MonoBehaviour, IPausable
     private Rigidbody _rb;
     private Vector2 _moveInput;
 
+    public bool CanPause = true;
     public bool DisableMovement = false;
 
     void OnEnable()
     {
         GameStateManager.OnPauseGame += OnPause;
-        SceneManager.sceneLoaded += SetActionMap;
+        EnableInput(true);
     }
     void OnDisable()
     {
         GameStateManager.OnPauseGame -= OnPause;
-        SceneManager.sceneLoaded -= SetActionMap;
+        EnableInput(false);
     }
 
-    private void SetActionMap(Scene scene, LoadSceneMode mode)  //Manually enables or disables TutorialPlayer action map depending on scene
+    private void EnableInput(bool enabled)  //Disables pause input if in TutorialScene, as pausing is handled in TutorialCameraController
     {
         PlayerInput playerInputs = GetComponent<PlayerInput>();
         InputActionMap playerMap = playerInputs.actions.FindActionMap("Player");
-        InputActionMap tutorialMap = playerInputs.actions.FindActionMap("TutorialPlayer");
 
-        if (scene.name == "TutorialScene")
+        if (enabled)
         {
-            playerMap.Disable();
-            tutorialMap.Enable();
+            playerMap.Enable();
         }
         else
         {
-            playerMap.Enable();
-            tutorialMap.Disable();
+            playerMap.Disable();
         }
-
-        foreach (var map in playerInputs.actions.actionMaps)
+        foreach (var map in GetComponent<PlayerInput>().actions.actionMaps)
         {
             Debug.Log($"{map.name}, {map.enabled}");
         }
+        Debug.Log($"Called EnableInput with {enabled}");
     }
 
     private void OnMove(InputValue input)
@@ -52,19 +50,20 @@ public class PlayerMovement : MonoBehaviour, IPausable
     }
     public void OnPauseGame()
     {
-        if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
+        if (CanPause)
         {
-            GameStateManager.Instance.SetPause();
+            Debug.Log("Called OnPauseGame in PlayerMovement");
+            if (GameStateManager.Instance.GetState() != GameStateManager.Instance.GameOver)
+            {
+                GameStateManager.Instance.SetPause();
+            }
         }
     }
-
 
     public void OnPause(bool gamePauseState)
     {
         _isPaused = gamePauseState;
     }
-
-
 
     private void Awake()
     {

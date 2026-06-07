@@ -344,6 +344,7 @@ MonoBehaviour:
   _RotationSpeed: 150
   _atTargetTransform: 0
   _targetIndex: 0
+  _movementIndex: 1
 --- !u!114 &192709388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,16 +428,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3275556740818020844, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: CanPause
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3275556740818020844, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3275556740818020844, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: DisableMovement
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5116243721643137739, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5116243721643137739, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_DefaultActionMap
-      value: ee23c4cc-940e-4e1d-8004-0c6e7267c95f
+      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
       objectReference: {fileID: 0}
     - target: {fileID: 5306967306751243160, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Enabled
@@ -445,6 +454,10 @@ PrefabInstance:
     - target: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9107005538670661313, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Enabled
@@ -1715,7 +1728,7 @@ PrefabInstance:
       objectReference: {fileID: 2006476040}
     - target: {fileID: 1773407882961904020, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToMainMenu
+      value: PauseButton
       objectReference: {fileID: 0}
     - target: {fileID: 1773407882961904020, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2256,6 +2269,10 @@ PrefabInstance:
     - target: {fileID: 8858089285482943798, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893723552857126043, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8978192016465052293, guid: 1d99770704a7d7d4da34ea1c376278fa, type: 3}
       propertyPath: m_Layer

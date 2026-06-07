@@ -100,6 +100,7 @@ public class PauseMenuManager : MenuBase
 
     public void PauseButton()
     {
+        Debug.Log("Called PauseButton");
         PlayUISound();
 
         GameStateManager.Instance.SetPause();
@@ -107,6 +108,7 @@ public class PauseMenuManager : MenuBase
 
     public void Resume()
     {
+        Debug.Log("Called Resume");
         PlayUISound();
 
         CloseMenus();

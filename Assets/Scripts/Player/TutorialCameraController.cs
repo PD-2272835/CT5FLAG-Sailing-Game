@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Jobs;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,16 +18,38 @@ public class TutorialCameraController : MonoBehaviour
     [SerializeField] private bool _atTargetTransform = false;
     [SerializeField] private int _targetIndex;
 
+    [SerializeField] private int _movementIndex;
+
+    private PlayerMovement _player;
+
+    private void Awake()
+    {
+        _player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+
+        GetComponent<PlayerInput>().actions.FindActionMap("Player").Disable();
+
+        foreach (var map in GetComponent<PlayerInput>().actions.actionMaps)
+        {
+            Debug.Log($"{map.name}, {map.enabled}");
+        }
+    }
 
     private void OnPrevious(InputValue input)
     {
+        Debug.Log("Called OnPrevious");
+
         if (_targetIndex == 0) return;
         _targetIndex--;
         _atTargetTransform = false;
+
+        Debug.Log($"_targetIndex moved to {_targetIndex}");
+        CheckMovement();
     }
 
     private void OnNext(InputValue input)
     {
+        Debug.Log("Called OnNext");
+
         _targetIndex++;
         if (_targetIndex > _Positions.Count - 1)
         {
@@ -34,7 +57,38 @@ public class TutorialCameraController : MonoBehaviour
             _targetIndex--;
             return;
         }
+        else
+        {
+            Debug.Log($"_targetIndex moved to {_targetIndex}");
+            CheckMovement();
+        }
         _atTargetTransform = false;
+    }
+
+    private void OnPauseGame()
+    {
+        Debug.Log("Called OnPauseGame in TutorialCameraController");
+
+        GameStateManager.Instance.SetPause();
+    }
+
+    private void CheckMovement()
+    {
+        Debug.Log("Called CheckMovement");
+        if (_targetIndex == _movementIndex)
+        {
+            SetPlayer(true);
+        }
+        else
+        {
+            SetPlayer(false);
+        }
+    }
+
+    private void SetPlayer(bool active) //Enable or disable PlayerMovement component in Player for segment of tutorial that requires input
+    {
+        Debug.Log($"Called SetPlayer with {active}");
+        _player.enabled = active;
     }
 
     private void FixedUpdate()
