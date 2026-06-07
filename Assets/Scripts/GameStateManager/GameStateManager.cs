@@ -101,10 +101,13 @@ public class GameStateManager : MonoBehaviour
         OnPauseGame?.Invoke(shouldPause);
     }
 
-    public void OnApplicationPause(bool pause)
+    public void OnApplicationPause(bool pause)  //Pause the game when unfocused from application, unless a screen transition is occuring
     {
-        Time.timeScale = 0f;
-        OnPauseGame?.Invoke(true);
+        if (!Transitions.Transitioning)
+        {
+            Time.timeScale = 0f;
+            OnPauseGame?.Invoke(true);
+        }
     }
 
     public void OnApplicationFocus(bool focus)

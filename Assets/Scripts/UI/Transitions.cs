@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public static class Transitions
 {
+    public static bool Transitioning = false;   //Checked to prevent game from pausing during a screen transition
 
     public static float EaseInOutSine(float x) 
     {
@@ -14,6 +15,8 @@ public static class Transitions
 
     public static IEnumerator FadeOut(Image obj, float duration)
     {
+        Transitioning = true;
+
         obj.raycastTarget = true;
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
@@ -27,6 +30,8 @@ public static class Transitions
 
     static public IEnumerator FadeIn(Image obj, float duration)
     {
+        Transitioning = true;   ///happy pride month
+
         obj.raycastTarget = false;
         for (float time = 0f; time <= duration; time += Time.deltaTime)
         {
@@ -37,6 +42,8 @@ public static class Transitions
             yield return null;
         }
         obj.color = new Color(obj.color.r, obj.color.g, obj.color.b, 0f);
+
+        Transitioning = false; ///sad pride month
     }
 
 }
