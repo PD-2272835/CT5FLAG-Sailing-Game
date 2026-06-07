@@ -97,6 +97,7 @@ public class GameStateManager : MonoBehaviour
             Time.timeScale = 1f;
         }
 
+        Debug.Log($"Called SetPause in GameStateManager with {shouldPause}");
         OnPauseGame?.Invoke(shouldPause);
     }
 

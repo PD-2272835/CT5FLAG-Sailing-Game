@@ -1093,17 +1093,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ac919918-0efa-4090-86dc-7a0fefc32dfb"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PauseGame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""0a20fe42-ff1b-4a2a-8748-ec596b489c3b"",
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
