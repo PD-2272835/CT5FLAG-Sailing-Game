@@ -32,7 +32,10 @@ public class TutorialCameraController : MonoBehaviour
         {
             Debug.Log($"{map.name}, {map.enabled}");
         }
+    }
 
+    private void Start()
+    {
         CheckMovement();
     }
 
