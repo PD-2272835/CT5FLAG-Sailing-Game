@@ -101,6 +101,7 @@ public class GameStateManager : MonoBehaviour
         OnPauseGame?.Invoke(shouldPause);
     }
 
+    /*
     public void OnApplicationPause(bool pause)  //Pause the game when unfocused from application, unless a screen transition is occuring
     {
         if (!Transitions.Transitioning)
@@ -108,7 +109,7 @@ public class GameStateManager : MonoBehaviour
             Time.timeScale = 0f;
             OnPauseGame?.Invoke(true);
         }
-    }
+    }*/
 
     public void OnApplicationFocus(bool focus)
     {
@@ -116,8 +117,11 @@ public class GameStateManager : MonoBehaviour
         //or indeed wait until the pause screen goes away
         //this will be fine for now though
         
-        Time.timeScale = 1f;
-        OnPauseGame?.Invoke(false);
+        if (focus == false)
+        {
+            Time.timeScale = 0;
+            OnPauseGame?.Invoke(true); //game should pause (true)
+        }
     }
 
 

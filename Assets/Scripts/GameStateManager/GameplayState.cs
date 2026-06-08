@@ -135,12 +135,12 @@ public class GameplayState : AbstractGameState
 
         if (settings.Kind == ObstacleKind.Island)
         {
-            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, -7, _HorizonDistance); //spawn all islands directly ahead of the player
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(0, -20, _HorizonDistance); //spawn all islands directly ahead of the player
             _LastIslandInterval = _ElapsedTime;
         }
         else
         {
-            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, -7, _HorizonDistance);
+            obstacle.transform.position = GameStateManager.Instance.player.transform.position + new Vector3(ObstacleRandomXOffet, -20, _HorizonDistance);
             _LastObstacleInterval = _ElapsedTime;
         }
 

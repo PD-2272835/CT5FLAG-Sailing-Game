@@ -91,7 +91,8 @@ public class PlayerStats : MonoBehaviour, IDamageable
             HeldCargo = null;
 
             GameplayUI.Instance?.DisplayCargo(null);
-            foreach(Transform child in _cargoLocation)
+            
+            foreach(Transform child in _cargoLocation) //remove the cargo prefab instance from visibility on the player ship
             {
                 Destroy(child.gameObject);
             }
