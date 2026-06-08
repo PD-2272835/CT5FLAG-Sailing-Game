@@ -121,7 +121,7 @@ public class GameStateManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             OnPauseGame?.Invoke(true); //game should pause (true)
-        } else if(_currentState == Menu || SceneManager.GetActiveScene().name == "TitleScreen") //unpause immediately upon refocus if in a menu
+        } else if(_currentState == Menu || SceneManager.GetActiveScene().name == "TitleScreen") //unpause immediately upon refocus if in main menu
         {
             Time.timeScale = 1f;
             OnPauseGame?.Invoke(false);

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HotWeather
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
   _Prefab: {fileID: 5841034571772146307, guid: 4131a0bb96598db418a93fb2c87ffd8b, type: 3}
-  DespawnBoundZ: -10
+  DespawnBoundZ: -20
   DamagesCargo:
   - {fileID: 11400000, guid: bc7d565c322bbb64dad702addea9fe0e, type: 2}
   SpawnWeight: 10

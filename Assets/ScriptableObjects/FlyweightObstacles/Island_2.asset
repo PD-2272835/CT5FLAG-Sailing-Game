@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Island_2
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
   _Prefab: {fileID: 6117265249301446249, guid: 1720089bc4308704f8b9332acbd59a58, type: 3}
-  DespawnBoundZ: -10
+  DespawnBoundZ: -20
   DamagesCargo: []
   SpawnWeight: 10
   Kind: 1

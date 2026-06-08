@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rain
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
   _Prefab: {fileID: 2243689156862074913, guid: 7a506d924cff8e040952e70d088c6ddf, type: 3}
-  DespawnBoundZ: -10
+  DespawnBoundZ: -20
   DamagesCargo:
   - {fileID: 11400000, guid: 51c496ae2fd014a4bb02e41d920c2baa, type: 2}
   SpawnWeight: 0

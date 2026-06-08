@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rocks_1
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleSettings
   _Prefab: {fileID: 2318548891235399441, guid: c20eb447de172054eb2ed92c8e57b278, type: 3}
-  DespawnBoundZ: -10
+  DespawnBoundZ: -20
   DamagesCargo:
   - {fileID: 11400000, guid: d75a9ee6b7b88e84186d826d145d60eb, type: 2}
   - {fileID: 11400000, guid: 815acce445c1d0545a5d44566dbbcb86, type: 2}
