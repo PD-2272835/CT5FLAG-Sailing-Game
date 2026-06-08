@@ -1076,6 +1076,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Good luck!
       objectReference: {fileID: 0}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96c037227002d214c91f311c50a8a856, type: 2}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 4474605963042816
@@ -1742,6 +1750,14 @@ PrefabInstance:
       value: Crashing into rocks and islands will break your cargo, and you'll lose
         a heart!
       objectReference: {fileID: 0}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96c037227002d214c91f311c50a8a856, type: 2}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 4474602259472384
@@ -2014,6 +2030,14 @@ PrefabInstance:
     - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_text
       value: Use the A and D keys to move the ship left and right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96c037227002d214c91f311c50a8a856, type: 2}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
@@ -3351,6 +3375,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Rain soaks books, snow harms animals, and sunbeams rot bananas.
       objectReference: {fileID: 0}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96c037227002d214c91f311c50a8a856, type: 2}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
       value: 4474604260155392
@@ -3565,6 +3597,14 @@ PrefabInstance:
     - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_text
       value: Sail past a dock to automatically collect and deliver cargo for points.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 96c037227002d214c91f311c50a8a856, type: 2}
+    - target: {fileID: 1334587233124532199, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5258652647506295547, guid: 571a426ed12f26b4ab4eb21c487326ad, type: 3}
       propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
