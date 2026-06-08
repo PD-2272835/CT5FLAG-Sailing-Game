@@ -699,6 +699,10 @@ PrefabInstance:
       propertyPath: Health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5306967306751243160, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
+      propertyPath: _playerDamageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 14974e82c6d8d7a48addb73e6f48f052, type: 3}
     - target: {fileID: 6131863742036459717, guid: 3ce585f8ed2821b4db800cb68f8348b0, type: 3}
       propertyPath: m_Name
       value: Player
