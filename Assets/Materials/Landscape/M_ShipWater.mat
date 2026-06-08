@@ -99,7 +99,7 @@ Material:
     - _BoilingStrength: 1
     - _BoilingTiling: 0
     - _CaveBlend: 0
-    - _CaveDistortion: 0
+    - _CaveDistortion: 0.88
     - _DepthCompareDistance: 0.1
     - _DepthFadeDistance: 10
     - _FoamBlend: 0.09
@@ -118,7 +118,7 @@ Material:
     - _LightingSmoothness: 12.34
     - _NormalScale: 9.11
     - _NormalSpeed: 0.16
-    - _NormalStrength: 1.71
+    - _NormalStrength: 0.96
     - _OrthographicCamSize: 0
     - _PERSPECTIVE: 1
     - _PosterizeSteps: 0
@@ -149,8 +149,8 @@ Material:
     - _WaveLength: 1
     - _WaveRiverLength: 0.73
     - _WaveRiverWidth: 0.16
-    - _WaveSpeed: 0.13
-    - _WaveSteepness: 2.78
+    - _WaveSpeed: 0.49
+    - _WaveSteepness: 2.92
     - _WaveStepness: 0.35
     - _WaveTileSize: 1.98
     m_Colors:
