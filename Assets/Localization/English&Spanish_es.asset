@@ -75,14 +75,16 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 4474609280737280
     m_Localized: "Jefe t\xE9cnico:\r\nPeter Delap\r\n\r\n\r\nIngeniero jefe de UI
-      y UX:\r\nJamie Holgate\r\n\r\nDise\xF1adora:\r\nDaisy Plumb"
+      y UX:\r\nJamie Holgate\n\r\n\r\nDise\xF1adora:\r\nDaisy Plumb"
     m_Metadata:
       m_Items: []
   - m_Id: 4474610903932928
     m_Localized: "M\xFAsica:\r\nM\xFAsica del men\xFA: \xABArriving At Shore\xBB
-      (versi\xF3n en bucle) de flowerheadmusic.itch.io\r\n\r\nM\xFAsica del juego:
-      \xABCursed Sea\xBB de alkakrab.itch.io\r\n\r\nEfectos de sonido:\r\nFilmCow
-      Royalty Free Sound Effects Library de filmcow.itch.io"
+      (Loop Version) de flowerheadmusic.itch.io\r\n\r\nM\xFAsica del juego: \xABCursed
+      Sea\xBB de alkakrab.itch.io\r\n\r\nEfectos de sonido:\r\nFilmCow Royalty Free
+      Sound Effects Library de filmcow.itch.io\n\nRecursos de agua y skybox:\r\nAQUIS
+      - Water Toon Shader (Orto & Perspective), de AureDevGames, en la Unity Asset
+      Store"
     m_Metadata:
       m_Items: []
   - m_Id: 4474612694900736
