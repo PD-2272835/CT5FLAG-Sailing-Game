@@ -11,9 +11,12 @@ public static class FlyweightFactory
     private static bool _collectionCheck = true;
 
     //Collection of object pools for Obstacles
-    readonly static Dictionary<FlyweightSettings, IObjectPool<Flyweight>> ObstaclePools = new();
+    private static Dictionary<FlyweightSettings, IObjectPool<Flyweight>> ObstaclePools = new();
 
-
+    public static void ResetPools()
+    {
+        ObstaclePools.Clear();
+    }
 
     //Spawn/Release an obstacle from it's respective pool
     public static Flyweight Spawn(FlyweightSettings settings) => GetPoolFor(settings)?.Get();

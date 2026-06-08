@@ -30,11 +30,11 @@ public class GameplayState : AbstractGameState
     private readonly float _MaxSpeed = 40f;                     //Maximum player speed
     private readonly float _DifficultyRampDuration = 20f;       //seconds to get to max difficulty (speed and obstacle intervals)
     private readonly float _InitialObstacleInterval = 1.5f;     //starting time between obstacles
-    private readonly float _MaxSpawnInterval = 2f;            //maximum time between obstacles (seconds)
+    private readonly float _MaxSpawnInterval = 2f;              //maximum time between obstacles (seconds)
     private readonly float _HorizonDistance = 300f;             //how far in front of the player obstacles should spawn
     private readonly float _ObstacleXSpawningRange = 50f;       //how far to the left and right of the player an obstacle should be allowed to spawn
     private readonly float _InitialIslandSpawnInterval = 1f;    //starting minimum interval between islands
-    private readonly float _IslandSpawnIntervalAmplifier = 2f; //How much the island interval should increase by on each successful island spawn
+    private readonly float _IslandSpawnIntervalAmplifier = 2f;  //How much the island interval should increase by on each successful island spawn
     
 
     //this should reset/initialze the game state
@@ -56,6 +56,9 @@ public class GameplayState : AbstractGameState
             _TotalObstacleSpawnWeight += data.SpawnWeight;
             //Debug.Log(_TotalObstacleSpawnWeight);
         }
+
+        FlyweightFactory.ResetPools();
+        InitializeObstaclePools(context);
     }
 
     public override void ExitState(GameStateManager context)    //GameStateManager should retrieve CurrentScore before exiting ExitState
@@ -181,5 +184,15 @@ public class GameplayState : AbstractGameState
         }
 
         return desiredPosition;
+    }
+
+    private void InitializeObstaclePools(GameStateManager context)
+    {
+        foreach (ObstacleSettings settings in context.allObstacles)
+        {
+            Flyweight obstacle = FlyweightFactory.Spawn(settings);
+            obstacle.transform.position = new Vector3(0, -40, 0);
+            FlyweightFactory.ReturnToPool(obstacle);
+        }
     }
 }
