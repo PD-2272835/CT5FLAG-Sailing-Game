@@ -2829,7 +2829,7 @@ Material:
     - _TextureHeight: 2048
     - _TextureWidth: 2048
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
+    - _UnderlayOffsetX: 0.7
     - _UnderlayOffsetY: 0
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
